@@ -1,0 +1,47 @@
+Prompt: Build "TruCare Systems" Landing Page
+Role: You are a Senior Frontend Developer & UX Designer. Task: Create a modern, high-converting B2B SaaS landing page for TruCare Systems and their TruCare platform. Target Audience: NDIS Provider CEOs (B2B Healthcare Tech). Tech Stack: [Insert preferred stack, e.g., React + Tailwind CSS + Framer Motion] OR [HTML5 + Vanilla CSS].
+
+Brand Identity
+Company: TruCare Systems
+Product: TruCare Platform
+Vibe: Trustworthy, Clinical yet Modern, "Audit-Proof", Efficient.
+Color Palette:
+Primary: Deep Teal/Medical Blue (Trust).
+Accent: Vibrant Green (Growth/Success).
+Background: Clean White/Light Gray.
+Typography: Clean Sans-Serif (e.g., Inter, Plus Jakarta Sans).
+Site Structure & Content
+1. Navigation Bar
+Logo: "TruCare Systems" (Text bold, clean).
+Links: Features, Why TruCare?, Resources, Login.
+CTA Button: "Book Pilot" (Primary Color).
+2. Hero Section
+Headline: "Stop Chasing Paperwork. Start Growing Care."
+Sub-headline: "The all-in-one workforce management platform ensuring NDIS Compliance, Cashflow, and Control."
+CTA: "Start 30-Day Pilot" & "Watch Video".
+Visual: High-quality mockup of a dashboard showing "100% Compliance" and a mobile app with "Check-in Verified".
+3. The Problem ("The Admin Trap")
+Section Style: Light Gray background. 3-Column Grid.
+Card 1: Compliance Risk. "Can you prove to an auditor your staff turned up? Don't guess."
+Card 2: Billing Lag. "How many days do you spend manually creating invoices? Do it in minutes."
+Card 3: Fragmented Data. "Stop using Excel and Emails. Get a single source of truth."
+4. The Solution (Feature Highlights)
+Layout: Alternating Text + Image (Left/Right).
+Feature A: Smart Rostering. "Assign the right staff instantly. Conflict-free schedules sent directly to their pocket."
+Feature B: GPS Verification (The Hero). "Eliminate time fraud. Geofenced check-ins provide irrefutable proof of service delivery."
+Feature C: One-Click Billing. "Generate NDIS Bulk Upload CSVs and Invoices in one click. Get paid faster."
+Feature D: Automated Payroll. "Pay your staff accurately based on verified GPS timestamps, not guesses."
+5. Social Proof / Trust
+"Trusted by forward-thinking NDIS Providers."
+Include 3 mock testimonials emphasizing "Peace of Mind" and "Saved Time".
+6. Final CTA
+Headline: "Ready to Audit-Proof Your Business?"
+Button: "Get Started Today".
+7. Footer
+Links: Support, Privacy Policy (NDIS Data Standards), Contact.
+Copyright © 2026 TruCare Systems.
+Implementation Instructions
+Use a mobile-first responsive design.
+Ensure high contrast and accessibility (WCAG AA).
+Use ample whitespace to create a "Premium" feel.
+Code Structure: Component-based (if React) or clean Semantic HTML.

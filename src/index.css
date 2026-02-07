@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3B3766;
+  --color-accent: #8BC34A;
+  --color-secondary: #F0F4F8;
+  --color-teal: #2B9C94;
+  --font-sans: Inter, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 overflow-x-hidden;
+  }
+}
