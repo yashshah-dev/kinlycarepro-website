@@ -77,7 +77,7 @@ const CareersPage = () => (
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-3 mb-8">
           <h2 className="text-3xl font-bold text-slate-900">Open roles</h2>
-          <p className="text-slate-600">Don’t see a role? Email talent@trucare.ai with your pitch—many of our hires started that way.</p>
+          <p className="text-slate-600">Don’t see a role? Email careers@kinlycarepro.com with your pitch—many of our hires started that way.</p>
         </div>
         <div className="space-y-6">
           {roles.map((role) => (

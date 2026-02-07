@@ -14,6 +14,25 @@
 </head>
 
 <body>
+  <!-- GitHub Pages SPA redirect handling -->
+  <script>
+    (function () {
+      // Handle redirect from 404.html
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+      // Handle path stored in query params (from 404.html redirect)
+      var params = new URLSearchParams(location.search);
+      var path = params.get('p');
+      var hash = params.get('h');
+      if (path) {
+        var newUrl = location.origin + location.pathname.replace(/\/$/, '') + path + (hash ? '#' + hash : '');
+        history.replaceState(null, null, newUrl);
+      }
+    })();
+  </script>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

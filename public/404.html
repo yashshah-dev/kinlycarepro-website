@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinly CarePro</title>
+  <script>
+    // Single Page App redirect for GitHub Pages
+    // This script takes the current URL and converts the path and query
+    // into just a query string, and then redirects the browser to the new URL
+    // where the index.html's script can read the query string
+    const segmentCount = 1; // number of path segments to keep (1 for project pages, 0 for user/org pages)
+    
+    const location = window.location;
+    const pathSegmentsToKeep = location.pathname.split('/').slice(0, 1 + segmentCount).join('/');
+    const remainingPath = location.pathname.slice(pathSegmentsToKeep.length);
+    
+    location.replace(
+      location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
+      pathSegmentsToKeep + '/?p=' +
+      encodeURIComponent(remainingPath + location.search) +
+      (location.hash ? '&h=' + encodeURIComponent(location.hash.slice(1)) : '')
+    );
+  </script>
+</head>
+<body>
+  <noscript>
+    <p>JavaScript is required to navigate this site.</p>
+  </noscript>
+</body>
+</html>

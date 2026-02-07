@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, ShieldCheck, Users } from 'lucide-react';
 import dashboardImage from '../assets/dashboard_mockup.png';
 
 const Hero = () => {
@@ -8,14 +8,22 @@ const Hero = () => {
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-[#f2fbff] via-white to-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center max-w-4xl mx-auto mb-16">
+                    {/* Trust Badges Row */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
+                        className="flex flex-wrap justify-center gap-3 mb-6"
                     >
-                        <span className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 tracking-wide border border-primary/20">
-                            <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                            Complete NDIS operations platform
+                        <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-emerald-50 text-emerald-700 font-semibold text-sm border border-emerald-200">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Now Accepting Providers
+                        </span>
+                        <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-slate-100 text-slate-600 font-medium text-sm">
+                            <ShieldCheck className="w-4 h-4" /> NDIS Registered Ready
+                        </span>
+                        <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-slate-100 text-slate-600 font-medium text-sm">
+                            <Users className="w-4 h-4" /> 18,400+ Participants Protected
                         </span>
                     </motion.div>
 
@@ -35,7 +43,7 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
                     >
-                        Mobile apps for staff, smart rostering for operations, one-click NDIS billing for finance—plus Guardian™ safety checks built into every workflow. Everything your team needs in one place.
+                        Mobile apps for staff, smart rostering for operations, one-click NDIS billing for finance—plus Guardian™ compliance checks built into every workflow.
                     </motion.p>
 
                     <motion.div
@@ -45,13 +53,13 @@ const Hero = () => {
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
                         <button className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-1 font-bold text-lg flex items-center justify-center gap-2 group">
-                            Start Free Trial <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                            Book Compliance Call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </button>
                         <button
-                            onClick={() => document.getElementById('video-section').scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth' })}
                             className="px-8 py-4 bg-white text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50 transition-all font-bold text-lg flex items-center justify-center gap-2 hover:border-gray-300"
                         >
-                            <Play size={20} className="fill-gray-700" /> Watch Demo
+                            <Play size={20} className="fill-gray-700" /> Watch 2-Min Demo
                         </button>
                     </motion.div>
                 </div>
@@ -70,16 +78,13 @@ const Hero = () => {
                 </motion.div>
             </div>
 
-            <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 text-left px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-left px-4 sm:px-6 lg:px-8">
                 {[{
                     label: 'Faster cash collection',
                     value: '3x speed improvement'
                 }, {
-                    label: 'Staff love the mobile app',
-                    value: '4.8★ avg rating'
-                }, {
-                    label: 'Rostering time saved',
-                    value: '12hrs/week average'
+                    label: 'Admin time saved weekly',
+                    value: '12+ hours average'
                 }].map((stat) => (
                     <div key={stat.value} className="p-6 rounded-2xl border border-gray-100 shadow-sm bg-white">
                         <p className="text-sm uppercase tracking-[0.3em] text-gray-500">{stat.label}</p>
