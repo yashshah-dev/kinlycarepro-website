@@ -7,7 +7,7 @@ const trustBadges = [
     { icon: <Globe2 className="w-5 h-5" />, label: '100% AU Hosted', detail: 'Sydney + Melbourne' },
     { icon: <Lock className="w-5 h-5" />, label: 'AES-256 Encryption', detail: 'In-flight & at-rest' },
     { icon: <ShieldCheck className="w-5 h-5" />, label: 'ISO 27001 Ready', detail: 'SOC 2 aligned' },
-    { icon: <Activity className="w-5 h-5" />, label: '99.98% Uptime', detail: '24/7 monitoring' },
+    { icon: <Activity className="w-5 h-5" />, label: 'High Availability', detail: '24/7 monitoring' },
     { icon: <KeyRound className="w-5 h-5" />, label: 'RBAC + SSO', detail: 'Enterprise controls' },
     { icon: <ClipboardCheck className="w-5 h-5" />, label: '7-Year Audit Trail', detail: 'Immutable logs' }
 ];

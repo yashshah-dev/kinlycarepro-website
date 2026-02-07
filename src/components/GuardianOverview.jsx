@@ -123,7 +123,7 @@ const GuardianOverview = () => {
                     </motion.div>
                 </div>
 
-                {/* Stats Strip */}
+                {/* Capability Strip */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -132,10 +132,10 @@ const GuardianOverview = () => {
                     className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
                 >
                     {[
-                        { value: '2.3M+', label: 'Notes reviewed' },
-                        { value: '99.1%', label: 'Goal match rate' },
-                        { value: '92%', label: 'Issues caught pre-billing' },
-                        { value: '100%', label: 'Audit pass rate' }
+                        { value: 'Every Note', label: 'Reviewed for compliance' },
+                        { value: 'Goal Matching', label: 'Built into workflows' },
+                        { value: 'Pre-Billing', label: 'Issue detection' },
+                        { value: 'Audit-Ready', label: 'Documentation' }
                     ].map((stat) => (
                         <div key={stat.label} className="text-center p-4 rounded-2xl bg-white/5 border border-white/10">
                             <p className="text-2xl font-bold text-white">{stat.value}</p>

@@ -1,30 +1,27 @@
 import React from 'react';
-import { Star, ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Zap, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const testimonials = [
+const capabilities = [
     {
-        text: "Our caregivers actually love the mobile app—offline mode saves them in rural areas. Rostering that took 10 hours now takes 90 minutes.",
-        author: "Sarah J.",
-        role: "Director",
-        company: "Leading SIL Provider, VIC"
+        icon: <Shield className="w-5 h-5" />,
+        title: 'Compliance-First Design',
+        description: 'Guardian checks every shift, note, and invoice against NDIS practice standards before billing.',
     },
     {
-        text: "We went from 18-day billing cycles to 3 days. The PRODA batch builder eliminated our Friday crunch. Cash flow transformed overnight.",
-        author: "Michael R.",
-        role: "Operations Manager",
-        company: "Enterprise Disability Services, NSW"
+        icon: <Zap className="w-5 h-5" />,
+        title: 'Streamlined Operations',
+        description: 'Smart rostering with fatigue rules, qualification matching, and real-time gap alerts.',
     },
     {
-        text: "The live ops map means I spot staffing gaps before clients notice. Guardian flags issues quietly in the background—it just works.",
-        author: "Elena M.",
-        role: "CEO",
-        company: "Community Access Group, QLD"
+        icon: <Clock className="w-5 h-5" />,
+        title: 'Faster Cash Flow',
+        description: 'One-click PRODA batch builder designed to accelerate your billing cycle.',
     }
 ];
 
-const providerLogos = [
+const providerTypes = [
     "SIL Providers",
     "Community Access",
     "Allied Health Groups",
@@ -44,7 +41,7 @@ const SocialProof = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Header with stats */}
+                {/* Header */}
                 <div className="text-center mb-12">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -52,10 +49,10 @@ const SocialProof = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-4xl font-bold mb-4"
                     >
-                        Trusted by Forward-Thinking Providers
+                        Built for Forward-Thinking Providers
                     </motion.h2>
 
-                    {/* Provider Types Logos */}
+                    {/* Provider Types */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -63,17 +60,17 @@ const SocialProof = () => {
                         transition={{ delay: 0.1 }}
                         className="flex flex-wrap justify-center gap-4 mt-6"
                     >
-                        {providerLogos.map((logo) => (
-                            <span key={logo} className="px-4 py-2 rounded-full bg-white/10 text-sm font-medium border border-white/20">
-                                {logo}
+                        {providerTypes.map((type) => (
+                            <span key={type} className="px-4 py-2 rounded-full bg-white/10 text-sm font-medium border border-white/20">
+                                {type}
                             </span>
                         ))}
                     </motion.div>
                 </div>
 
-                {/* Testimonials */}
+                {/* Capabilities Grid */}
                 <div className="grid md:grid-cols-3 gap-6">
-                    {testimonials.map((t, i) => (
+                    {capabilities.map((cap, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
@@ -82,26 +79,16 @@ const SocialProof = () => {
                             transition={{ delay: i * 0.1 }}
                             className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-colors"
                         >
-                            <div className="flex gap-1 mb-4">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                                ))}
+                            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-accent mb-4">
+                                {cap.icon}
                             </div>
-                            <p className="text-base italic mb-5 text-gray-100 leading-relaxed">"{t.text}"</p>
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold text-white">
-                                    {t.author[0]}
-                                </div>
-                                <div>
-                                    <p className="font-semibold text-white text-sm">{t.author}, {t.role}</p>
-                                    <p className="text-teal-200 text-xs">{t.company}</p>
-                                </div>
-                            </div>
+                            <h3 className="text-lg font-semibold mb-2">{cap.title}</h3>
+                            <p className="text-sm text-blue-100 leading-relaxed">{cap.description}</p>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* CTA */}
+                {/* Founding Provider CTA */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -110,12 +97,19 @@ const SocialProof = () => {
                     className="mt-14 text-center"
                 >
                     <div className="inline-block p-6 rounded-2xl bg-[#0b3b47] w-full max-w-3xl mx-auto border border-white/10">
-                        <h3 className="text-xl font-bold mb-4">Join 18,400+ Participants Being Protected</h3>
+                        <div className="flex items-center justify-center gap-2 text-accent mb-3">
+                            <Sparkles className="w-5 h-5" />
+                            <span className="text-sm font-semibold uppercase tracking-wide">Limited Spots Available</span>
+                        </div>
+                        <h3 className="text-xl font-bold mb-2">Join Our Founding Provider Program</h3>
+                        <p className="text-blue-100 text-sm mb-4 max-w-xl mx-auto">
+                            Be among the first providers to experience Kinly CarePro. Founding partners receive priority onboarding, direct access to our product team, and special pricing.
+                        </p>
                         <Link
                             to="/contact"
                             className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-white rounded-xl hover:bg-[#2ab36d] transition-all shadow-lg font-bold"
                         >
-                            Book a Demo <ArrowRight className="w-4 h-4" />
+                            Apply for Early Access <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
                 </motion.div>

@@ -14,8 +14,8 @@ const tabs = {
       'One-tap emergency beacon notifying supervisors with live location'
     ],
     metrics: [
-      { value: '54K+', label: 'Geofenced shifts / week' },
-      { value: '<30s', label: 'Average incident draft time' }
+      { value: 'GPS Verified', label: 'Shift tracking' },
+      { value: 'Instant', label: 'Incident drafting' }
     ],
     image: mobileApp,
     icon: <Smartphone className="w-5 h-5" />
@@ -29,10 +29,10 @@ const tabs = {
       'Automated billing review blocking ghost shifts before PRODA export'
     ],
     metrics: [
-      { value: '8hrs', label: 'Rostering time saved weekly' },
-      { value: '4.8★', label: 'Staff mobile app rating' },
-      { value: '3x faster', label: 'Invoice processing speed' },
-      { value: '3x', label: 'Faster cash collection' }
+      { value: 'Smart', label: 'Rostering automation' },
+      { value: 'One-Click', label: 'PRODA billing' },
+      { value: 'Real-Time', label: 'Ops visibility' },
+      { value: 'Streamlined', label: 'Cash collection' }
     ],
     image: dashboard,
     icon: <ShieldCheck className="w-5 h-5" />

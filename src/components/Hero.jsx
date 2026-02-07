@@ -23,7 +23,7 @@ const Hero = () => {
                             <ShieldCheck className="w-4 h-4" /> NDIS Registered Ready
                         </span>
                         <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-slate-100 text-slate-600 font-medium text-sm">
-                            <Users className="w-4 h-4" /> 18,400+ Participants Protected
+                            <Users className="w-4 h-4" /> Enterprise-Ready Platform
                         </span>
                     </motion.div>
 
@@ -80,11 +80,11 @@ const Hero = () => {
 
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-left px-4 sm:px-6 lg:px-8">
                 {[{
-                    label: 'Faster cash collection',
-                    value: '3x speed improvement'
+                    label: 'Designed to accelerate',
+                    value: 'Cash collection speed'
                 }, {
-                    label: 'Admin time saved weekly',
-                    value: '12+ hours average'
+                    label: 'Built to reduce',
+                    value: 'Admin overhead weekly'
                 }].map((stat) => (
                     <div key={stat.value} className="p-6 rounded-2xl border border-gray-100 shadow-sm bg-white">
                         <p className="text-sm uppercase tracking-[0.3em] text-gray-500">{stat.label}</p>

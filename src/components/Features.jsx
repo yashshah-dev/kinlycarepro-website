@@ -30,7 +30,7 @@ const features = [
         title: 'Financial & Billing Automation',
         description: 'One-click PRODA exports, payroll interpretation, and participant budget tracking keep revenue safeguarded.',
         icon: <Calculator className="w-6 h-6" />,
-        stats: '3x faster cash collection',
+        stats: 'Streamlined billing workflow',
         bullets: ['Bulk PRODA CSV + invoice generation', 'Timesheet engine for Active Night vs Sleepover', 'Budget burn alerts for finance + service leads'],
         image: null,
         reverse: false
@@ -40,7 +40,7 @@ const features = [
         title: 'Guardian™ Risk Protection',
         description: 'Automated safety checks for progress notes, incidents, and invoices—providing suggestions for qualified staff to approve.',
         icon: <ShieldCheck className="w-6 h-6" />,
-        stats: 'Flags 92% of issues before billing',
+        stats: 'Designed to catch issues pre-billing',
         bullets: ['Automated suggestions with staff approval required', 'Goal alignment checking with human verification', 'Incident template suggestions and restrictive practice alerts'],
         image: dashboard,
         reverse: true

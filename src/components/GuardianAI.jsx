@@ -6,25 +6,25 @@ const aiHighlights = [
   {
     title: 'Smart Documentation Help',
     description: 'Spots missing goal references or vague language as staff type—suggesting improvements they can accept, edit, or ignore.',
-    icon: <Bot className="w-5 h-5" />, 
-    metric: '2.3M notes reviewed'
+    icon: <Bot className="w-5 h-5" />,
+    metric: 'Real-time review'
   },
   {
     title: 'Goal Alignment Tips',
     description: 'Quietly flags entries that might need goal references—staff stay in control of final documentation.',
-    icon: <Target className="w-5 h-5" />, 
-    metric: '99.1% goal match rate'
+    icon: <Target className="w-5 h-5" />,
+    metric: 'Goal alignment checks'
   },
   {
     title: 'Automatic Incident Alerts',
     description: 'Detects keywords like "bruise" or "refused medication" and drafts incident templates for clinical teams to complete.',
-    icon: <AlertTriangle className="w-5 h-5" />, 
+    icon: <AlertTriangle className="w-5 h-5" />,
     metric: 'Instant template drafts'
   },
   {
     title: 'Pre-Billing Checks',
     description: 'Catches overlapping shifts, price errors, and duplicate claims before invoices go to NDIA.',
-    icon: <FileSearch className="w-5 h-5" />, 
+    icon: <FileSearch className="w-5 h-5" />,
     metric: '0 rejected invoices'
   }
 ];
@@ -256,7 +256,7 @@ const GuardianAI = () => {
                   <p className="text-3xl font-bold text-slate-900">NDIS ready export</p>
                 </div>
                 <div className="px-4 py-2 rounded-full bg-emerald-50 text-emerald-600 text-sm font-semibold">
-                  100% audit pass rate
+                  Audit-ready exports
                 </div>
               </div>
               <div className="space-y-4">

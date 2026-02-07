@@ -1,84 +1,80 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import { Users, ShieldCheck, BarChart3, Award } from 'lucide-react';
+import { Users, ShieldCheck, BarChart3, Award, Rocket, Target, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const stats = [
-  { label: 'Participants protected', value: '18,400+' },
-  { label: 'Compliance checks performed monthly', value: '2.3M' },
-  { label: 'Implementation time', value: '48 hours' },
-  { label: 'Audit pass rate', value: '100%' }
+const capabilities = [
+  { label: 'Implementation target', value: '48 hours' },
+  { label: 'Hosting', value: '100% Australian' },
+  { label: 'Design focus', value: 'Compliance-first' },
+  { label: 'Support model', value: 'Hands-on onboarding' }
 ];
 
-const leadership = [
+const values = [
   {
-    name: 'Amelia Rhodes',
-    title: 'Chief Executive Officer',
-    bio: 'Former COO of a national SIL provider, Amelia founded Kinly CarePro after leading multiple NDIS audits and discovering compliance blind spots.',
-    expertise: 'Governance & Compliance'
+    icon: <Heart className="w-6 h-6" />,
+    title: 'Participant-Centered',
+    text: 'Every feature is designed to help providers deliver better outcomes for NDIS participants.'
   },
   {
-    name: 'Noah Campbell',
-    title: 'Chief Product Officer',
-    bio: 'Previously at Atlassian Enterprise, Noah oversees Guardian compliance technology, rostering intelligence, and mobile experience.',
-    expertise: 'Compliance Tech & Product'
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: 'Compliance Obsessed',
+    text: 'Guardian checks are built into every workflow to help you stay audit-ready.'
   },
   {
-    name: 'Priya Iqbal',
-    title: 'Chief Clinical Advisor',
-    bio: 'Registered Nurse and former clinical lead for a top SDA provider, Priya embeds safeguarding best practice into every Kinly CarePro workflow.',
-    expertise: 'Safeguarding & Clinical'
+    icon: <Target className="w-6 h-6" />,
+    title: 'Operator Experience',
+    text: 'Built by someone who understands the daily challenges of running an NDIS business.'
+  },
+  {
+    icon: <Rocket className="w-6 h-6" />,
+    title: 'Continuous Improvement',
+    text: 'Regular updates based on provider feedback and evolving NDIS requirements.'
   }
 ];
 
-const milestones = [
-  { year: '2021', event: 'Kinly CarePro founded in Melbourne after NDIS practice audit reform.' },
-  { year: '2022', event: 'Guardian compliance engine launches with live note checking + risk flag detection.' },
-  { year: '2023', event: 'Mobile app rolls out across 280 providers with offline mode.' },
-  { year: '2024', event: 'Operations command center + One-Click Audit adopted by enterprise SIL groups.' }
+const roadmap = [
+  { status: 'complete', event: 'Core platform development with Guardian compliance engine' },
+  { status: 'complete', event: 'Mobile app with offline mode and GPS verification' },
+  { status: 'complete', event: 'One-click PRODA billing and smart rostering' },
+  { status: 'current', event: 'Founding provider program and early access rollout' },
+  { status: 'upcoming', event: 'Operations command center and advanced analytics' }
 ];
 
 const AboutPage = () => (
   <>
     <SEO
-      title="About Kinly CarePro - Australian NDIS Software Built by Care Experts"
-      description="Kinly CarePro is built by former NDIS providers who understand operational challenges. 18,400+ participants protected, 100% audit pass rate. Trusted by Australian care teams."
-      keywords="Kinly CarePro about, NDIS software company, Australian care technology, disability support innovation, NDIS platform team, care management leadership"
+      title="About Kinly CarePro - Australian NDIS Software Built for Care Providers"
+      description="Kinly CarePro is built to help NDIS providers run compliant, efficient operations. Australian-hosted platform designed for SIL, Community Access, and Allied Health providers."
+      keywords="Kinly CarePro about, NDIS software company, Australian care technology, disability support innovation, NDIS platform, care management"
       url="https://kinlycarepro.com.au/about"
     />
     <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-white text-center px-4">
       <p className="text-accent font-semibold tracking-[0.4em] uppercase text-xs">About Kinly CarePro</p>
-      <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4">NDIS operators built Kinly CarePro for NDIS operators.</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4">Built by an NDIS operator, for NDIS operators.</h1>
       <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
-        We are ex-operations managers, clinicians, and engineers obsessed with compliance automation, financial accuracy, and frontline experience.
+        Kinly CarePro was created to solve the real operational challenges that NDIS providers face every day—compliance complexity, billing delays, and admin overhead.
       </p>
     </section>
 
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Mission</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Mission</h2>
           <p className="text-slate-600 text-lg">
             Empower every Australian care provider to run a compliant, profitable, and human-centered service without drowning in spreadsheets. Guardian automates the low-trust admin so teams can focus on participants.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="p-5 rounded-2xl border border-slate-200 bg-slate-50">
-                <p className="text-2xl font-bold text-slate-900">{stat.value}</p>
-                <p className="text-xs uppercase tracking-wide text-slate-500 mt-1">{stat.label}</p>
+            {capabilities.map((cap) => (
+              <div key={cap.label} className="p-5 rounded-2xl border border-slate-200 bg-slate-50">
+                <p className="text-2xl font-bold text-slate-900">{cap.value}</p>
+                <p className="text-xs uppercase tracking-wide text-slate-500 mt-1">{cap.label}</p>
               </div>
             ))}
           </div>
         </div>
         <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 space-y-4">
-          {[{
-            icon: <ShieldCheck className="w-6 h-6" />, title: 'GDPR + APP compliant hosting', text: 'Sydney + Melbourne data centers with SOC 2 aligned controls.'
-          }, {
-            icon: <Users className="w-6 h-6" />, title: 'Leadership with frontline experience', text: 'Our exec team has run SIL, Community Access, and Allied Health organisations.'
-          }, {
-            icon: <BarChart3 className="w-6 h-6" />, title: 'Data-backed outcomes', text: 'Guardian prevents 92% of compliance issues before billing.'
-          }, {
-            icon: <Award className="w-6 h-6" />, title: 'NDIS practice standard experts', text: 'We partner with external auditors to keep Kinly CarePro aligned with the latest requirements.'
-          }].map((item) => (
+          {values.map((item) => (
             <div key={item.title} className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">{item.icon}</div>
               <div>
@@ -93,29 +89,49 @@ const AboutPage = () => (
 
     <section className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <h2 className="text-3xl font-bold text-slate-900">Leadership team</h2>
-        <p className="text-slate-600 mt-4">People who have lived through NDIS audits, implemented safeguarding reforms, and led enterprise software teams.</p>
+        <h2 className="text-3xl font-bold text-slate-900">The Founder</h2>
+        <p className="text-slate-600 mt-4">Kinly CarePro is a solo-founder startup on a mission to transform NDIS provider operations.</p>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-        {leadership.map((leader) => (
-          <div key={leader.name} className="rounded-3xl border border-slate-200 bg-white p-6 flex flex-col gap-3 text-left">
-            <p className="text-xl font-semibold text-slate-900">{leader.name}</p>
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-500">{leader.title}</p>
-            <p className="text-sm text-slate-600 flex-1">{leader.bio}</p>
-            <p className="text-xs font-semibold text-primary uppercase tracking-wide">{leader.expertise}</p>
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center">
+          <div className="w-20 h-20 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+            <Users className="w-8 h-8" />
           </div>
-        ))}
+          <p className="text-xl font-semibold text-slate-900">Yash Shah</p>
+          <p className="text-sm uppercase tracking-[0.3em] text-slate-500 mt-1">Founder</p>
+          <p className="text-sm text-slate-600 mt-4">
+            Building Kinly CarePro to solve the compliance and operational challenges that NDIS providers face daily. Focused on creating software that actually works for frontline teams.
+          </p>
+          <div className="mt-6">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-colors font-semibold"
+            >
+              Get in Touch
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
 
     <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-slate-900 mb-8">Milestones</h2>
+        <h2 className="text-3xl font-bold text-slate-900 mb-8">Product Roadmap</h2>
         <div className="space-y-6">
-          {milestones.map((milestone) => (
-            <div key={milestone.year} className="flex gap-6">
-              <div className="w-24 text-primary font-semibold">{milestone.year}</div>
-              <p className="flex-1 text-slate-700">{milestone.event}</p>
+          {roadmap.map((item, index) => (
+            <div key={index} className="flex gap-6">
+              <div className="w-24 flex items-center">
+                {item.status === 'complete' && (
+                  <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold">✓ Done</span>
+                )}
+                {item.status === 'current' && (
+                  <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold animate-pulse">🚀 Now</span>
+                )}
+                {item.status === 'upcoming' && (
+                  <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">📅 Next</span>
+                )}
+              </div>
+              <p className="flex-1 text-slate-700">{item.event}</p>
             </div>
           ))}
         </div>

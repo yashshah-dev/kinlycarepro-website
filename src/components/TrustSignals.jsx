@@ -46,7 +46,7 @@ const TrustSignals = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6 w-full lg:w-auto">
-            {[{ label: '99.98%', text: 'Platform uptime' }, { label: '48hrs', text: 'Implementation turn-up' }, { label: 'ISO 27001', text: 'Audit ready' }, { label: '24/7', text: 'System monitoring' }].map((stat) => (
+            {[{ label: 'High Availability', text: 'Platform uptime' }, { label: '48hrs', text: 'Implementation target' }, { label: 'SOC 2', text: 'Aligned controls' }, { label: '24/7', text: 'System monitoring' }].map((stat) => (
               <div key={stat.text} className="bg-white/5 rounded-2xl border border-white/10 p-6 text-center">
                 <p className="text-3xl font-bold text-white">{stat.label}</p>
                 <p className="text-sm text-slate-300 mt-1">{stat.text}</p>
