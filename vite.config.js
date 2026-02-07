@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // Base path for GitHub Pages deployment
-  // Set to '/' for root domain or custom domain
-  // Set to '/repository-name/' for GitHub Pages project site
-  base: process.env.GITHUB_ACTIONS ? '/KinlyCarePro/' : '/',
+  // Uses VITE_BASE_URL env var if set (from GitHub Actions workflow)
+  // Otherwise falls back to '/' for local development
+  base: process.env.VITE_BASE_URL || (process.env.GITHUB_ACTIONS ? '/kinlycarepro-website/' : '/'),
 })
