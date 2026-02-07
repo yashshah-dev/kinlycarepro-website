@@ -20,7 +20,7 @@ const partnerTypes = [
   }
 ];
 
-const logos = ['Aurora Advisory', 'CareTech Payroll', 'Bluegum Analytics', 'Northside Allied Health', 'SDA Collective'];
+
 
 const PartnersPage = () => (
   <>
@@ -52,13 +52,14 @@ const PartnersPage = () => (
 
     <section className="py-16 bg-slate-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Featured partners</p>
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-4 text-slate-500 font-semibold">
-          {logos.map((logo) => (
-            <div key={logo} className="rounded-2xl border border-slate-200 bg-white py-6 px-4">
-              {logo}
-            </div>
-          ))}
+        <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Partner ecosystem</p>
+        <h2 className="mt-4 text-2xl font-bold text-slate-900">Building our partner network</h2>
+        <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+          We're actively seeking implementation consultants, technology integrators, and allied health networks to join our founding partner program. Early partners receive priority onboarding and co-marketing support.
+        </p>
+        <div className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-50 text-emerald-700 font-semibold text-sm border border-emerald-200">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Now Accepting Partner Applications
         </div>
       </div>
     </section>
