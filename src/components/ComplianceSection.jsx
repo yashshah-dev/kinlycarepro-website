@@ -43,9 +43,9 @@ const auditTimeline = [
 ];
 
 const complianceStats = [
-  { label: '47', text: 'documents zipped per audit pack' },
-  { label: '12hrs', text: 'maximum incident notification SLA' },
-  { label: '0', text: 'restrictive practice breaches in 2025 YTD' }
+  { label: 'One-Click', text: 'Audit pack exports' },
+  { label: 'Real-Time', text: 'Incident notifications' },
+  { label: 'Tracked', text: 'Restrictive practices' }
 ];
 
 const ComplianceSection = () => {
@@ -149,7 +149,7 @@ const ComplianceSection = () => {
               ))}
             </ul>
             <button className="mt-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-100">
-              Download compliance playbook <ArrowRight className="w-4 h-4" />
+              Talk to Compliance Team <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
         </div>
