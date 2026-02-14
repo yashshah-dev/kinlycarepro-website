@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, ShieldCheck, Users } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Users } from 'lucide-react';
 import dashboardImage from '../assets/dashboard_mockup.png';
 
 const Hero = () => {
@@ -55,12 +55,7 @@ const Hero = () => {
                         <button className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-1 font-bold text-lg flex items-center justify-center gap-2 group">
                             Book Compliance Call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <button
-                            onClick={() => document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="px-8 py-4 bg-white text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50 transition-all font-bold text-lg flex items-center justify-center gap-2 hover:border-gray-300"
-                        >
-                            <Play size={20} className="fill-gray-700" /> Watch 2-Min Demo
-                        </button>
+
                     </motion.div>
                 </div>
 

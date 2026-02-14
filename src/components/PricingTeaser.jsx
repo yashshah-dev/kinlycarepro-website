@@ -5,32 +5,33 @@ import { motion } from 'framer-motion';
 
 const plans = [
     {
-        name: 'Growth',
-        price: '$10',
-        cadence: 'per participant/month',
-        description: 'For growing providers who need smart rostering, compliance, and onboarding support.',
+        name: '14-Day Free Trial',
+        price: '$0',
+        cadence: 'for 14 days',
+        description: 'Full access to test the platform with your own data.',
         features: [
+            'Unlimited staff accounts',
             'Guardian compliance engine',
             'Mobile app with GPS geofencing',
-            'Live operations map + smart rostering',
-            'Free data migration (worth $2k)'
+            'Basic rostering & notes'
         ],
-        highlight: 'Most popular',
-        primary: true
+        highlight: 'Risk free',
+        primary: false
     },
     {
-        name: 'Enterprise',
-        price: 'Custom',
-        cadence: 'pricing',
-        description: 'White-glove service with dedicated infrastructure and strategic operational support.',
+        name: 'Starter',
+        price: '$199',
+        cadence: 'per month',
+        description: 'For growing teams. Full access to the entire platform.',
         features: [
-            'Everything in Growth, plus:',
-            'Dedicated AU hosting + SSO',
-            'Assigned operations strategist',
-            'Custom SLA + premium support'
+            'Everything in Trial, plus:',
+            'Live operations map',
+            'Smart fatigue alerts',
+            'Qualification tracking',
+            'Custom shift rates'
         ],
-        highlight: 'Enterprise grade',
-        primary: false
+        highlight: 'Best for small teams',
+        primary: true
     }
 ];
 
@@ -62,7 +63,7 @@ const PricingTeaser = () => {
                 >
                     {[
                         'Complete platform included',
-                        'Free migration worth $2k',
+                        'Unlimited staff accounts',
                         'NDIS price updates guaranteed'
                     ].map((item) => (
                         <div key={item} className="flex items-center gap-2 text-sm font-medium text-emerald-900 bg-emerald-50 px-4 py-2 rounded-full">
@@ -82,8 +83,8 @@ const PricingTeaser = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 + index * 0.1 }}
                             className={`relative rounded-3xl border p-8 ${plan.primary
-                                    ? 'border-primary/30 bg-primary/5 shadow-xl'
-                                    : 'border-slate-200 bg-white shadow-lg'
+                                ? 'border-primary/30 bg-primary/5 shadow-xl'
+                                : 'border-slate-200 bg-white shadow-lg'
                                 }`}
                         >
                             <span className={`text-xs font-semibold px-3 py-1 rounded-full ${plan.primary ? 'bg-primary text-white' : 'bg-slate-100 text-slate-600'
@@ -111,8 +112,8 @@ const PricingTeaser = () => {
                             </ul>
 
                             <button className={`mt-8 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm ${plan.primary
-                                    ? 'bg-primary text-white hover:bg-[#0b3b47]'
-                                    : 'bg-slate-900 text-white hover:bg-slate-800'
+                                ? 'bg-primary text-white hover:bg-[#0b3b47]'
+                                : 'bg-slate-900 text-white hover:bg-slate-800'
                                 }`}>
                                 {plan.name === 'Enterprise' ? 'Book review' : 'Start pilot'}
                                 <ArrowRight className="w-4 h-4" />

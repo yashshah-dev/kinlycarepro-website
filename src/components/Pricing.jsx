@@ -3,104 +3,102 @@ import { Check, ArrowUpRight, Minus } from 'lucide-react';
 
 const plans = [
   {
-    name: 'Starter',
-    price: '$8',
-    cadence: 'per participant/month',
-    platformFee: '$299/month platform fee',
-    minimum: 'Minimum 30 participants',
-    description: 'Perfect for small teams ready to modernize rostering, billing, and mobile workflows.',
+    name: '14-Day Free Trial',
+    price: '$0',
+    cadence: 'for 14 days',
+    platformFee: 'Up to 3 participants',
+    minimum: 'No credit card required',
+    description: 'Full access to test the platform with your own data.',
     features: [
-      'Guardian compliance engine included',
-      'Mobile app with GPS geofencing',
-      'Basic rostering + shift management',
-      'PRODA exports + incident drafting',
-      'Standard email support'
+      'Unlimited staff accounts',
+      'Guardian compliance engine',
+      'Mobile app with GPS',
+      'Basic rostering & notes',
+      'PRODA exports'
+    ],
+    highlight: 'Risk free'
+  },
+  {
+    name: 'Starter',
+    price: '$199',
+    cadence: 'per month',
+    platformFee: 'Up to 20 participants',
+    minimum: 'Includes unlimited staff',
+    description: 'For growing teams. Full access to the entire platform.',
+    features: [
+      'Everything in Trial, plus:',
+      'Live operations map',
+      'Smart fatigue alerts',
+      'Qualification tracking',
+      'Custom shift rates',
+      'Bulk billing exports'
     ],
     highlight: 'Best for small teams'
   },
   {
     name: 'Growth',
-    price: '$10',
-    cadence: 'per participant/month',
-    platformFee: '$399/month platform fee',
-    minimum: 'Minimum 75 participants',
-    description: 'Ideal for growing providers who need advanced features and onboarding support.',
+    price: '$499',
+    cadence: 'per month',
+    platformFee: 'Up to 50 participants',
+    minimum: 'Includes unlimited staff',
+    description: 'For established providers. Same full access, higher capacity.',
     features: [
       'Everything in Starter, plus:',
-      'Live operations map + smart rostering',
-      'Fatigue alerts + qualification tracking',
-      'Free data migration (worth $2k)',
-      '3 months compliance strategist support'
+      'Higher participant limit (50)',
+      'Priority email support',
+      'Same full feature set',
+      'No hidden upgrades'
     ],
     highlight: 'Most popular'
-  },
-  {
-    name: 'Scale',
-    price: '$9',
-    cadence: 'per participant/month',
-    platformFee: '$899/month platform fee',
-    minimum: 'Minimum 200 participants',
-    description: 'Built for mid-market providers with integration and support requirements.',
-    features: [
-      'Everything in Growth, plus:',
-      'Custom APIs + webhook integrations',
-      'Advanced dashboards + analytics',
-      'Dedicated success manager',
-      'NDIS price guide auto-updates',
-      '24/7 priority support'
-    ],
-    highlight: 'Best value'
   },
   {
     name: 'Enterprise',
     price: 'Custom',
     cadence: 'pricing',
-    platformFee: 'From $1,899/month',
-    minimum: 'Custom minimum',
-    description: 'White-glove service with dedicated infrastructure and strategic operational support.',
+    platformFee: '50+ participants',
+    minimum: 'Volume discounts available',
+    description: 'Dedicated infrastructure and strategic support for large organizations.',
     features: [
-      'Everything in Scale, plus:',
-      'Dedicated single-tenant hosting in AU',
-      'Advanced RBAC + SSO/SCIM',
-      'Assigned operations strategist',
-      'White-glove onboarding + training',
-      'Custom SLA + premium support'
+      'Everything in Growth, plus:',
+      'Dedicated AU instance',
+      'SSO & SCIM provisioning',
+      'Custom SLA & uptime guarantee',
+      'API access & webhooks',
+      'Dedicated success manager'
     ],
     highlight: 'Enterprise grade'
   }
 ];
 
 const comparisonRows = [
-  { feature: 'Guardian compliance engine', starter: true, growth: true, scale: true, enterprise: true },
-  { feature: 'Mobile app with GPS geofencing', starter: true, growth: true, scale: true, enterprise: true },
-  { feature: 'PRODA exports + incident drafting', starter: true, growth: true, scale: true, enterprise: true },
-  { feature: 'Live operations map', starter: false, growth: true, scale: true, enterprise: true },
-  { feature: 'Smart rostering with fatigue alerts', starter: false, growth: true, scale: true, enterprise: true },
-  { feature: 'Free data migration', starter: false, growth: true, scale: true, enterprise: true },
-  { feature: 'Operational support', starter: false, growth: '3 months', scale: 'Ongoing', enterprise: 'Dedicated' },
-  { feature: 'Custom APIs + integrations', starter: false, growth: false, scale: true, enterprise: true },
-  { feature: 'Advanced dashboards', starter: false, growth: false, scale: true, enterprise: true },
-  { feature: 'NDIS price guide auto-updates', starter: false, growth: false, scale: true, enterprise: true },
-  { feature: '24/7 priority support', starter: false, growth: false, scale: true, enterprise: true },
-  { feature: 'Dedicated hosting', starter: false, growth: false, scale: false, enterprise: true },
-  { feature: 'SSO/SCIM', starter: false, growth: false, scale: false, enterprise: true }
+  { feature: 'Staff accounts', trial: 'Unlimited', starter: 'Unlimited', growth: 'Unlimited', enterprise: 'Unlimited' },
+  { feature: 'Guardian compliance engine', trial: true, starter: true, growth: true, enterprise: true },
+  { feature: 'Mobile app with GPS', trial: true, starter: true, growth: true, enterprise: true },
+  { feature: 'PRODA exports', trial: true, starter: true, growth: true, enterprise: true },
+  { feature: 'Live operations map', trial: false, starter: true, growth: true, enterprise: true },
+  { feature: 'Smart fatigue alerts', trial: false, starter: true, growth: true, enterprise: true },
+  { feature: 'Qualification tracking', trial: false, starter: true, growth: true, enterprise: true },
+  { feature: 'Custom shift rates', trial: false, starter: true, growth: true, enterprise: true },
+  { feature: 'API access', trial: false, starter: false, growth: false, enterprise: true },
+  { feature: 'Dedicated success manager', trial: false, starter: false, growth: false, enterprise: true },
+  { feature: 'SSO/SCIM', trial: false, starter: false, growth: false, enterprise: true }
 ];
 
 const addOns = [
   {
-    title: 'Dedicated server cluster',
-    description: 'Isolated VPC, private networking, and data residency controls for multi-brand groups.',
-    price: '$1.2k / month'
+    title: 'Data Migration Service',
+    description: 'We import your legacy data (participants, staff, history) from Excel or other systems.',
+    price: '$499 one-time'
   },
   {
-    title: 'SOC 2 + IRAP support pack',
-    description: 'Security reviews, penetration testing coordination, and documentation templates.',
-    price: '$6.5k fixed'
+    title: 'Audit Preparation Pack',
+    description: 'One-click export of all compliance evidence linked to NDIS practice standards.',
+    price: '$99 / month'
   },
   {
-    title: 'Integration accelerator',
-    description: 'Managed data warehouse feeds, payroll exports, and webhook setup handled by Kinly CarePro engineers.',
-    price: 'From $4k'
+    title: 'White Label Portal',
+    description: 'Remove Kinly branding from family and participant portals.',
+    price: '$199 / month'
   }
 ];
 
@@ -122,7 +120,7 @@ const Pricing = () => {
           </div>
           <div className="flex items-center gap-2 text-sm font-medium text-emerald-900">
             <Check className="w-4 h-4 text-emerald-600" />
-            <span>Free migration worth $2k</span>
+            <span>Unlimited staff accounts</span>
           </div>
           <div className="flex items-center gap-2 text-sm font-medium text-emerald-900">
             <Check className="w-4 h-4 text-emerald-600" />
@@ -168,9 +166,9 @@ const Pricing = () => {
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wide text-slate-500">
                   <th className="py-4 px-6 font-semibold">Capability</th>
+                  <th className="py-4 px-4 text-center font-semibold">Trial</th>
                   <th className="py-4 px-4 text-center font-semibold">Starter</th>
                   <th className="py-4 px-4 text-center font-semibold">Growth</th>
-                  <th className="py-4 px-4 text-center font-semibold">Scale</th>
                   <th className="py-4 px-4 text-center font-semibold">Enterprise</th>
                 </tr>
               </thead>
@@ -178,6 +176,17 @@ const Pricing = () => {
                 {comparisonRows.map((row) => (
                   <tr key={row.feature} className="border-t border-slate-100">
                     <td className="py-4 px-6 font-medium text-slate-900">{row.feature}</td>
+                    <td className="py-4 px-4 text-center">
+                      {typeof row.trial === 'boolean' ? (
+                        row.trial ? (
+                          <Check className="w-5 h-5 mx-auto text-emerald-600" />
+                        ) : (
+                          <Minus className="w-5 h-5 mx-auto text-slate-300" />
+                        )
+                      ) : (
+                        <span className="text-xs text-slate-700 font-medium">{row.trial}</span>
+                      )}
+                    </td>
                     <td className="py-4 px-4 text-center">
                       {typeof row.starter === 'boolean' ? (
                         row.starter ? (
@@ -198,17 +207,6 @@ const Pricing = () => {
                         )
                       ) : (
                         <span className="text-xs text-slate-700 font-medium">{row.growth}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.scale === 'boolean' ? (
-                        row.scale ? (
-                          <Check className="w-5 h-5 mx-auto text-emerald-600" />
-                        ) : (
-                          <Minus className="w-5 h-5 mx-auto text-slate-300" />
-                        )
-                      ) : (
-                        <span className="text-xs text-slate-700 font-medium">{row.scale}</span>
                       )}
                     </td>
                     <td className="py-4 px-4 text-center">
