@@ -84,23 +84,7 @@ const comparisonRows = [
   { feature: 'SSO/SCIM', trial: false, starter: false, growth: false, enterprise: true }
 ];
 
-const addOns = [
-  {
-    title: 'Data Migration Service',
-    description: 'We import your legacy data (participants, staff, history) from Excel or other systems.',
-    price: '$499 one-time'
-  },
-  {
-    title: 'Audit Preparation Pack',
-    description: 'One-click export of all compliance evidence linked to NDIS practice standards.',
-    price: '$99 / month'
-  },
-  {
-    title: 'White Label Portal',
-    description: 'Remove Kinly branding from family and participant portals.',
-    price: '$199 / month'
-  }
-];
+
 
 const Pricing = () => {
   return (
@@ -227,19 +211,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="mt-12 text-left">
-          <h3 className="text-2xl font-semibold text-slate-900 mb-4">Enterprise add-ons</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {addOns.map((addOn) => (
-              <div key={addOn.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="text-sm uppercase tracking-[0.3em] text-slate-500 font-semibold">Add-on</p>
-                <h4 className="text-xl font-semibold text-slate-900 mt-2">{addOn.title}</h4>
-                <p className="text-sm text-slate-600 mt-3">{addOn.description}</p>
-                <p className="mt-6 text-base font-semibold text-slate-900">{addOn.price}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );
