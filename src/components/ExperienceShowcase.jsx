@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Bell, MapPin, MonitorPlay, Activity, ShieldCheck } from 'lucide-react';
-import mobileApp from '../assets/mobile_app_mockup.png';
-import dashboard from '../assets/dashboard_mockup.png';
+import mobileApp from '../assets/mobile_app.png';
+import dashboard from '../assets/hero_dashboard.png';
 
 const tabs = {
   staff: {
@@ -105,7 +105,7 @@ const ExperienceShowcase = () => {
             >
               <div className="relative w-full max-w-lg">
                 <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-primary/30 blur-3xl"></div>
-                <img src={tab.image} alt={tab.label} className="relative z-10 rounded-2xl shadow-2xl border border-white/10" />
+                <img src={tab.image} alt={tab.label} className="relative z-10 rounded-2xl shadow-2xl border border-white/10 img-crisp" />
                 <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-3 rounded-2xl shadow-lg flex items-center gap-3 text-sm text-slate-900">
                   {activeTab === 'staff' ? (
                     <>

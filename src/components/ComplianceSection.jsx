@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, ClipboardCheck, FileSearch, Shield, Activity, Timer, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const compliancePillars = [
   {
@@ -148,9 +149,12 @@ const ComplianceSection = () => {
                 </li>
               ))}
             </ul>
-            <button className="mt-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-100">
+            <Link
+              to="/contact"
+              className="mt-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-100"
+            >
               Talk to Compliance Team <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>

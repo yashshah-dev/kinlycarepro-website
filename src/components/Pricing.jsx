@@ -1,22 +1,23 @@
 import React from 'react';
 import { Check, ArrowUpRight, Minus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const plans = [
   {
-    name: '14-Day Free Trial',
-    price: '$0',
-    cadence: 'for 14 days',
-    platformFee: 'Up to 3 participants',
-    minimum: 'No credit card required',
-    description: 'Full access to test the platform with your own data.',
+    name: 'Solo',
+    price: '$49',
+    cadence: 'per month',
+    platformFee: 'Up to 5 participants',
+    minimum: 'Perfect for sole traders',
+    description: 'Essential compliance and care tools for independent providers.',
     features: [
       'Unlimited staff accounts',
       'Guardian compliance engine',
       'Mobile app with GPS',
-      'Basic rostering & notes',
-      'PRODA exports'
+      'Shift notes & incident reports',
+      'Basic invoicing'
     ],
-    highlight: 'Risk free'
+    highlight: 'New Entry Plan'
   },
   {
     name: 'Starter',
@@ -26,36 +27,36 @@ const plans = [
     minimum: 'Includes unlimited staff',
     description: 'For growing teams. Full access to the entire platform.',
     features: [
-      'Everything in Trial, plus:',
+      'Everything in Solo, plus:',
       'Live operations map',
       'Smart fatigue alerts',
       'Qualification tracking',
       'Custom shift rates',
       'Bulk billing exports'
     ],
-    highlight: 'Best for small teams'
+    highlight: 'Best Value'
   },
   {
     name: 'Growth',
-    price: '$499',
+    price: '$399',
     cadence: 'per month',
     platformFee: 'Up to 50 participants',
     minimum: 'Includes unlimited staff',
     description: 'For established providers. Same full access, higher capacity.',
     features: [
       'Everything in Starter, plus:',
-      'Higher participant limit (50)',
+      'Higher participant limit (60)',
       'Priority email support',
-      'Same full feature set',
-      'No hidden upgrades'
+      'Data import assistance',
+      'Quarterly business review'
     ],
-    highlight: 'Most popular'
+    highlight: 'Most Popular'
   },
   {
     name: 'Enterprise',
     price: 'Custom',
     cadence: 'pricing',
-    platformFee: '50+ participants',
+    platformFee: '60+ participants',
     minimum: 'Volume discounts available',
     description: 'Dedicated infrastructure and strategic support for large organizations.',
     features: [
@@ -66,22 +67,22 @@ const plans = [
       'API access & webhooks',
       'Dedicated success manager'
     ],
-    highlight: 'Enterprise grade'
+    highlight: 'Enterprise Grade'
   }
 ];
 
 const comparisonRows = [
-  { feature: 'Staff accounts', trial: 'Unlimited', starter: 'Unlimited', growth: 'Unlimited', enterprise: 'Unlimited' },
-  { feature: 'Guardian compliance engine', trial: true, starter: true, growth: true, enterprise: true },
-  { feature: 'Mobile app with GPS', trial: true, starter: true, growth: true, enterprise: true },
-  { feature: 'PRODA exports', trial: true, starter: true, growth: true, enterprise: true },
-  { feature: 'Live operations map', trial: false, starter: true, growth: true, enterprise: true },
-  { feature: 'Smart fatigue alerts', trial: false, starter: true, growth: true, enterprise: true },
-  { feature: 'Qualification tracking', trial: false, starter: true, growth: true, enterprise: true },
-  { feature: 'Custom shift rates', trial: false, starter: true, growth: true, enterprise: true },
-  { feature: 'API access', trial: false, starter: false, growth: false, enterprise: true },
-  { feature: 'Dedicated success manager', trial: false, starter: false, growth: false, enterprise: true },
-  { feature: 'SSO/SCIM', trial: false, starter: false, growth: false, enterprise: true }
+  { feature: 'Staff accounts', solo: 'Unlimited', starter: 'Unlimited', growth: 'Unlimited', enterprise: 'Unlimited' },
+  { feature: 'Guardian compliance engine', solo: true, starter: true, growth: true, enterprise: true },
+  { feature: 'Mobile app with GPS', solo: true, starter: true, growth: true, enterprise: true },
+  { feature: 'PRODA exports', solo: false, starter: true, growth: true, enterprise: true },
+  { feature: 'Live operations map', solo: false, starter: true, growth: true, enterprise: true },
+  { feature: 'Smart fatigue alerts', solo: false, starter: true, growth: true, enterprise: true },
+  { feature: 'Qualification tracking', solo: false, starter: true, growth: true, enterprise: true },
+  { feature: 'Custom shift rates', solo: true, starter: true, growth: true, enterprise: true },
+  { feature: 'API access', solo: false, starter: false, growth: false, enterprise: true },
+  { feature: 'Dedicated success manager', solo: false, starter: false, growth: false, enterprise: true },
+  { feature: 'SSO/SCIM', solo: false, starter: false, growth: false, enterprise: true }
 ];
 
 
@@ -135,10 +136,13 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <button className="mt-8 w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800">
+              <Link
+                to="/contact"
+                className="mt-8 w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800"
+              >
                 {plan.name === 'Enterprise' ? 'Book review' : 'Start pilot'}
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -150,7 +154,7 @@ const Pricing = () => {
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wide text-slate-500">
                   <th className="py-4 px-6 font-semibold">Capability</th>
-                  <th className="py-4 px-4 text-center font-semibold">Trial</th>
+                  <th className="py-4 px-4 text-center font-semibold">Solo</th>
                   <th className="py-4 px-4 text-center font-semibold">Starter</th>
                   <th className="py-4 px-4 text-center font-semibold">Growth</th>
                   <th className="py-4 px-4 text-center font-semibold">Enterprise</th>
@@ -161,14 +165,14 @@ const Pricing = () => {
                   <tr key={row.feature} className="border-t border-slate-100">
                     <td className="py-4 px-6 font-medium text-slate-900">{row.feature}</td>
                     <td className="py-4 px-4 text-center">
-                      {typeof row.trial === 'boolean' ? (
-                        row.trial ? (
+                      {typeof row.solo === 'boolean' ? (
+                        row.solo ? (
                           <Check className="w-5 h-5 mx-auto text-emerald-600" />
                         ) : (
                           <Minus className="w-5 h-5 mx-auto text-slate-300" />
                         )
                       ) : (
-                        <span className="text-xs text-slate-700 font-medium">{row.trial}</span>
+                        <span className="text-xs text-slate-700 font-medium">{row.solo}</span>
                       )}
                     </td>
                     <td className="py-4 px-4 text-center">

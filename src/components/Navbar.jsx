@@ -21,9 +21,6 @@ const Navbar = () => {
 
     const companyLinks = [
         { label: 'About Us', to: '/about' },
-        { label: 'Careers', to: '/careers' },
-        { label: 'Partners', to: '/partners' },
-        { label: 'Compliance', to: '/compliance' }
     ];
 
     return (
@@ -32,7 +29,7 @@ const Navbar = () => {
                 <div className="flex justify-between h-20 items-center">
                     <div className="flex-shrink-0 flex items-center cursor-pointer">
                         <Link to="/" aria-label="Kinly CarePro home">
-                            <img src={logo} alt="Kinly CarePro" className="h-16 sm:h-20 w-auto" />
+                            <img src={logo} alt="Kinly CarePro" className="h-16 sm:h-20 w-auto transform scale-250 origin-left" />
                         </Link>
                     </div>
 

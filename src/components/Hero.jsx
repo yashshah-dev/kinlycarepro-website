@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Users } from 'lucide-react';
-import dashboardImage from '../assets/dashboard_mockup.png';
+import { Link } from 'react-router-dom';
+import dashboardImage from '../assets/hero_dashboard.png';
 
 const Hero = () => {
     return (
@@ -52,9 +53,12 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
-                        <button className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-1 font-bold text-lg flex items-center justify-center gap-2 group">
+                        <Link
+                            to="/contact"
+                            className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-1 font-bold text-lg flex items-center justify-center gap-2 group"
+                        >
                             Book Compliance Call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </Link>
 
                     </motion.div>
                 </div>
@@ -68,7 +72,7 @@ const Hero = () => {
                     <img
                         src={dashboardImage}
                         alt="Kinly CarePro dashboard interface"
-                        className="w-full h-auto"
+                        className="w-full h-auto img-crisp"
                     />
                 </motion.div>
             </div>

@@ -5,13 +5,14 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import FeaturesPage from './pages/FeaturesPage';
-import CompliancePage from './pages/CompliancePage';
 import PricingPage from './pages/PricingPage';
 import ResourcesPage from './pages/ResourcesPage';
 import AboutPage from './pages/AboutPage';
-import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
-import PartnersPage from './pages/PartnersPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
+import CompliancePage from './pages/CompliancePage';
+import SecurityPage from './pages/SecurityPage';
 
 function App() {
   return (
@@ -23,13 +24,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/compliance" element={<CompliancePage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/careers" element={<CareersPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/partners" element={<PartnersPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/compliance" element={<CompliancePage />} />
+            <Route path="/security" element={<SecurityPage />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>

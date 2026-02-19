@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FileText, ShieldCheck, Users, Bell, ArrowRight } from 'lucide-react';
 
 const upcomingResources = [
@@ -23,6 +23,17 @@ const upcomingResources = [
 ];
 
 const ResourcesSection = () => {
+  const [notified, setNotified] = useState(false);
+  const [email, setEmail] = useState('');
+
+  const handleNotify = (e) => {
+    e.preventDefault();
+    if (email) {
+      setNotified(true);
+      setEmail('');
+    }
+  };
+
   return (
     <section id="resources" className="py-24 bg-slate-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,19 +72,26 @@ const ResourcesSection = () => {
             <p className="text-slate-600 text-sm mb-4">
               Be the first to know when our implementation guides and tools are ready.
             </p>
-            <form className="flex gap-3 flex-col sm:flex-row">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-              />
-              <button
-                type="button"
-                className="px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-[#0b3b47] flex items-center justify-center gap-2"
-              >
-                Notify Me <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
+            {notified ? (
+              <p className="text-emerald-600 font-semibold py-2">✓ You're on the list! We'll notify you soon.</p>
+            ) : (
+              <form onSubmit={handleNotify} className="flex gap-3 flex-col sm:flex-row">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  className="flex-1 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                />
+                <button
+                  type="submit"
+                  className="px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-[#0b3b47] flex items-center justify-center gap-2"
+                >
+                  Notify Me <ArrowRight className="w-4 h-4" />
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

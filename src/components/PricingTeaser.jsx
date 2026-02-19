@@ -5,17 +5,17 @@ import { motion } from 'framer-motion';
 
 const plans = [
     {
-        name: '14-Day Free Trial',
-        price: '$0',
-        cadence: 'for 14 days',
-        description: 'Full access to test the platform with your own data.',
+        name: 'Solo',
+        price: '$49',
+        cadence: 'per month',
+        description: 'Perfect for independent providers.',
         features: [
             'Unlimited staff accounts',
             'Guardian compliance engine',
-            'Mobile app with GPS geofencing',
-            'Basic rostering & notes'
+            'Mobile app with GPS',
+            'Basic invoicing'
         ],
-        highlight: 'Risk free',
+        highlight: 'New Entry Plan',
         primary: false
     },
     {
@@ -24,7 +24,7 @@ const plans = [
         cadence: 'per month',
         description: 'For growing teams. Full access to the entire platform.',
         features: [
-            'Everything in Trial, plus:',
+            'Everything in Solo, plus:',
             'Live operations map',
             'Smart fatigue alerts',
             'Qualification tracking',
@@ -49,7 +49,7 @@ const PricingTeaser = () => {
                     <p className="text-accent font-semibold tracking-wide uppercase text-sm">Pricing</p>
                     <h2 className="text-4xl font-bold text-slate-900 mt-4">Simple, audit-friendly billing.</h2>
                     <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                        Every plan includes mobile apps, smart rostering, one-click NDIS billing, and Guardian compliance. No hidden module fees.
+                        Start with our new <strong>Solo Plan</strong> or scale up with <strong>Starter</strong> and <strong>Growth</strong>. All plans include mobile apps and Guardian compliance.
                     </p>
                 </motion.div>
 
@@ -111,13 +111,15 @@ const PricingTeaser = () => {
                                 ))}
                             </ul>
 
-                            <button className={`mt-8 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm ${plan.primary
-                                ? 'bg-primary text-white hover:bg-[#0b3b47]'
-                                : 'bg-slate-900 text-white hover:bg-slate-800'
-                                }`}>
+                            <Link
+                                to="/contact"
+                                className={`mt-8 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm ${plan.primary
+                                    ? 'bg-primary text-white hover:bg-[#0b3b47]'
+                                    : 'bg-slate-900 text-white hover:bg-slate-800'
+                                    }`}>
                                 {plan.name === 'Enterprise' ? 'Book review' : 'Start pilot'}
                                 <ArrowRight className="w-4 h-4" />
-                            </button>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

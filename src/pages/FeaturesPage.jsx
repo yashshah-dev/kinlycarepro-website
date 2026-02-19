@@ -3,7 +3,6 @@ import SEO from '../components/SEO';
 import GuardianAI from '../components/GuardianAI';
 import Features from '../components/Features';
 import ExperienceShowcase from '../components/ExperienceShowcase';
-import VideoSection from '../components/VideoSection';
 
 const FeaturesPage = () => {
   return (
@@ -24,7 +23,6 @@ const FeaturesPage = () => {
       <GuardianAI />
       <Features />
       <ExperienceShowcase />
-      <VideoSection />
     </>
   );
 };

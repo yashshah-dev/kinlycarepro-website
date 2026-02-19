@@ -89,28 +89,32 @@ const AboutPage = () => (
 
     <section className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <h2 className="text-3xl font-bold text-slate-900">The Founder</h2>
-        <p className="text-slate-600 mt-4">Kinly CarePro is a solo-founder startup on a mission to transform NDIS provider operations.</p>
+        <h2 className="text-3xl font-bold text-slate-900">Why Providers Choose Us</h2>
+        <p className="text-slate-600 mt-4 max-w-2xl mx-auto">Built from real operator experience, Kinly CarePro is designed around the workflows that matter most to NDIS teams.</p>
       </div>
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center">
-          <div className="w-20 h-20 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
-            <Users className="w-8 h-8" />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: <ShieldCheck className="w-6 h-6" />, title: 'Audit-Ready from Day One', text: 'Guardian compliance checks are embedded into every shift, note, and invoice — not bolted on as an afterthought.' },
+          { icon: <BarChart3 className="w-6 h-6" />, title: 'Faster Billing Cycles', text: 'One-click PRODA batch generation designed to reduce billing delays and improve your cash flow.' },
+          { icon: <Award className="w-6 h-6" />, title: '100% Australian Hosted', text: 'All data stays on Australian soil, meeting NDIS data sovereignty requirements and privacy standards.' },
+          { icon: <Users className="w-6 h-6" />, title: 'Built for Frontline Teams', text: 'Mobile-first design with offline mode means support workers can do their job even without internet.' }
+        ].map((item) => (
+          <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">{item.icon}</div>
+            <div>
+              <p className="text-lg font-semibold text-slate-900">{item.title}</p>
+              <p className="text-sm text-slate-600 mt-1">{item.text}</p>
+            </div>
           </div>
-          <p className="text-xl font-semibold text-slate-900">Yash Shah</p>
-          <p className="text-sm uppercase tracking-[0.3em] text-slate-500 mt-1">Founder</p>
-          <p className="text-sm text-slate-600 mt-4">
-            Building Kinly CarePro to solve the compliance and operational challenges that NDIS providers face daily. Focused on creating software that actually works for frontline teams.
-          </p>
-          <div className="mt-6">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-colors font-semibold"
-            >
-              Get in Touch
-            </Link>
-          </div>
-        </div>
+        ))}
+      </div>
+      <div className="text-center mt-10">
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-colors font-semibold"
+        >
+          Get in Touch
+        </Link>
       </div>
     </section>
 

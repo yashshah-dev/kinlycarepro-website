@@ -103,7 +103,7 @@ const SocialProof = () => {
                         </div>
                         <h3 className="text-xl font-bold mb-2">Join Our Founding Provider Program</h3>
                         <p className="text-blue-100 text-sm mb-4 max-w-xl mx-auto">
-                            Be among the first providers to experience Kinly CarePro. Founding partners receive priority onboarding, direct access to our product team, and special pricing.
+                            Be among the first providers to experience Kinly CarePro. Founding providers receive priority onboarding, direct access to our product team, and special pricing.
                         </p>
                         <Link
                             to="/contact"

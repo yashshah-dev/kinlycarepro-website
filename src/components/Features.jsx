@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Smartphone, Radar, Calculator } from 'lucide-react';
-import mobileApp from '../assets/mobile_app_mockup.png';
-import dashboard from '../assets/dashboard_mockup.png';
+import mobileApp from '../assets/mobile_app.png';
+import dashboard from '../assets/roster_view.png';
+import billing from '../assets/billing_success.png';
+import guardian from '../assets/guardian_shield.png';
 
 const features = [
     {
@@ -11,7 +13,6 @@ const features = [
         description: 'Offline-capable app with GPS smart-fencing, one-tap emergency alerts, and shift dashboards that work in dead zones.',
         icon: <Smartphone className="w-6 h-6" />,
         stats: 'Works offline + syncs automatically',
-        bullets: ['Geofenced check-in/out + photo proof', 'Shift dashboard with care plans + alerts', 'One-tap escalation with live GPS breadcrumb'],
         image: mobileApp,
         reverse: false
     },
@@ -21,7 +22,6 @@ const features = [
         description: 'Airport-style live map showing every active worker, with rostering intelligence built on fatigue and qualification rules.',
         icon: <Radar className="w-6 h-6" />,
         stats: 'Detects double-bookings before publish',
-        bullets: ['Smart drag-and-drop rostering', 'NDIS Price Guide sync (TTP, Saturday, PH rates)', 'Live status map: green on-time, red missing'],
         image: dashboard,
         reverse: true
     },
@@ -31,8 +31,7 @@ const features = [
         description: 'One-click PRODA exports, payroll interpretation, and participant budget tracking keep revenue safeguarded.',
         icon: <Calculator className="w-6 h-6" />,
         stats: 'Streamlined billing workflow',
-        bullets: ['Bulk PRODA CSV + invoice generation', 'Timesheet engine for Active Night vs Sleepover', 'Budget burn alerts for finance + service leads'],
-        image: null,
+        image: billing,
         reverse: false
     },
     {
@@ -41,8 +40,7 @@ const features = [
         description: 'Automated safety checks for progress notes, incidents, and invoices—providing suggestions for qualified staff to approve.',
         icon: <ShieldCheck className="w-6 h-6" />,
         stats: 'Designed to catch issues pre-billing',
-        bullets: ['Automated suggestions with staff approval required', 'Goal alignment checking with human verification', 'Incident template suggestions and restrictive practice alerts'],
-        image: dashboard,
+        image: guardian,
         reverse: true
     }
 ];
@@ -74,14 +72,6 @@ const Features = () => {
                                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                                     {feature.description}
                                 </p>
-                                <ul className="space-y-3 text-gray-600 mb-6">
-                                    {feature.bullets && feature.bullets.map((bullet) => (
-                                        <li key={bullet} className="flex items-start gap-3">
-                                            <span className="mt-2 w-2 h-2 rounded-full bg-accent"></span>
-                                            <span>{bullet}</span>
-                                        </li>
-                                    ))}
-                                </ul>
                                 <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
                                     <div className="h-10 w-1 bg-accent rounded-full"></div>
                                     <p className="font-semibold text-gray-800">{feature.stats}</p>
@@ -97,7 +87,7 @@ const Features = () => {
                             >
                                 <div className="relative rounded-2xl bg-gray-100 p-2 lg:p-4 shadow-xl ring-1 ring-black/5 transform hover:scale-[1.02] transition-transform duration-500">
                                     {feature.image ? (
-                                        <img src={feature.image} alt={feature.title} className="rounded-xl w-full h-auto shadow-sm" />
+                                        <img src={feature.image} alt={feature.title} className="rounded-xl w-full h-auto shadow-sm img-crisp" />
                                     ) : (
                                         <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm aspect-video flex flex-col justify-center">
                                             <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-4">

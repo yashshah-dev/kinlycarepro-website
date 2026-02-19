@@ -13,3 +13,9 @@
     @apply font-sans bg-slate-50 text-slate-900 overflow-x-hidden;
   }
 }
+@layer utilities {
+  .img-crisp {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
