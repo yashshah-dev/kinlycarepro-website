@@ -15,12 +15,14 @@ import CompliancePage from './pages/CompliancePage';
 import SecurityPage from './pages/SecurityPage';
 
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-accent/30">
         <SpeedInsights />
+        <Analytics />
         <Navbar />
         <ScrollToTop />
         <main>
