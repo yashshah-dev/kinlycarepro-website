@@ -47,7 +47,7 @@ const AboutPage = () => (
       title="About Kinly CarePro - Australian NDIS Software Built for Care Providers"
       description="Kinly CarePro is built to help NDIS providers run compliant, efficient operations. Australian-hosted platform designed for SIL, Community Access, and Allied Health providers."
       keywords="Kinly CarePro about, NDIS software company, Australian care technology, disability support innovation, NDIS platform, care management"
-      url="https://kinlycarepro.com.au/about"
+      url="https://kinlycarepro.com/about"
     />
     <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-white text-center px-4">
       <p className="text-accent font-semibold tracking-[0.4em] uppercase text-xs">About Kinly CarePro</p>

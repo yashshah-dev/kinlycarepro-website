@@ -62,10 +62,10 @@ const ContactPage = () => {
   return (
     <>
       <SEO
-        title="Contact Us - Get Started with Kinly CarePro NDIS Software"
-        description="Book a demo or speak with our team about implementing Kinly CarePro at your NDIS organization. 48-hour deployment. Australia-wide support available 24/7."
-        keywords="contact Kinly CarePro, NDIS software demo, book demo, NDIS software support, Australian care software contact, get started NDIS platform"
-        url="https://kinlycarepro.com.au/contact"
+        title="Contact Us - Australian NDIS Software Support | Kinly CarePro"
+        description="Book a demo or speak with our Australian support team. We help NDIS providers implement compliant software in 48 hours. Support available 8am-7pm AEST."
+        keywords="contact Kinly CarePro, NDIS software demo, Australian NDIS support, NDIS software contact, care management software help, Melbourne NDIS software"
+        url="https://kinlycarepro.com/contact"
       />
       <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-white text-center px-4">
         <p className="text-primary font-semibold tracking-[0.4em] uppercase text-xs">Contact</p>

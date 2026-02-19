@@ -10,7 +10,7 @@ const CompliancePage = () => {
             lastUpdated="February 19, 2026"
             seoTitle="NDIS Data Standards & Compliance - Kinly CarePro"
             seoDescription="Kinly CarePro is built to meet NDIS Practice Standards. Learn how our software simplifies compliance for Australian providers."
-            seoUrl="https://kinlycarepro.com.au/compliance"
+            seoUrl="https://kinlycarepro.com/compliance"
         >
             <div className="space-y-12">
                 <section className="bg-emerald-50 border border-emerald-100 rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-center">

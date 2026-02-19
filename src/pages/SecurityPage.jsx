@@ -10,7 +10,7 @@ const SecurityPage = () => {
             lastUpdated="February 19, 2026"
             seoTitle="Security - Kinly CarePro"
             seoDescription="Enterprise-grade security protecting your NDIS data. Encryption, Australian hosting, and strict access controls."
-            seoUrl="https://kinlycarepro.com.au/security"
+            seoUrl="https://kinlycarepro.com/security"
         >
             <div className="space-y-12">
                 <section className="text-center max-w-2xl mx-auto">

@@ -10,7 +10,7 @@ const TermsPage = () => {
             lastUpdated="February 19, 2026"
             seoTitle="Terms of Service - Kinly CarePro"
             seoDescription="Terms and conditions for using the Kinly CarePro NDIS management platform."
-            seoUrl="https://kinlycarepro.com.au/terms"
+            seoUrl="https://kinlycarepro.com/terms"
         >
             <div className="space-y-12">
                 <section>

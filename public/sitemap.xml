@@ -1,56 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://trucare.com.au/</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/features</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/features</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/pricing</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/pricing</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/compliance</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/compliance</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/resources</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/resources</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/about</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/about</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/contact</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/contact</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/careers</loc>
-    <lastmod>2026-01-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://kinlycarepro.com/privacy</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://trucare.com.au/partners</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://kinlycarepro.com/terms</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kinlycarepro.com/security</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
