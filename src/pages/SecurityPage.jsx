@@ -86,7 +86,7 @@ const SecurityPage = () => {
                         </div>
                     </div>
                     <a
-                        href="mailto:security@kinlycarepro.com"
+                        href="mailto:support@kinlycarepro.com"
                         className="px-6 py-3 bg-white text-slate-900 rounded-lg font-bold hover:bg-slate-100 transition-colors flex items-center gap-2 shrink-0"
                     >
                         <AlertOctagon size={18} />

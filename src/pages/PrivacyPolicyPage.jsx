@@ -106,8 +106,8 @@ const PrivacyPolicyPage = () => {
                             <p className="mb-2 font-medium text-white">Data Protection Officer</p>
                             <p className="text-sm opacity-80 mb-6 max-w-md">For access requests, corrections, or privacy concerns, please reach out to our dedicated team.</p>
                             <div className="flex flex-col gap-3">
-                                <a href="mailto:privacy@kinlycarepro.com" className="flex items-center gap-3 text-white hover:text-teal-400 transition-colors">
-                                    <Mail size={18} /> privacy@kinlycarepro.com
+                                <a href="mailto:support@kinlycarepro.com" className="flex items-center gap-3 text-white hover:text-teal-400 transition-colors">
+                                    <Mail size={18} /> support@kinlycarepro.com
                                 </a>
                                 <div className="flex items-center gap-3 text-sm">
                                     <span className="w-5 flex justify-center text-gray-500">📍</span>
