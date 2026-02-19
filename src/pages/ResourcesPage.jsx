@@ -10,7 +10,7 @@ const ResourcesPage = () => {
         title="Resources - NDIS Implementation Guides & Audit Checklists"
         description="Download implementation guides, NDIS pricing checklists, ROI models, and audit preparation resources. Free guides for NDIS care providers."
         keywords="NDIS implementation guide, NDIS audit checklist, NDIS pricing guide, care management resources, NDIS ROI calculator, NDIS best practices"
-        url="https://kinlycarepro.com/resources"
+        url="https://www.kinlycarepro.com/resources"
       />
       <section className="pt-32 pb-16 bg-slate-100 text-center px-4">
         <p className="text-accent font-semibold tracking-[0.4em] uppercase text-xs">Resources</p>

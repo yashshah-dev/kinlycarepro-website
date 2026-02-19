@@ -16,7 +16,7 @@ const Home = () => {
         title="NDIS Software for Australian Providers | Kinly CarePro"
         description="The complete NDIS management platform. Mobile apps, smart rostering, one-click PRODA billing, and Guardian compliance checks. 48-hour implementation."
         keywords="NDIS software, NDIS management platform, care provider software, NDIS rostering, NDIS billing, PRODA export, disability support software, Australian NDIS, SIL software, community care software"
-        url="https://kinlycarepro.com"
+        url="https://www.kinlycarepro.com"
       />
 
       {/* 1. Hero - Value proposition + trust signals */}

@@ -10,7 +10,7 @@ const PrivacyPolicyPage = () => {
             lastUpdated="February 19, 2026"
             seoTitle="Privacy Policy - Kinly CarePro"
             seoDescription="Our commitment to protecting your data and complying with Australian privacy laws and NDIS standards."
-            seoUrl="https://kinlycarepro.com/privacy"
+            seoUrl="https://www.kinlycarepro.com/privacy"
         >
             <div className="space-y-12">
                 <section>

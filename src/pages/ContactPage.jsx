@@ -65,7 +65,7 @@ const ContactPage = () => {
         title="Contact Us - Australian NDIS Software Support | Kinly CarePro"
         description="Book a demo or speak with our Australian support team. We help NDIS providers implement compliant software in 48 hours. Support available 8am-7pm AEST."
         keywords="contact Kinly CarePro, NDIS software demo, Australian NDIS support, NDIS software contact, care management software help, Melbourne NDIS software"
-        url="https://kinlycarepro.com/contact"
+        url="https://www.kinlycarepro.com/contact"
       />
       <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-white text-center px-4">
         <p className="text-primary font-semibold tracking-[0.4em] uppercase text-xs">Contact</p>
