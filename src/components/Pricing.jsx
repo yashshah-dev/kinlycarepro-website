@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const plans = [
   {
     name: 'Solo',
-    price: '$49',
+    price: '$99',
     cadence: 'per month',
     platformFee: 'Up to 5 participants',
     minimum: 'Perfect for sole traders',

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const plans = [
     {
         name: 'Solo',
-        price: '$49',
+        price: '$99',
         cadence: 'per month',
         description: 'Perfect for independent providers.',
         features: [

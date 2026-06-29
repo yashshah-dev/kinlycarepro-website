@@ -7,8 +7,8 @@ const PricingPage = () => {
   return (
     <>
       <SEO
-        title="Pricing - From $49/month | NDIS Software"
-        description="Affordable NDIS software. Solo plan from $49/month. All plans include mobile apps, rostering, billing, and Guardian safety checks. 48-hour implementation."
+        title="Pricing - From $99/month | NDIS Software"
+        description="Affordable NDIS software. Solo plan from $99/month. All plans include mobile apps, rostering, billing, and Guardian safety checks. 48-hour implementation."
         keywords="NDIS software pricing, care management cost, NDIS platform price, sole trader NDIS software, NDIS software plans, affordable NDIS software"
         url="https://www.kinlycarepro.com/pricing"
       />
