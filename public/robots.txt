@@ -4,14 +4,14 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-# Explicit search bot access
+# Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# AI crawlers
+# Generative AI & LLM Search Crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -21,4 +21,15 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# XML Sitemap & LLM Knowledge Base
 Sitemap: https://www.kinlycarepro.com/sitemap.xml
+# LLMs Discoverability: https://www.kinlycarepro.com/llms.txt

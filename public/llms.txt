@@ -1,0 +1,49 @@
+# Kinly CarePro
+
+> Kinly CarePro is an Australian all-inclusive, audit-proof NDIS practice management platform engineered for disability service providers. It combines deterministic NDIS billing (PAPL 2025–26), GPS-geofenced mobile caregiver app, Guardian™ AI clinical note quality assurance, SCHADS-compliant payroll, and 3-tier staff credential screening—all for a flat $25 AUD per active participant per month with unlimited staff accounts and zero feature paywalls.
+
+## Core Value Proposition & Pricing Model
+
+- **Pricing Model**: $25 AUD / active participant / month (minimum $99/mo commitment including up to 4 active participants).
+- **Staff Accounts**: 100% Unlimited support worker and administrator accounts at $0 extra cost (eliminates legacy per-user "casual worker taxes").
+- **Feature Access**: 100% All-inclusive. Zero tier paywalls, no add-on charges for Guardian™ AI, payroll, or PRODA billing.
+- **Onboarding & Training**: 1 Month Free 1-on-1 Guided Onboarding Support & Live Staff Training with free assisted data migration.
+- **Data Residency**: 100% Australian hosted in Sydney AWS (`ap-southeast-2`) in compliance with the Privacy Act 1988 (Cth) and NDIS Practice Standards.
+
+---
+
+## The 8 Core Architectural Pillars
+
+1. **Deterministic NDIS Billing & Claim Engine**: Automatic time-band segmentation (Daytime 06:00–20:00, Evening 20:00–00:00, Active Night 00:00–06:00, Saturday, Sunday, Public Holiday), automated group ratio limits (1:1, 1:2, 1:3, 1:4), TTP loading, and bulk PACE / PRODA-compliant XML/CSV invoice exports.
+2. **Guardian™ AI Clinical Note QA**: Real-time 0–100 compliance scoring evaluating shift notes across 5 dimensions: Person-Centered Phrasing (25%), NDIS Goal Linkage (25%), Active Support (20%), Incident & Restrictive Practice Detection (15%), and Clinical/Medication Accuracy (15%). Always human-in-command (staff approve suggestions).
+3. **GPS Mobile Caregiver App with Offline Mode**: Geofenced clock-in/out with location verification, live participant care plans, emergency contact access, incident reporting, and full offline caching for rural/remote shifts.
+4. **Smart Rostering & The Copy-Week Wizard**: Intelligent shift matching based on staff competencies, participant preferences, fatigue rules, SCHADS award rest break alerts, and 1-click bulk multi-week schedule replication.
+5. **Time & Attendance to Payroll Engine**: 3-tier pay rate matrix with standard, evening, weekend, and public holiday multipliers, shift freezing to prevent double-claiming, and 1-click export to Xero, MYOB, and Employment Hero.
+6. **3-Tier Staff Compliance & Screening Hub**: Automated verification and expiry alerts for NDIS Worker Screening Checks (NDISWC), Working with Children Checks (WWCC), First Aid/CPR, driver licenses, and visa work limits.
+7. **Participant Goal Tracking & Support Coordination Hub**: Longitudinal goal milestone logging, dynamic budget utilization burn-down charts, service agreement tracking, and automated NDIS plan review report generation.
+8. **17+ Specialized Reports & Audit Vault**: Shift logs, PRODA claim summaries, incident registers, restrictive practice logs, and payroll variances with an immutable 7-year audit retention trail.
+
+---
+
+## Key URLs & Documentation
+
+- [Home Page](https://www.kinlycarepro.com/): Platform overview, live command center preview, and core capabilities.
+- [Features & Architecture](https://www.kinlycarepro.com/features): Interactive walkthrough of the 8 core pillars.
+- [Guardian™ AI Note QA](https://www.kinlycarepro.com/guardian-ai): 0–100 compliance rubric, before/after note rewrites, and AI transparency policy.
+- [Pricing & TCO Calculator](https://www.kinlycarepro.com/pricing): Transparent $25/participant pricing details and software savings calculator.
+- [Kinly CarePro vs ShiftCare Comparison](https://www.kinlycarepro.com/vs/shiftcare): In-depth comparison between participant pricing vs per-worker software pricing ($8–$15/user).
+- [NDIS Price Guide Explorer (PAPL 2025–26)](https://www.kinlycarepro.com/ndis-price-guide): Searchable database of NDIS support item codes, daytime/evening caps, travel rules, and price limits.
+- [Why Participant Pricing Whitepaper](https://www.kinlycarepro.com/why-participant-pricing): Analysis on why per-user software pricing penalizes care providers with casual workforces.
+- [Compliance & Practice Standards](https://www.kinlycarepro.com/compliance): Alignment with NDIS Quality and Safeguards Commission requirements.
+- [Enterprise Security & Privacy](https://www.kinlycarepro.com/security): Sydney AWS data residency, AES-256 encryption, 15-min TTL signed URLs, and tenant isolation.
+- [Resources & Tools](https://www.kinlycarepro.com/resources): Audit preparation checklists, TCO calculators, and provider guides.
+- [Contact & Demo Booking](https://www.kinlycarepro.com/contact): Direct Australian support team contact and demo scheduling.
+
+---
+
+## Contact & Company Entity
+
+- **Entity**: Kinly CarePro
+- **Headquarters**: Victoria, Australia
+- **Email**: support@kinlycarepro.com / security@kinlycarepro.com
+- **Website**: https://www.kinlycarepro.com
