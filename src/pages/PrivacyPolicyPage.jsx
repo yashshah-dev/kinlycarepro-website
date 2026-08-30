@@ -5,13 +5,18 @@ import { Shield, Database, Lock, Mail, Server, Eye, FileText, UserCheck } from '
 
 const PrivacyPolicyPage = () => {
     return (
-        <LegalLayout
-            title="Privacy Policy"
-            lastUpdated="February 19, 2026"
-            seoTitle="Privacy Policy - Kinly CarePro"
-            seoDescription="Our commitment to protecting your data and complying with Australian privacy laws and NDIS standards."
-            seoUrl="https://www.kinlycarepro.com/privacy"
-        >
+        <>
+            <SEO
+                title="Privacy Policy - Australian NDIS Data Protection | Kinly CarePro"
+                description="Kinly CarePro Privacy Policy. Our commitment to the Privacy Act 1988 (Cth), NDIS Quality and Safeguards Commission data governance, and Sydney AWS health data isolation."
+                keywords="Kinly CarePro privacy policy, NDIS data privacy, Australian privacy principles, NDIS health data security"
+                url="https://www.kinlycarepro.com/privacy"
+                breadcrumbs={[{ name: "Privacy Policy", path: "/privacy" }]}
+            />
+            <LegalLayout
+                title="Privacy Policy"
+                lastUpdated="February 19, 2026"
+            >
             <div className="space-y-12">
                 <section>
                     <p className="text-xl text-gray-600 leading-relaxed">
@@ -119,6 +124,7 @@ const PrivacyPolicyPage = () => {
                 </section>
             </div>
         </LegalLayout>
+        </>
     );
 };
 

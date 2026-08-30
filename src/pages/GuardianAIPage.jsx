@@ -174,10 +174,12 @@ const GuardianAIPage = () => {
   return (
     <>
       <SEO
-        title="Guardian™ AI Note Quality Assistant | Audit-Proof NDIS Progress Notes"
-        description="Transform rough frontline shift notes into audit-proof, goal-aligned NDIS clinical records with Guardian™ AI. Real-time 0–100 compliance scoring, incident detection, and human-in-command governance."
+        title="Guardian™ AI Note QA & NDIS Compliance Checker | Kinly CarePro"
+        description="Transform frontline shift notes into audit-proof, goal-aligned NDIS records with Guardian™ AI. Real-time 0–100 compliance scoring, incident detection, and human-in-command governance."
         keywords="Guardian AI, NDIS progress notes AI, NDIS AI note assistant, NDIS note quality score, NDIS practice standards AI, audit proof NDIS notes, NDIS clinical documentation, human in command AI disability care"
         url="https://www.kinlycarepro.com/guardian-ai"
+        faqs={faqItems}
+        breadcrumbs={[{ name: "Guardian™ AI", path: "/guardian-ai" }]}
       />
 
       {/* Hero Section */}

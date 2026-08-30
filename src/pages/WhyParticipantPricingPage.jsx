@@ -5,6 +5,17 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import TcoCalculator from '../components/TcoCalculator';
 
+const pricingAnalysisFaqs = [
+  {
+    question: 'Why does per-user pricing harm NDIS provider margins?',
+    answer: 'NDIS providers rely on casual and relief support workers for shift coverage. Per-user software models force providers to pay $10-$15/month for workers who may only work a few hours, distorting unit economics.'
+  },
+  {
+    question: 'How does participant-based pricing align with NDIS revenue?',
+    answer: 'Because provider revenue scales with active NDIS participants and plan utilization, participant-based pricing ($25/participant/mo) keeps software overhead strictly proportional to income.'
+  }
+];
+
 const WhyParticipantPricingPage = () => {
   return (
     <>
@@ -13,6 +24,8 @@ const WhyParticipantPricingPage = () => {
         description="Learn why per-user software pricing penalizes NDIS care providers and how participant-based pricing ($25/participant/mo with unlimited staff) protects your margins and aligns software costs with revenue."
         keywords="NDIS software pricing, per user pricing vs participant pricing, NDIS PMS pricing model, disability provider margins, NDIS software cost"
         url="https://www.kinlycarepro.com/why-participant-pricing"
+        faqs={pricingAnalysisFaqs}
+        breadcrumbs={[{ name: "Why Participant Pricing?", path: "/why-participant-pricing" }]}
       />
 
       {/* Hero */}

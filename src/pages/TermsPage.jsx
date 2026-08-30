@@ -5,13 +5,18 @@ import { Scale, AlertCircle, CheckCircle2, DollarSign, ShieldAlert, Clock } from
 
 const TermsPage = () => {
     return (
-        <LegalLayout
-            title="Terms of Service"
-            lastUpdated="February 19, 2026"
-            seoTitle="Terms of Service - Kinly CarePro"
-            seoDescription="Terms and conditions for using the Kinly CarePro NDIS management platform."
-            seoUrl="https://www.kinlycarepro.com/terms"
-        >
+        <>
+            <SEO
+                title="Terms of Service - Software Service Agreement | Kinly CarePro"
+                description="Kinly CarePro Terms of Service. Australian SaaS subscription agreement, 99.9% uptime SLA, NDIS data sovereignty, and billing governance."
+                keywords="Kinly CarePro terms of service, NDIS SaaS agreement, software service terms, Australian cloud terms"
+                url="https://www.kinlycarepro.com/terms"
+                breadcrumbs={[{ name: "Terms of Service", path: "/terms" }]}
+            />
+            <LegalLayout
+                title="Terms of Service"
+                lastUpdated="February 19, 2026"
+            >
             <div className="space-y-12">
                 <section>
                     <p className="text-xl text-gray-600 leading-relaxed">
@@ -102,6 +107,7 @@ const TermsPage = () => {
                 </section>
             </div>
         </LegalLayout>
+        </>
     );
 };
 

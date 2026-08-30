@@ -52,6 +52,7 @@ const AboutPage = () => (
       description="Kinly CarePro was created to solve NDIS operational challenges — billing complexity, compliance risk, and per-worker software taxes. Built in Australia for care providers."
       keywords="Kinly CarePro about, NDIS software company, Australian care technology, disability support innovation, NDIS platform, care management"
       url="https://www.kinlycarepro.com/about"
+      breadcrumbs={[{ name: "About Us", path: "/about" }]}
     />
 
     {/* Hero */}

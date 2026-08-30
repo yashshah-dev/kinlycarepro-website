@@ -11,6 +11,7 @@ const CompliancePage = () => {
                 description="Built for the NDIS Quality and Safeguards Commission. 7-year immutable audit retention, 3-tier worker screening, incident reporting, restrictive practices, and deterministic PAPL billing."
                 keywords="NDIS compliance, NDIS practice standards, NDIS worker screening check, NDIS incident management, restrictive practices logging, 7 year NDIS audit log"
                 url="https://www.kinlycarepro.com/compliance"
+                breadcrumbs={[{ name: "NDIS Compliance & Governance", path: "/compliance" }]}
             />
 
             <LegalLayout

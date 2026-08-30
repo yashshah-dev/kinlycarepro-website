@@ -1,0 +1,16 @@
+{
+  "name": "Kinly CarePro",
+  "short_name": "KinlyCarePro",
+  "description": "All-in-One NDIS Practice Management Platform with Guardian AI Note QA, Deterministic Billing & GPS Mobile Care.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F4C5C",
+  "icons": [
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

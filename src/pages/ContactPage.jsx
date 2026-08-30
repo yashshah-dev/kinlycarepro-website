@@ -67,6 +67,7 @@ const ContactPage = () => {
         description="Book a live walkthrough or speak with our Australian support team. Transparent $25/participant/mo pricing with unlimited staff accounts."
         keywords="contact Kinly CarePro, NDIS software demo, Australian NDIS support, NDIS software migration, Melbourne NDIS software, ShiftCare switch demo"
         url="https://www.kinlycarepro.com/contact"
+        breadcrumbs={[{ name: "Contact & Demo", path: "/contact" }]}
       />
 
       {/* Header */}

@@ -167,10 +167,21 @@ const NdisPriceGuidePage = () => {
   return (
     <>
       <SEO
-        title="NDIS Price Guide Explorer 2025–26 (PAPL Search) | Kinly CarePro"
+        title="NDIS Price Guide Explorer 2025–26 (PAPL Search & Rates) | Kinly CarePro"
         description="Search active NDIS Pricing Arrangements and Price Limits (PAPL 2025–26) support item codes, daytime/evening/weekend caps, travel TRAN rules, and Support Coordination rates."
         keywords="NDIS price guide 2025-26, PAPL 2025-26 item codes, NDIS line item search, NDIS price limits directory, NDIS hourly rates Australia, NDIS support item search"
         url="https://www.kinlycarepro.com/ndis-price-guide"
+        breadcrumbs={[{ name: "NDIS Price Guide Explorer", path: "/ndis-price-guide" }]}
+        faqs={[
+          {
+            question: "What is the NDIS PAPL 2025-26?",
+            answer: "The NDIS Pricing Arrangements and Price Limits (PAPL) sets the maximum allowable prices that registered and unregistered providers can charge for NDIS supports."
+          },
+          {
+            question: "How does Kinly CarePro handle price limit updates?",
+            answer: "Kinly CarePro ingests active PAPL updates automatically so rosters, PRODA exports, and client invoices apply the exact price caps without manual spreadsheet lookups."
+          }
+        ]}
       />
 
       {/* Hero */}

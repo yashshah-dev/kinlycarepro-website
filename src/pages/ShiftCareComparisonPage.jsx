@@ -56,14 +56,34 @@ const comparisonData = [
   }
 ];
 
+const comparisonFaqs = [
+  {
+    question: 'How does Kinly CarePro pricing compare to ShiftCare?',
+    answer: 'ShiftCare charges per worker ($8–$15/user/mo plus extra for admin and coordinator seats). Kinly CarePro charges a flat $25 AUD / participant / month with unlimited worker and admin accounts at $0.'
+  },
+  {
+    question: 'Can I migrate data from ShiftCare to Kinly CarePro without downtime?',
+    answer: 'Yes. Our Australian onboarding team provides full assisted data migration for participant records, care plans, service agreements, and staff profiles with zero disruption to daily care.'
+  },
+  {
+    question: 'Is Guardian AI Note QA included in Kinly CarePro?',
+    answer: 'Yes. Real-time 0–100 compliance scoring, goal linkage, and incident detection are 100% included for all Kinly CarePro providers with zero paywalls.'
+  }
+];
+
 const ShiftCareComparisonPage = () => {
   return (
     <>
       <SEO
-        title="Kinly CarePro vs ShiftCare - NDIS Software TCO Comparison"
+        title="Kinly CarePro vs ShiftCare - NDIS Software TCO Comparison | Kinly CarePro"
         description="Compare Kinly CarePro vs ShiftCare. See why NDIS providers are switching from per-user pricing ($10-$15/worker) to Kinly CarePro's $25/participant all-inclusive model with unlimited staff."
         keywords="Kinly CarePro vs ShiftCare, ShiftCare alternative, ShiftCare pricing comparison, NDIS software comparison, participant based NDIS pricing, NDIS PMS comparison Australia"
         url="https://www.kinlycarepro.com/vs/shiftcare"
+        faqs={comparisonFaqs}
+        breadcrumbs={[
+          { name: "Comparisons", path: "/vs/shiftcare" },
+          { name: "vs ShiftCare", path: "/vs/shiftcare" }
+        ]}
       />
 
       {/* Hero */}

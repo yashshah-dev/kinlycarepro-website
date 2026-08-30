@@ -9,10 +9,11 @@ const FeaturesPage = () => {
   return (
     <>
       <SEO
-        title="Features - The 8 Core Value Pillars | Kinly CarePro"
+        title="NDIS Software Features - 8 Core Architectural Pillars | Kinly CarePro"
         description="Explore the 8 core pillars of Kinly CarePro: Deterministic NDIS Billing (PAPL 2025-26), Guardian AI Note QA, GPS Caregiver App, Copy-Week Wizard, Payroll Engine, 3-Tier Staff Screening, 17+ Reports Hub, and Data Isolation."
         keywords="NDIS software features, NDIS billing engine, Guardian AI note QA, NDIS mobile app GPS, copy week wizard rostering, NDIS payroll engine, 3 tier worker screening, NDIS incident management, NDIS reports hub"
         url="https://www.kinlycarepro.com/features"
+        breadcrumbs={[{ name: "Features", path: "/features" }]}
       />
       
       {/* Header Banner */}

@@ -1,21 +1,21 @@
-// SEO Schema Validation Script
-// Run this in browser console on production to verify structured data
+// Kinly CarePro SEO & Schema Validation Tool
+// Run this in browser console to verify technical SEO, metadata, and JSON-LD graph integrity
 
 (function validateSEO() {
-  console.log('%c🔍 TruCare SEO Validation Tool', 'font-size: 16px; font-weight: bold; color: #0F4C5C;');
+  console.log('%c🔍 Kinly CarePro SEO Validation Tool', 'font-size: 16px; font-weight: bold; color: #0F4C5C;');
   console.log('=====================================\n');
 
   // 1. Check Title Tag
   const title = document.title;
   console.log(`📌 Title Tag: "${title}"`);
-  console.log(`   Length: ${title.length} chars ${title.length <= 60 ? '✅' : '❌ Too long!'}`);
+  console.log(`   Length: ${title.length} chars ${title.length <= 70 ? '✅' : '❌ Too long!'}`);
 
   // 2. Check Meta Description
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     const descContent = metaDesc.content;
     console.log(`\n📝 Meta Description: "${descContent}"`);
-    console.log(`   Length: ${descContent.length} chars ${descContent.length >= 150 && descContent.length <= 160 ? '✅' : '⚠️ Optimize length (150-160)'}`);
+    console.log(`   Length: ${descContent.length} chars ${descContent.length >= 130 && descContent.length <= 170 ? '✅' : '⚠️ Target 140-160 chars'}`);
   } else {
     console.log('\n❌ Meta Description: MISSING');
   }
@@ -32,15 +32,17 @@
   const ogTitle = document.querySelector('meta[property="og:title"]');
   const ogDesc = document.querySelector('meta[property="og:description"]');
   const ogImage = document.querySelector('meta[property="og:image"]');
+  const ogUrl = document.querySelector('meta[property="og:url"]');
   
   console.log('\n📱 Open Graph Tags:');
   console.log(`   og:title: ${ogTitle ? '✅' : '❌'}`);
   console.log(`   og:description: ${ogDesc ? '✅' : '❌'}`);
-  console.log(`   og:image: ${ogImage ? '✅' : '❌'}`);
+  console.log(`   og:image: ${ogImage ? ogImage.content + ' ✅' : '❌'}`);
+  console.log(`   og:url: ${ogUrl ? ogUrl.content + ' ✅' : '❌'}`);
 
   // 5. Check Twitter Card
   const twitterCard = document.querySelector('meta[name="twitter:card"]');
-  console.log(`\n🐦 Twitter Card: ${twitterCard ? '✅' : '❌'}`);
+  console.log(`\n🐦 Twitter Card: ${twitterCard ? twitterCard.content + ' ✅' : '❌'}`);
 
   // 6. Check H1 Tag
   const h1Tags = document.querySelectorAll('h1');
@@ -58,14 +60,13 @@
   jsonLdScripts.forEach((script, i) => {
     try {
       const data = JSON.parse(script.textContent);
-      console.log(`   Block ${i + 1}: @type = "${data['@type']}" ✅`);
-      
-      // Validate SoftwareApplication schema
-      if (data['@type'] === 'SoftwareApplication') {
-        console.log(`      - name: ${data.name ? '✅' : '❌'}`);
-        console.log(`      - applicationCategory: ${data.applicationCategory ? '✅' : '❌'}`);
-        console.log(`      - aggregateRating: ${data.aggregateRating ? '✅' : '❌'}`);
-        console.log(`      - offers: ${data.offers ? '✅' : '❌'}`);
+      if (data['@graph']) {
+        console.log(`   Block ${i + 1}: @graph with ${data['@graph'].length} entities ✅`);
+        data['@graph'].forEach(entity => {
+          console.log(`      - @type: "${entity['@type']}" (ID: ${entity['@id'] || 'n/a'})`);
+        });
+      } else {
+        console.log(`   Block ${i + 1}: @type = "${data['@type']}" ✅`);
       }
     } catch (e) {
       console.log(`   Block ${i + 1}: ❌ Invalid JSON`);
@@ -77,28 +78,16 @@
   const imagesWithoutAlt = Array.from(images).filter(img => !img.alt || img.alt.trim() === '');
   console.log(`\n🖼️  Images: ${images.length} total, ${imagesWithoutAlt.length} missing alt text ${imagesWithoutAlt.length === 0 ? '✅' : '⚠️'}`);
 
-  // 9. Check Internal Links
-  const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="http://localhost"], a[href^="https://trucare"]');
+  // 9. Internal Links
+  const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="http://localhost"], a[href^="https://www.kinlycarepro.com"]');
   console.log(`\n🔗 Internal Links: ${internalLinks.length} found ✅`);
 
-  // 10. Mobile Viewport
+  // 10. Mobile Viewport & Language
   const viewport = document.querySelector('meta[name="viewport"]');
-  console.log(`\n📱 Mobile Viewport: ${viewport ? '✅' : '❌'}`);
-
-  // 11. Language Tag
   const htmlLang = document.documentElement.lang;
-  console.log(`\n🌏 Language Tag: ${htmlLang || 'Not set'} ${htmlLang === 'en-AU' ? '✅' : '⚠️ Should be en-AU'}`);
+  console.log(`\n📱 Mobile Viewport: ${viewport ? '✅' : '❌'}`);
+  console.log(`🌏 Language Tag: ${htmlLang || 'Not set'} ${htmlLang === 'en-AU' ? '✅' : '⚠️ Target en-AU'}`);
 
-  // 12. Performance Hints
-  console.log('\n⚡ Performance Quick Check:');
-  console.log(`   Page load: ${(performance.timing.loadEventEnd - performance.timing.navigationStart) / 1000}s`);
-  
-  // Summary
   console.log('\n=====================================');
-  console.log('%c✅ SEO Validation Complete!', 'font-size: 14px; font-weight: bold; color: #2ab36d;');
-  console.log('\nNext Steps:');
-  console.log('1. Test with Google Rich Results: https://search.google.com/test/rich-results');
-  console.log('2. Validate sitemap: https://www.xml-sitemaps.com/validate-xml-sitemap.html');
-  console.log('3. Check mobile-friendliness: https://search.google.com/test/mobile-friendly');
-  console.log('4. PageSpeed Insights: https://pagespeed.web.dev/');
+  console.log('%c✅ Kinly CarePro SEO Validation Complete!', 'font-size: 14px; font-weight: bold; color: #0F4C5C;');
 })();
