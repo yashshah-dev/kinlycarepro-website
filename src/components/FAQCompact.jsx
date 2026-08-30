@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const faqs = [
     {
         question: 'Does Guardian make autonomous clinical decisions?',
-        answer: 'No. Guardian provides compliance suggestions only. Staff approve all changes and remain the documented authors. Full audit trail preserved.'
+        answer: 'No. Guardian provides compliance suggestions only. Staff approve all changes and remain the documented authors. A full audit trail is preserved.'
     },
     {
         question: 'Can staff check in from home?',
@@ -25,13 +25,13 @@ const FAQCompact = () => {
     const [openIndex, setOpenIndex] = useState(0);
 
     return (
-        <section id="faq" className="py-20 bg-white">
+        <section id="faq" className="py-20 bg-slate-50 border-t border-slate-200">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-10">
                     <p className="text-accent font-semibold tracking-wide uppercase text-sm">FAQ</p>
-                    <h2 className="text-3xl font-bold text-slate-900 mt-3">Common questions</h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mt-3">Common questions</h2>
                 </div>
-                <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200 overflow-hidden">
+                <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white overflow-hidden">
                     {faqs.map((faq, index) => {
                         const isOpen = openIndex === index;
                         return (
@@ -53,7 +53,7 @@ const FAQCompact = () => {
                     })}
                 </div>
                 <div className="mt-6 text-center">
-                    <Link to="/features" className="text-primary font-semibold text-sm hover:underline">
+                    <Link to="/resources" className="text-primary font-semibold text-sm hover:underline">
                         View more FAQs →
                     </Link>
                 </div>

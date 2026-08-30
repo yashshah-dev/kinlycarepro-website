@@ -1,100 +1,109 @@
 import React from 'react';
 import LegalLayout from '../components/LegalLayout';
 import SEO from '../components/SEO';
-import { ShieldCheck, AlertTriangle, Hand, ClipboardCheck, UserCheck, FileJson } from 'lucide-react';
+import { ShieldCheck, AlertTriangle, Hand, ClipboardCheck, UserCheck, FileJson, Clock, FileText } from 'lucide-react';
 
 const CompliancePage = () => {
     return (
-        <LegalLayout
-            title="NDIS Compliance & Data Standards"
-            lastUpdated="February 19, 2026"
-            seoTitle="NDIS Data Standards & Compliance - Kinly CarePro"
-            seoDescription="Kinly CarePro is built to meet NDIS Practice Standards. Learn how our software simplifies compliance for Australian providers."
-            seoUrl="https://www.kinlycarepro.com/compliance"
-        >
-            <div className="space-y-12">
-                <section className="bg-emerald-50 border border-emerald-100 rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-center">
-                    <div className="bg-white p-4 rounded-full shadow-sm">
-                        <ShieldCheck className="text-emerald-600" size={48} />
-                    </div>
-                    <div>
-                        <h2 className="text-2xl font-bold text-emerald-900 mb-2">Built for the NDIS Commission</h2>
-                        <p className="text-emerald-800 leading-relaxed">
-                            Kinly CarePro is purpose-built to help disability service providers meet the rigorous requirements of the <strong>NDIS Practice Standards</strong>. Our platform integrates compliance directly into your daily workflow, reducing the risk of audit failure.
-                        </p>
-                    </div>
-                </section>
+        <>
+            <SEO
+                title="NDIS Compliance & Practice Standards Governance | Kinly CarePro"
+                description="Built for the NDIS Quality and Safeguards Commission. 7-year immutable audit retention, 3-tier worker screening, incident reporting, restrictive practices, and deterministic PAPL billing."
+                keywords="NDIS compliance, NDIS practice standards, NDIS worker screening check, NDIS incident management, restrictive practices logging, 7 year NDIS audit log"
+                url="https://www.kinlycarepro.com/compliance"
+            />
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    {[
-                        {
-                            title: "Incident Management",
-                            icon: AlertTriangle,
-                            color: "text-amber-500",
-                            desc: "Structured reporting system aligning with NDIS Commission requirements. Includes mandatory fields for 'Reportable Incidents' and automated management escalation workflows."
-                        },
-                        {
-                            title: "Restrictive Practices",
-                            icon: Hand,
-                            color: "text-red-500",
-                            desc: "Track authorized practices against Participant Care Plans. Log usage for monthly Commissioner reports and get alerts for unauthorized attempts."
-                        },
-                        {
-                            title: "Worker Screening",
-                            icon: UserCheck,
-                            color: "text-blue-500",
-                            desc: "Ensure only qualified staff are rostered. Verifies NDIS Worker Screening Checks and tracks expiry for mandatory certifications like First Aid."
-                        },
-                        {
-                            title: "Progress Notes & Evidence",
-                            icon: ClipboardCheck,
-                            color: "text-purple-500",
-                            desc: "Enforce high-quality record keeping with goal-based notes linked to NDIS outcomes. Entries are timestamped and geolocated for proof of delivery."
-                        }
-                    ].map((item, i) => (
-                        <div key={i} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className={`p-2 rounded-lg bg-gray-50 ${item.color}`}>
-                                    <item.icon size={24} />
-                                </div>
-                                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-                            </div>
-                            <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+            <LegalLayout
+                title="NDIS Practice Standards & Data Governance"
+                lastUpdated="August 29, 2026"
+                seoTitle="NDIS Compliance Standards - Kinly CarePro"
+                seoDescription="Kinly CarePro is purpose-built to meet NDIS Practice Standards. Learn how our software simplifies compliance for Australian providers."
+                seoUrl="https://www.kinlycarepro.com/compliance"
+            >
+                <div className="space-y-12">
+                    <section className="bg-emerald-50 border border-emerald-200 rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-center">
+                        <div className="bg-white p-4 rounded-2xl shadow-sm text-emerald-600 flex-shrink-0">
+                            <ShieldCheck size={48} />
                         </div>
-                    ))}
-                </div>
+                        <div>
+                            <h2 className="text-2xl font-bold text-emerald-950 mb-2">Built for the NDIS Quality & Safeguards Commission</h2>
+                            <p className="text-emerald-900 leading-relaxed text-sm md:text-base">
+                                Kinly CarePro is engineered to ensure disability service providers effortlessly maintain compliance with the <strong>NDIS Practice Standards</strong>. Every shift, progress note, and credential check is verified with immutable audit logging to ensure your organization is audit-ready at all times.
+                            </p>
+                        </div>
+                    </section>
 
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                        <FileJson className="text-primary" size={28} />
-                        Data Governance
-                    </h2>
-                    <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                        <p className="text-gray-700 mb-4 leading-relaxed">
-                            We adhere to strict data governance policies to protect participant privacy and ensure audit readiness at all times.
-                        </p>
-                        <ul className="grid md:grid-cols-2 gap-3">
-                            <li className="flex items-center gap-2 text-sm text-gray-600">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                All data stored securely in Australia
-                            </li>
-                            <li className="flex items-center gap-2 text-sm text-gray-600">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                Role-based access control (RBAC)
-                            </li>
-                            <li className="flex items-center gap-2 text-sm text-gray-600">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                Audit trails for all data modifications
-                            </li>
-                            <li className="flex items-center gap-2 text-sm text-gray-600">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                Regular compliance reviews
-                            </li>
-                        </ul>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {[
+                            {
+                                title: "Incident Management & Commission Reporting",
+                                icon: AlertTriangle,
+                                color: "text-amber-600 bg-amber-50",
+                                desc: "Structured reporting workflow categorizing incident severity (Minor, Moderate, Serious, Reportable). Generates formal, branded PDF reports formatted for executive review and immediate submission to the NDIS Commission."
+                            },
+                            {
+                                title: "Restrictive Practices & Behavior Support",
+                                icon: Hand,
+                                color: "text-rose-600 bg-rose-50",
+                                desc: "Track authorized restrictive practices against Participant Behavior Support Plans. Log ABC (Antecedent, Behavior, Consequence) observations with intensity scoring (1–5) and automated expiry countdowns."
+                            },
+                            {
+                                title: "3-Tier Staff Screening & Credential Locks",
+                                icon: UserCheck,
+                                color: "text-blue-600 bg-blue-50",
+                                desc: "Tier 1 blocking mandatory checks (NDISWC, WWCC, Police Check, First Aid, CPR). Automatically locks non-compliant staff from high-intensity shifts and triggers proactive 30/60/90-day expiry notifications."
+                            },
+                            {
+                                title: "Goal-Aligned Notes & Proof of Delivery",
+                                icon: ClipboardCheck,
+                                color: "text-purple-600 bg-purple-50",
+                                desc: "Enforce audit-proof record keeping with Guardian AI note quality scoring (0–100). Every progress note is geofenced, timestamped, and mapped to funded NDIS goals."
+                            }
+                        ].map((item, i) => (
+                            <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center gap-3 mb-3">
+                                        <div className={`p-2.5 rounded-xl ${item.color}`}>
+                                            <item.icon size={22} />
+                                        </div>
+                                        <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
+                                    </div>
+                                    <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </section>
-            </div>
-        </LegalLayout>
+
+                    <section className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+                        <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <Clock className="text-primary" size={24} />
+                            7-Year Immutable Audit Trail Mandate
+                        </h2>
+                        <p className="text-slate-700 text-sm leading-relaxed mb-6">
+                            In accordance with NDIS Commission rules and Australian health record retention standards, Kinly CarePro preserves an immutable, versioned audit trail for 7 years:
+                        </p>
+                        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                            <div className="p-4 bg-white rounded-xl border border-slate-200">
+                                <strong className="text-slate-900 block mb-1">Shift Changes:</strong>
+                                Logs exact scheduling edits, worker re-assignments, and cancellations with user attribution.
+                            </div>
+                            <div className="p-4 bg-white rounded-xl border border-slate-200">
+                                <strong className="text-slate-900 block mb-1">Clinical Note Diffs:</strong>
+                                Preserves original raw notes and staff-approved edits alongside Guardian AI suggestions.
+                            </div>
+                            <div className="p-4 bg-white rounded-xl border border-slate-200">
+                                <strong className="text-slate-900 block mb-1">Billing Runs:</strong>
+                                Draft vs. committed invoice line items with batch export history (`BATCH-YYYYMMDD-XX.csv`).
+                            </div>
+                            <div className="p-4 bg-white rounded-xl border border-slate-200">
+                                <strong className="text-slate-900 block mb-1">Data Sovereignty:</strong>
+                                100% stored in Sydney AWS (ap-southeast-2) with encrypted offsite daily backups.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </LegalLayout>
+        </>
     );
 };
 

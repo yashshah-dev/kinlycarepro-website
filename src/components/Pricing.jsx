@@ -1,221 +1,138 @@
 import React from 'react';
-import { Check, ArrowUpRight, Minus } from 'lucide-react';
+import { Check, ArrowRight, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import PriceEstimator from './PriceEstimator';
 
-const plans = [
+const pricingFaqs = [
   {
-    name: 'Solo',
-    price: '$99',
-    cadence: 'per month',
-    platformFee: 'Up to 5 participants',
-    minimum: 'Perfect for sole traders',
-    description: 'Essential compliance and care tools for independent providers.',
-    features: [
-      'Unlimited staff accounts',
-      'Guardian compliance engine',
-      'Mobile app with GPS',
-      'Shift notes & incident reports',
-      'Basic invoicing'
-    ],
-    highlight: 'New Entry Plan'
+    q: 'How are "active participants" counted?',
+    a: 'An active participant is anyone who has had at least one shift, progress note, or billable support item logged that month. Paused or inactive participants cost $0.'
   },
   {
-    name: 'Starter',
-    price: '$199',
-    cadence: 'per month',
-    platformFee: 'Up to 20 participants',
-    minimum: 'Includes unlimited staff',
-    description: 'For growing teams. Full access to the entire platform.',
-    features: [
-      'Everything in Solo, plus:',
-      'Live operations map',
-      'Smart fatigue alerts',
-      'Qualification tracking',
-      'Custom shift rates',
-      'Bulk billing exports'
-    ],
-    highlight: 'Best Value'
+    q: 'Are there really zero extra fees for staff and admins?',
+    a: 'Yes. Whether you have 5 support workers or 500 casual carers, all staff and admin accounts are $0. We never charge per worker.'
   },
   {
-    name: 'Growth',
-    price: '$399',
-    cadence: 'per month',
-    platformFee: 'Up to 50 participants',
-    minimum: 'Includes unlimited staff',
-    description: 'For established providers. Same full access, higher capacity.',
-    features: [
-      'Everything in Starter, plus:',
-      'Higher participant limit (60)',
-      'Priority email support',
-      'Data import assistance',
-      'Quarterly business review'
-    ],
-    highlight: 'Most Popular'
+    q: "What's the minimum monthly commitment?",
+    a: 'Plans start at $99 AUD / month, which includes up to 4 active participants. Beyond 4, billing scales at exactly $25 AUD / participant / month.'
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    cadence: 'pricing',
-    platformFee: '60+ participants',
-    minimum: 'Volume discounts available',
-    description: 'Dedicated infrastructure and strategic support for large organizations.',
-    features: [
-      'Everything in Growth, plus:',
-      'Dedicated AU instance',
-      'SSO & SCIM provisioning',
-      'Custom SLA & uptime guarantee',
-      'API access & webhooks',
-      'Dedicated success manager'
-    ],
-    highlight: 'Enterprise Grade'
+    q: 'Are there setup, implementation, or training fees?',
+    a: 'None. Every provider receives 1 Month of Free 1-on-1 Guided Onboarding Support & Live Staff Training, plus free assisted data migration from legacy platforms.'
   }
 ];
-
-const comparisonRows = [
-  { feature: 'Staff accounts', solo: 'Unlimited', starter: 'Unlimited', growth: 'Unlimited', enterprise: 'Unlimited' },
-  { feature: 'Guardian compliance engine', solo: true, starter: true, growth: true, enterprise: true },
-  { feature: 'Mobile app with GPS', solo: true, starter: true, growth: true, enterprise: true },
-  { feature: 'PRODA exports', solo: false, starter: true, growth: true, enterprise: true },
-  { feature: 'Live operations map', solo: false, starter: true, growth: true, enterprise: true },
-  { feature: 'Smart fatigue alerts', solo: false, starter: true, growth: true, enterprise: true },
-  { feature: 'Qualification tracking', solo: false, starter: true, growth: true, enterprise: true },
-  { feature: 'Custom shift rates', solo: true, starter: true, growth: true, enterprise: true },
-  { feature: 'API access', solo: false, starter: false, growth: false, enterprise: true },
-  { feature: 'Dedicated success manager', solo: false, starter: false, growth: false, enterprise: true },
-  { feature: 'SSO/SCIM', solo: false, starter: false, growth: false, enterprise: true }
-];
-
-
 
 const Pricing = () => {
   return (
     <section id="pricing" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-accent font-semibold tracking-wide uppercase text-sm">Pricing</p>
-        <h2 className="text-4xl font-bold text-slate-900 mt-4">Simple, audit-friendly billing.</h2>
-        <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
-          Every plan includes mobile apps, smart rostering, one-click NDIS billing, and Guardian safety checks. Upgrade for dedicated infrastructure or custom integrations.
-        </p>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <p className="text-accent font-semibold tracking-wide uppercase text-xs">Transparent Pricing</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">
+            One simple price. <span className="text-primary">Everything included.</span>
+          </h1>
+          <p className="mt-4 text-lg text-slate-600">
+            $25 per active participant per month. Unlimited staff, unlimited features, no paywalls.
+          </p>
 
-        {/* Competitive advantage banner */}
-        <div className="mt-8 inline-flex items-center gap-6 px-6 py-3 rounded-full bg-emerald-50 border border-emerald-200">
-          <div className="flex items-center gap-2 text-sm font-medium text-emerald-900">
-            <Check className="w-4 h-4 text-emerald-600" />
-            <span>Complete platform included (competitors charge per module)</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm font-medium text-emerald-900">
-            <Check className="w-4 h-4 text-emerald-600" />
-            <span>Unlimited staff accounts</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm font-medium text-emerald-900">
-            <Check className="w-4 h-4 text-emerald-600" />
-            <span>NDIS price updates guaranteed</span>
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
+            {[
+              '1 Month Free Support & Training',
+              'Unlimited staff accounts ($0)',
+              'Every feature included',
+              'PAPL 2025–26 compliant'
+            ].map((badge) => (
+              <span key={badge} className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-accent-50 text-accent-700 font-semibold text-xs border border-accent-100">
+                <Check className="w-3.5 h-3.5 text-accent-600" />
+                {badge}
+              </span>
+            ))}
           </div>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {plans.map((plan) => (
-            <div key={plan.name} className="relative rounded-3xl border border-slate-100 shadow-xl p-8 text-left hover:-translate-y-2 transition-transform bg-white">
-              <div className="mb-4">
-                <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">{plan.highlight}</span>
-                <p className="mt-4 text-sm uppercase tracking-[0.3em] text-slate-500">{plan.name}</p>
-                <h3 className="mt-2 text-3xl font-semibold text-slate-900">{plan.price}
-                  <span className="block text-sm font-medium text-slate-500 mt-1">{plan.cadence}</span>
-                </h3>
-                <p className="mt-2 text-xs text-slate-500 font-medium">{plan.platformFee}</p>
-                <p className="text-xs text-slate-400">{plan.minimum}</p>
+        {/* Master Plan Card */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <div className="relative rounded-3xl border-2 border-primary bg-gradient-to-b from-primary/5 via-white to-white shadow-2xl p-8 md:p-10 overflow-hidden">
+            <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold uppercase tracking-widest py-2 px-8 rounded-bl-2xl shadow-md">
+              All-Inclusive Plan
+            </div>
+
+            <div className="text-center">
+              <span className="text-xs uppercase tracking-widest font-extrabold text-accent-700">Kinly CarePro Platform</span>
+              <h2 className="text-2xl font-extrabold text-slate-900 mt-1">Full NDIS Practice Management</h2>
+
+              <div className="flex items-baseline justify-center gap-1 mt-6">
+                <span className="text-6xl font-black text-primary">$25</span>
+                <span className="text-sm font-bold text-slate-500">AUD</span>
               </div>
-              <p className="mt-4 text-sm text-slate-600">{plan.description}</p>
-              <ul className="mt-6 space-y-3">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-slate-700">
-                    <span className="mt-0.5 w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-2.5 h-2.5" />
-                    </span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm font-semibold text-slate-600 mt-1">per active participant / month</p>
+              <p className="text-xs text-slate-400 mt-2">
+                Minimum $99/mo (includes up to 4 participants). Save 2 months with annual billing — $250 / participant / year.
+              </p>
+            </div>
+
+            {/* Core Inclusions */}
+            <div className="grid sm:grid-cols-2 gap-3 my-8 text-xs sm:text-sm text-slate-800">
+              {[
+                '1 Month Free 1-on-1 Support & Staff Training',
+                'Unlimited support workers & carers ($0)',
+                'Unlimited admin & scheduler seats ($0)',
+                'Deterministic NDIS billing & PAPL 2025–26',
+                'Guardian AI note quality scoring',
+                'GPS mobile app with offline sync',
+                'Smart rostering & copy-week wizard',
+                'Payroll, compliance & 17+ reports',
+                '100% Australian data residency (Sydney)',
+                'Free assisted data migration from legacy apps'
+              ].map((inc, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3" />
+                  </span>
+                  <span>{inc}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 to="/contact"
-                className="mt-8 w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800"
+                className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-lg font-bold text-sm flex items-center justify-center gap-2 group"
               >
-                {plan.name === 'Enterprise' ? 'Book review' : 'Start pilot'}
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                Book a demo <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/vs/shiftcare"
+                className="w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-700 rounded-xl hover:bg-slate-200 transition-all font-semibold text-sm flex items-center justify-center gap-2 border border-slate-200"
+              >
+                <Scale className="w-4 h-4" /> Compare vs ShiftCare
               </Link>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-16 text-left">
-          <h3 className="text-2xl font-semibold text-slate-900 mb-4">Compare plans</h3>
-          <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white">
-            <table className="min-w-full text-sm text-slate-600">
-              <thead>
-                <tr className="text-left text-xs uppercase tracking-wide text-slate-500">
-                  <th className="py-4 px-6 font-semibold">Capability</th>
-                  <th className="py-4 px-4 text-center font-semibold">Solo</th>
-                  <th className="py-4 px-4 text-center font-semibold">Starter</th>
-                  <th className="py-4 px-4 text-center font-semibold">Growth</th>
-                  <th className="py-4 px-4 text-center font-semibold">Enterprise</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.map((row) => (
-                  <tr key={row.feature} className="border-t border-slate-100">
-                    <td className="py-4 px-6 font-medium text-slate-900">{row.feature}</td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.solo === 'boolean' ? (
-                        row.solo ? (
-                          <Check className="w-5 h-5 mx-auto text-emerald-600" />
-                        ) : (
-                          <Minus className="w-5 h-5 mx-auto text-slate-300" />
-                        )
-                      ) : (
-                        <span className="text-xs text-slate-700 font-medium">{row.solo}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.starter === 'boolean' ? (
-                        row.starter ? (
-                          <Check className="w-5 h-5 mx-auto text-emerald-600" />
-                        ) : (
-                          <Minus className="w-5 h-5 mx-auto text-slate-300" />
-                        )
-                      ) : (
-                        <span className="text-xs text-slate-700 font-medium">{row.starter}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.growth === 'boolean' ? (
-                        row.growth ? (
-                          <Check className="w-5 h-5 mx-auto text-emerald-600" />
-                        ) : (
-                          <Minus className="w-5 h-5 mx-auto text-slate-300" />
-                        )
-                      ) : (
-                        <span className="text-xs text-slate-700 font-medium">{row.growth}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.enterprise === 'boolean' ? (
-                        row.enterprise ? (
-                          <Check className="w-5 h-5 mx-auto text-emerald-600" />
-                        ) : (
-                          <Minus className="w-5 h-5 mx-auto text-slate-300" />
-                        )
-                      ) : (
-                        <span className="text-xs text-slate-700 font-medium">{row.enterprise}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
 
+        {/* Simple Price Estimator */}
+        <div className="max-w-3xl mx-auto mb-24">
+          <PriceEstimator />
+        </div>
 
+        {/* FAQ */}
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs uppercase tracking-widest text-primary font-bold">Frequently Asked Questions</span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-1">Pricing FAQ</h2>
+          </div>
+
+          <div className="space-y-4">
+            {pricingFaqs.map((faq, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                <h3 className="text-base font-bold text-slate-900">{faq.q}</h3>
+                <p className="text-sm text-slate-600 mt-2 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,43 +1,51 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
-
 import ProblemStrip from '../components/ProblemStrip';
+import FeatureGrid from '../components/FeatureGrid';
 import GuardianOverview from '../components/GuardianOverview';
-import Features from '../components/Features';
-
-import SocialProof from '../components/SocialProof';
 import PricingTeaser from '../components/PricingTeaser';
+import SocialProof from '../components/SocialProof';
+import SecurityStrip from '../components/SecurityStrip';
+import FAQCompact from '../components/FAQCompact';
+import FinalCta from '../components/FinalCta';
 
 const Home = () => {
   return (
     <>
       <SEO
-        title="NDIS Software for Australian Providers | Kinly CarePro"
-        description="The complete NDIS management platform. Mobile apps, smart rostering, one-click PRODA billing, and Guardian compliance checks. 48-hour implementation."
-        keywords="NDIS software, NDIS management platform, care provider software, NDIS rostering, NDIS billing, PRODA export, disability support software, Australian NDIS, SIL software, community care software"
+        title="Kinly CarePro | All-in-One NDIS Practice Management Platform"
+        description="The all-in-one, audit-proof NDIS practice management platform. GPS-verified mobile care, deterministic NDIS billing, AI note QA, and payroll. $25/participant/mo with unlimited staff."
+        keywords="NDIS software, NDIS practice management platform, NDIS billing software, PAPL 2025-26, NDIS rostering software, ShiftCare alternative, Guardian AI NDIS compliance, NDIS mobile app GPS, NDIS payroll software"
         url="https://www.kinlycarepro.com"
       />
 
-      {/* 1. Hero - Value proposition + trust signals */}
+      {/* 1. Hero - Value proposition + trust signals + Command Center Preview */}
       <Hero />
 
-
-
-      {/* 3. Problem - Pain points strip */}
+      {/* 2. Problem - Pain points strip */}
       <ProblemStrip />
 
-      {/* 4. Guardian Overview - Compliance engine highlight */}
+      {/* 3. Feature Grid - Compact 9-core-capabilities overview */}
+      <FeatureGrid />
+
+      {/* 4. Guardian AI - Flagship differentiator spotlight */}
       <GuardianOverview />
 
-      {/* 5. Features - Core capabilities (4 modules) */}
-      <Features />
+      {/* 5. Pricing Teaser - Transparent $25/participant/mo */}
+      <PricingTeaser />
 
-      {/* 6. Social Proof - Testimonials */}
+      {/* 6. Social Proof - Provider personas & Founding program */}
       <SocialProof />
 
-      {/* 7. Pricing Teaser - 2 plans only */}
-      <PricingTeaser />
+      {/* 7. Bank-Grade Security & Trust Promise */}
+      <SecurityStrip />
+
+      {/* 8. Compact FAQ */}
+      <FAQCompact />
+
+      {/* 9. Final CTA */}
+      <FinalCta />
     </>
   );
 };

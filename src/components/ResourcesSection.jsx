@@ -1,98 +1,98 @@
-import React, { useState } from 'react';
-import { FileText, ShieldCheck, Users, Bell, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { FileText, ShieldCheck, Users, Calculator, Scale, BookOpen, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const upcomingResources = [
+const activeResources = [
   {
-    title: 'Implementation Guide',
-    description: 'Step-by-step guide covering mobile app rollout, rostering migration, and audit preparation for a smooth launch.',
-    type: 'Coming Soon',
-    icon: <ShieldCheck className="w-6 h-6" />
+    title: 'NDIS Price Guide Explorer (PAPL 2025–26)',
+    description: 'Searchable directory of active NDIS support item codes, hourly price caps, time bands, and travel claim rules.',
+    link: '/ndis-price-guide',
+    cta: 'Launch Explorer',
+    type: 'Interactive Tool',
+    icon: <BookOpen className="w-6 h-6 text-emerald-600" />
   },
   {
-    title: 'NDIS Pricing Checklist',
-    description: 'Ensure every roster, rate, and PRODA export reflects the latest Pricing Arrangements.',
-    type: 'Coming Soon',
-    icon: <FileText className="w-6 h-6" />
+    title: 'NDIS Software TCO & ROI Calculator',
+    description: 'Calculate your exact software cost savings moving from per-worker pricing to Kinly CarePro’s $25/participant model.',
+    link: '/pricing',
+    cta: 'Calculate Savings',
+    type: 'Interactive Tool',
+    icon: <Calculator className="w-6 h-6 text-primary" />
   },
   {
-    title: 'ROI Calculator',
-    description: 'Model your operational savings across rostering, billing, and admin time.',
-    type: 'Coming Soon',
-    icon: <Users className="w-6 h-6" />
+    title: 'Head-to-Head Benchmark: Kinly vs ShiftCare',
+    description: 'Detailed feature matrix, legal comparison, and total cost of ownership analysis for Australian NDIS providers.',
+    link: '/vs/shiftcare',
+    cta: 'Read Comparison',
+    type: 'Benchmark Guide',
+    icon: <Scale className="w-6 h-6 text-purple-600" />
+  },
+  {
+    title: 'The Case for Participant-Based Pricing',
+    description: 'Why per-user pricing penalizes care operators when scaling casual relief staff, and how to protect your margins.',
+    link: '/why-participant-pricing',
+    cta: 'Read Whitepaper',
+    type: 'Strategic Guide',
+    icon: <Users className="w-6 h-6 text-blue-600" />
+  },
+  {
+    title: 'NDIS Commission Audit Preparation Guide',
+    description: 'Essential checklist covering 7-year immutable audit logs, 3-tier worker screening, and incident reporting.',
+    link: '/compliance',
+    cta: 'View Standards',
+    type: 'Compliance Guide',
+    icon: <ShieldCheck className="w-6 h-6 text-amber-600" />
+  },
+  {
+    title: 'Enterprise Security & Data Sovereignty',
+    description: 'Overview of AWS Sydney hosting, AES-256 encryption, 15-min signed URLs, and tenant data isolation.',
+    link: '/security',
+    cta: 'View Architecture',
+    type: 'Technical Paper',
+    icon: <FileText className="w-6 h-6 text-slate-700" />
   }
 ];
 
 const ResourcesSection = () => {
-  const [notified, setNotified] = useState(false);
-  const [email, setEmail] = useState('');
-
-  const handleNotify = (e) => {
-    e.preventDefault();
-    if (email) {
-      setNotified(true);
-      setEmail('');
-    }
-  };
-
   return (
-    <section id="resources" className="py-24 bg-slate-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-accent font-semibold tracking-wide uppercase text-sm">Resources</p>
-          <h2 className="text-4xl font-bold text-slate-900 mt-3">Resources for your team.</h2>
-          <p className="text-slate-600 mt-4">
-            We're building a library of implementation guides, pricing checklists, and ROI models to help you make informed decisions.
+    <section id="resources-section" className="py-24 bg-slate-50 border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="text-accent font-bold tracking-widest uppercase text-xs">Operator Toolkit</p>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2">
+            NDIS Provider Resources & Tools
+          </h2>
+          <p className="text-slate-600 text-sm md:text-base mt-3">
+            Free tools, pricing calculators, PAPL directories, and compliance blueprints for Australian disability care teams.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {upcomingResources.map((resource) => (
-            <div key={resource.title} className="rounded-3xl bg-white border border-slate-200 shadow-sm p-8 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                {resource.icon}
-              </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {activeResources.map((resource, i) => (
+            <div key={i} className="rounded-3xl bg-white border border-slate-200 shadow-sm p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
               <div>
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold uppercase tracking-wide">
-                  {resource.type}
-                </span>
-                <h3 className="text-2xl font-semibold text-slate-900 mt-3">{resource.title}</h3>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+                    {resource.icon}
+                  </div>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-bold uppercase tracking-wider">
+                    {resource.type}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 leading-snug">{resource.title}</h3>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed mt-2">{resource.description}</p>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed flex-1">{resource.description}</p>
+
+              <div className="mt-6 pt-4 border-t border-slate-100">
+                <Link
+                  to={resource.link}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-[#0b3b47] transition-colors"
+                >
+                  {resource.cta} <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
           ))}
-        </div>
-
-        {/* Notify Me CTA */}
-        <div className="mt-12 text-center">
-          <div className="inline-block p-6 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-xl">
-            <div className="flex items-center justify-center gap-2 text-primary mb-3">
-              <Bell className="w-5 h-5" />
-              <span className="font-semibold">Get Notified</span>
-            </div>
-            <p className="text-slate-600 text-sm mb-4">
-              Be the first to know when our implementation guides and tools are ready.
-            </p>
-            {notified ? (
-              <p className="text-emerald-600 font-semibold py-2">✓ You're on the list! We'll notify you soon.</p>
-            ) : (
-              <form onSubmit={handleNotify} className="flex gap-3 flex-col sm:flex-row">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email address"
-                  className="flex-1 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-[#0b3b47] flex items-center justify-center gap-2"
-                >
-                  Notify Me <ArrowRight className="w-4 h-4" />
-                </button>
-              </form>
-            )}
-          </div>
         </div>
       </div>
     </section>

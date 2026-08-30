@@ -1,100 +1,65 @@
 import React from 'react';
 import LegalLayout from '../components/LegalLayout';
 import SEO from '../components/SEO';
-import { Shield, Lock, Key, Server, RefreshCw, AlertOctagon } from 'lucide-react';
+import SecurityArchitectureSection from '../components/SecurityArchitectureSection';
+import { Shield, Lock, Key, Server, RefreshCw, AlertOctagon, Database, CheckCircle2 } from 'lucide-react';
 
 const SecurityPage = () => {
     return (
-        <LegalLayout
-            title="Security"
-            lastUpdated="February 19, 2026"
-            seoTitle="Security - Kinly CarePro"
-            seoDescription="Enterprise-grade security protecting your NDIS data. Encryption, Australian hosting, and strict access controls."
-            seoUrl="https://www.kinlycarepro.com/security"
-        >
-            <div className="space-y-12">
-                <section className="text-center max-w-2xl mx-auto">
-                    <p className="text-xl text-gray-600">
-                        Safeguarding your data is our highest priority. We use enterprise-grade security measures to ensure NDIS participant data remains protected.
-                    </p>
-                </section>
+        <>
+            <SEO
+                title="Enterprise Security, Privacy & Data Compliance Architecture | Kinly CarePro"
+                description="100% Australian Data Residency in Sydney AWS, AES-256 encryption, 15-min TTL signed URLs, multi-tenant isolation, OWASP Top 10 defense, and 7-year NDIS immutable audit trail."
+                keywords="NDIS software security, Australian data sovereignty, NDIS data compliance, AWS Sydney NDIS hosting, Privacy Act 1988 NDIS, NDIS audit trail retention"
+                url="https://www.kinlycarepro.com/security"
+            />
 
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                        <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-4">
-                            <Server size={24} />
+            <LegalLayout
+                title="Enterprise Security & Privacy Architecture"
+                lastUpdated="August 29, 2026"
+                seoTitle="Security & Data Protection - Kinly CarePro"
+                seoDescription="Bank-grade security protecting your NDIS participant data. 100% Australian hosted in Sydney AWS."
+                seoUrl="https://www.kinlycarepro.com/security"
+            >
+                <div className="space-y-12">
+                    <section className="bg-slate-900 text-white rounded-3xl p-8 border border-slate-800">
+                        <div className="flex items-center gap-3 mb-3">
+                            <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span className="text-xs uppercase tracking-widest text-emerald-400 font-bold">100% Australian Data Residency</span>
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Infrastructure & Hosting</h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                            Hosted on <strong className="text-gray-900">Amazon Web Services (AWS)</strong> in the <strong className="text-gray-900">Sydney Region</strong> (ap-southeast-2). This ensures full compliance with Australian data sovereignty laws for government contracts and health data.
+                        <h2 className="text-2xl md:text-3xl font-bold">Enterprise Security for Australian NDIS Providers</h2>
+                        <p className="text-slate-300 text-sm md:text-base mt-2 leading-relaxed">
+                            Kinly CarePro is engineered from the ground up to safeguard sensitive health data, clinical notes, and financial transactions. Hosted exclusively in Sydney data centres with multi-layered defenses.
                         </p>
-                    </div>
+                    </section>
 
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                        <div className="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 mb-4">
-                            <Lock size={24} />
-                        </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Unbreakable Encryption</h3>
-                        <ul className="text-sm text-gray-600 space-y-2">
-                            <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                                <strong>In Transit:</strong> TLS 1.2+ for all data transmission.
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                                <strong>At Rest:</strong> AES-256 encryption for databases.
-                            </li>
-                        </ul>
-                    </div>
+                    {/* Full Interactive 6-Pillars & 3-Layer Architecture Component */}
+                    <SecurityArchitectureSection />
 
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                        <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-4">
-                            <Key size={24} />
+                    {/* Vulnerability Disclosure */}
+                    <section className="bg-slate-900 text-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="flex items-start gap-4">
+                            <div className="bg-rose-500/10 p-3 rounded-xl border border-rose-500/20">
+                                <Shield className="text-rose-400" size={32} />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold mb-1">Responsible Security Disclosure</h3>
+                                <p className="text-slate-400 text-xs md:text-sm max-w-md">
+                                    We value the security and research community. If you identify a potential security vulnerability, please notify our engineering team immediately.
+                                </p>
+                            </div>
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Access Control</h3>
-                        <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                            Strict Role-Based Access Control (RBAC) ensures data isolation.
-                        </p>
-                        <ul className="text-sm text-gray-600 space-y-1">
-                            <li>• Providers only see their own organization.</li>
-                            <li>• Staff viewing restricted to assigned participants.</li>
-                            <li>• MFA available for administrative accounts.</li>
-                        </ul>
-                    </div>
-
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                        <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center text-green-600 mb-4">
-                            <RefreshCw size={24} />
-                        </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Backup & Recovery</h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                            Automated daily backups stored across multiple availability zones. We perform regular restore tests to ensure data durability and rapid recovery capabilities.
-                        </p>
-                    </div>
+                        <a
+                            href="mailto:security@kinlycarepro.com"
+                            className="px-6 py-3 bg-white text-slate-900 rounded-lg font-bold hover:bg-slate-100 transition-colors flex items-center gap-2 shrink-0 text-sm"
+                        >
+                            <AlertOctagon size={16} />
+                            Report Vulnerability
+                        </a>
+                    </section>
                 </div>
-
-                <section className="bg-slate-900 text-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-red-500/10 p-3 rounded-xl border border-red-500/20">
-                            <Shield className="text-red-400" size={32} />
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold mb-1">Found a Vulnerability?</h3>
-                            <p className="text-slate-400 text-sm max-w-md">
-                                We value the security community. If you identify a potential issue, please report it to our security team immediately.
-                            </p>
-                        </div>
-                    </div>
-                    <a
-                        href="mailto:support@kinlycarepro.com"
-                        className="px-6 py-3 bg-white text-slate-900 rounded-lg font-bold hover:bg-slate-100 transition-colors flex items-center gap-2 shrink-0"
-                    >
-                        <AlertOctagon size={18} />
-                        Report Issue
-                    </a>
-                </section>
-            </div>
-        </LegalLayout>
+            </LegalLayout>
+        </>
     );
 };
 

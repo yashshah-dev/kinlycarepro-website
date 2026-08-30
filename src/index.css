@@ -1,21 +1,57 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #3B3766;
-  --color-accent: #8BC34A;
+  /* Brand — deep teal (primary) */
+  --color-primary: #0F4C5C;
+  --color-primary-50: #EAF4F6;
+  --color-primary-100: #D3E8EC;
+  --color-primary-200: #A6D0D9;
+  --color-primary-600: #0C3E4A;
+  --color-primary-700: #0A3440;
+  --color-primary-800: #082A34;
+  --color-primary-900: #0F2B38;
+  --color-primary-950: #061821;
+
+  /* Brand — vibrant green (accent) */
+  --color-accent: #33CA7F;
+  --color-accent-50: #EAFBF1;
+  --color-accent-100: #D2F5E2;
+  --color-accent-600: #2AB36D;
+  --color-accent-700: #1E9E5F;
+
   --color-secondary: #F0F4F8;
-  --color-teal: #2B9C94;
-  --font-sans: Inter, sans-serif;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-slate-50 text-slate-900 overflow-x-hidden;
+    @apply font-sans bg-slate-50 text-slate-900 overflow-x-hidden antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }
+
 @layer utilities {
   .img-crisp {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Feature section: zoom in on image, pan down on hover to reveal full UI */
+  .feature-zoom-img {
+    will-change: transform;
+    transition: transform 4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Parent div hover triggers the pan-down by shifting transform-origin to bottom */
+  .rounded-2xl:hover .feature-zoom-img {
+    transform-origin: bottom center !important;
   }
 }

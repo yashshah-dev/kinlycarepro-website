@@ -1,26 +1,19 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import Pricing from '../components/Pricing';
-import FAQSection from '../components/FAQSection';
+import SecurityStrip from '../components/SecurityStrip';
 
 const PricingPage = () => {
   return (
     <>
       <SEO
-        title="Pricing - From $99/month | NDIS Software"
-        description="Affordable NDIS software. Solo plan from $99/month. All plans include mobile apps, rostering, billing, and Guardian safety checks. 48-hour implementation."
-        keywords="NDIS software pricing, care management cost, NDIS platform price, sole trader NDIS software, NDIS software plans, affordable NDIS software"
+        title="NDIS Software Pricing - $25/Participant/Mo | Unlimited Staff | Kinly CarePro"
+        description="Transparent NDIS pricing: $25 AUD / active participant / month (minimum $99/mo). Unlimited support worker and admin accounts at $0, and every feature included with zero paywalls."
+        keywords="NDIS software pricing, transparent NDIS pricing, participant based NDIS pricing, NDIS PMS pricing Australia, $25 participant NDIS software, unlimited staff NDIS software"
         url="https://www.kinlycarepro.com/pricing"
       />
-      <section className="pt-32 pb-16 bg-gradient-to-b from-white to-slate-50 text-center px-4">
-        <p className="text-accent font-semibold tracking-[0.4em] uppercase text-xs">Pricing</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4">Transparent plans for every provider size.</h1>
-        <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
-          Start with our <strong>Solo Plan</strong> for independent providers or choose <strong>Starter</strong> for growing teams. No hidden fees.
-        </p>
-      </section>
       <Pricing />
-      <FAQSection />
+      <SecurityStrip />
     </>
   );
 };

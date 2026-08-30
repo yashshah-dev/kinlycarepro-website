@@ -1,64 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Bot, Target, AlertTriangle, FileSearch, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Bot, Target, AlertTriangle, Sparkles, CheckCircle2, UserCheck, RefreshCw } from 'lucide-react';
 
 const aiHighlights = [
   {
-    title: 'Smart Documentation Help',
-    description: 'Spots missing goal references or vague language as staff type—suggesting improvements they can accept, edit, or ignore.',
+    title: 'Multi-Dimensional Note Scoring (0–100)',
+    description: 'Evaluates person-centered language, active support documentation, participant engagement, and measurable goal outcomes in real time.',
     icon: <Bot className="w-5 h-5" />,
-    metric: 'Real-time review'
+    metric: 'Real-time QA'
   },
   {
-    title: 'Goal Alignment Tips',
-    description: 'Quietly flags entries that might need goal references—staff stay in control of final documentation.',
+    title: 'NDIS Plan Goal Alignment',
+    description: 'Automatically matches recorded activities against the participant’s funded NDIS goals (Core, Capacity Building, Capital).',
     icon: <Target className="w-5 h-5" />,
-    metric: 'Goal alignment checks'
+    metric: 'Goal tracking'
   },
   {
-    title: 'Automatic Incident Alerts',
-    description: 'Detects keywords like "bruise" or "refused medication" and drafts incident templates for clinical teams to complete.',
+    title: 'Automated Incident Flagging',
+    description: 'Detects safety indicators such as medication refusals, falls, or restrictive practices and drafts NDIS Commission incident templates.',
     icon: <AlertTriangle className="w-5 h-5" />,
-    metric: 'Instant template drafts'
+    metric: 'Instant safety alerts'
   },
   {
-    title: 'Pre-Billing Checks',
-    description: 'Catches overlapping shifts, price errors, and duplicate claims before invoices go to NDIA.',
-    icon: <FileSearch className="w-5 h-5" />,
-    metric: '0 rejected invoices'
+    title: 'Interactive Rewrite Assistant',
+    description: 'Restructures rough frontline worker notes into professional, audit-compliant clinical records ready for supervisor approval.',
+    icon: <Sparkles className="w-5 h-5" />,
+    metric: '1-Click clinical polish'
   }
 ];
 
 const auditSteps = [
-  { step: 'Review', detail: 'Automated review of notes + rosters for compliance gaps', duration: '0.3s' },
-  { step: 'Suggest', detail: 'System suggests improvements for goals, funding + price guide alignment', duration: '1.2s' },
-  { step: 'Staff Approve', detail: 'Qualified staff review and accept/reject suggestions before finalizing', duration: '0.6s' }
+  { step: '1. Ingest Note', detail: 'Frontline support worker enters note via mobile app (online or offline)', duration: '0.1s' },
+  { step: '2. Guardian QA', detail: 'Evaluates note for goal references, active support phrasing, and safety triggers', duration: '0.8s' },
+  { step: '3. Upgrade & Score', detail: 'Calculates 0–100 compliance rating and drafts clinical rewrite', duration: '0.4s' },
+  { step: '4. Staff Approve', detail: 'Support worker or coordinator reviews, edits, and finalizes with immutable audit trail', duration: 'Human-in-Command' }
 ];
 
 const noteScenarios = [
   {
     id: 'community-access',
-    label: 'Community access shift',
+    label: 'Scenario 1: Community Access Shift',
     badNote:
       'Took James to the park. He had a small fall but said he was fine. We left early because it rained.',
     rewrite:
-      'Escorted James (Goal 2: build social confidence) to Victoria Park, arriving 09:05. At 10:12 he slipped on wet grass and reported soreness in left knee. Applied first-aid checklist, notified on-call supervisor, and logged incident draft #INC-4472. Session ended 15 min early due to weather and rescheduled in ShiftCare for Friday.',
-    flags: ['No goal alignment reference', 'Incident lacked follow-up action', 'Timing variance not documented'],
-    improvements: ['Links activity to NDIS goal', 'Records incident workflow + draft ID', 'Documents roster variance and next steps'],
-    initialScore: 64,
-    finalScore: 97
+      'Escorted James (Goal 2: Build Social Independence & Community Access) to Victoria Park at 09:05. At 10:12 James experienced a minor slip on damp grass; conducted initial first-aid physical check (no visible swelling or bruising). Notified on-call supervisor and initiated incident log #INC-4472. Due to heavy rainfall, concluded session 15 minutes early as agreed with James and rescheduled replacement community access shift on the Kinly CarePro roster for Friday.',
+    flags: ['Missing explicit NDIS goal reference', 'Fall incident lacked structured supervisor notification', 'Early departure variance not documented with participant agreement'],
+    improvements: ['Explicitly links session to NDIS Goal 2', 'Logs supervisor notification and incident tracking #INC-4472', 'Documents weather variance and roster reschedule'],
+    initialScore: 48,
+    finalScore: 98
   },
   {
     id: 'medication-support',
-    label: 'Medication refusal at SIL home',
+    label: 'Scenario 2: SIL Home Medication Refusal',
     badNote:
       'Evening shift was quiet. Maya refused tablets, staff reminded her twice. Logged in book.',
     rewrite:
-      'Completed evening routine with Maya (Goal 1: maintain daily living skills). At 20:40 she declined Lamotrigine 100mg citing nausea. Guardian script triggered Restrictive Practice flag, so I documented refusal, informed RN Priya, and scheduled GP review in CarePlan. Added follow-up reminder for tomorrow 09:00 visit.',
-    flags: ['No medication detail', 'Missing escalation contact', 'Lacks follow-up task'],
-    improvements: ['Captures medication name + dosage', 'Logs escalation to clinical lead', 'Creates dated follow-up inside plan'],
-    initialScore: 58,
-    finalScore: 95
+      'Supported Maya with evening routine (Goal 1: Daily Living Skills & Medication Management). At 20:40 Maya declined prescribed evening medication (Lamotrigine 100mg) stating mild nausea. Re-offered with water after 15 minutes as per protocol. When refusal persisted, documented refusal on Medication Chart, notified Registered Nurse Priya at 20:58, and scheduled clinical review task in CarePlan for tomorrow morning.',
+    flags: ['Medication name, dosage, and time missing', 'Protocol re-offering steps unrecorded', 'Clinical escalation contact not timestamped'],
+    improvements: ['Captures exact medication name & 100mg dosage', 'Logs protocol re-offering and RN Priya escalation at 20:58', 'Automates follow-up clinical review task'],
+    initialScore: 52,
+    finalScore: 96
   }
 ];
 
@@ -69,221 +70,194 @@ const GuardianAI = () => {
 
   const currentScenario = noteScenarios[scenarioIndex];
 
-  useEffect(() => {
-    setNoteText(currentScenario.badNote);
-    setAnalysis({ status: 'idle', rewritten: '', score: currentScenario.initialScore });
-  }, [currentScenario]);
+  const handleScenarioChange = (idx) => {
+    setScenarioIndex(idx);
+    setNoteText(noteScenarios[idx].badNote);
+    setAnalysis({ status: 'idle', rewritten: '', score: noteScenarios[idx].initialScore });
+  };
 
   const runGuardianAI = () => {
     setAnalysis({ status: 'analyzing', rewritten: '', score: currentScenario.initialScore });
     setTimeout(() => {
       setAnalysis({ status: 'complete', rewritten: currentScenario.rewrite, score: currentScenario.finalScore });
-    }, 900);
+    }, 800);
   };
 
-  const riskLabel = analysis.score >= 95 ? 'Audit ready' : analysis.score >= 80 ? 'Low risk' : 'Needs attention';
-
   return (
-    <section id="guardian-ai" className="relative py-28 bg-gradient-to-br from-[#061821] via-[#0f2b38] to-[#0F4C5C] text-white overflow-hidden">
+    <section id="guardian-ai" className="relative py-24 bg-gradient-to-br from-[#061821] via-[#0f2b38] to-[#0F4C5C] text-white overflow-hidden">
       <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 45%)' }}></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-sm uppercase tracking-[0.2em] text-accent">
-              <ShieldCheck className="w-4 h-4" /> Built-in Safety Features
-            </div>
-            <h2 className="mt-6 text-4xl md:text-5xl font-semibold leading-tight">
-              Guardian™ works in the background.
-            </h2>
-            <p className="mt-6 text-lg text-blue-100 leading-relaxed">
-              While your team focuses on rostering, billing, and care delivery, Guardian quietly reviews every shift, note, and invoice—flagging potential issues for staff to review. It's like having an experienced supervisor checking work 24/7, without the micromanagement.
-            </p>
-            <div className="mt-4 p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
-              <p className="text-sm text-yellow-100 leading-relaxed">
-                <strong className="text-yellow-50">Human-in-Command:</strong> Guardian provides compliance suggestions only. All clinical decisions and documentation remain under the control and responsibility of qualified professionals. Staff must review and approve each recommendation.
-              </p>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-xs uppercase tracking-[0.2em] text-emerald-400 font-bold mb-4">
+            <ShieldCheck className="w-4 h-4" /> Guardian™ AI Note Quality Assistant
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            Live AI Progress Note Compliance QA
+          </h2>
+          <p className="mt-4 text-base md:text-lg text-blue-100">
+            See how Guardian AI evaluates frontline shift notes in real time, identifies audit gaps, and assists staff in generating audit-proof clinical documentation.
+          </p>
+        </div>
+
+        {/* Interactive Simulator Card */}
+        <div className="bg-slate-900/90 rounded-3xl border border-white/15 shadow-2xl p-6 md:p-10 backdrop-blur-xl mb-16">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-white/10">
+            <div>
+              <span className="text-xs uppercase tracking-widest text-emerald-400 font-bold">Interactive QA Simulator</span>
+              <h3 className="text-xl font-bold text-white mt-1">Select a Clinical Shift Note Scenario</h3>
             </div>
 
-            <div className="mt-10 grid sm:grid-cols-2 gap-6">
-              {aiHighlights.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors"
+            <div className="flex gap-2">
+              {noteScenarios.map((s, idx) => (
+                <button
+                  key={s.id}
+                  onClick={() => handleScenarioChange(idx)}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                    scenarioIndex === idx
+                      ? 'bg-emerald-500 text-slate-950 shadow-md'
+                      : 'bg-white/10 text-slate-300 hover:bg-white/15'
+                  }`}
                 >
-                  <div className="flex items-center justify-between mb-4 text-accent">
-                    <div className="p-2 bg-white/10 rounded-xl">{item.icon}</div>
-                    <span className="text-xs font-semibold uppercase tracking-wide text-blue-100">{item.metric}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-blue-100 leading-relaxed">{item.description}</p>
-                </motion.div>
+                  {s.label}
+                </button>
               ))}
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-white text-slate-900 rounded-3xl shadow-2xl border border-white/10 p-8 space-y-8"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide">Interactive demo</p>
-                  <p className="text-3xl font-bold text-slate-900">Guardian compliance review</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs font-semibold text-slate-400 uppercase">Scenario</p>
-                  <select
-                    className="mt-1 text-sm font-semibold text-slate-900 bg-slate-100 px-3 py-1 rounded-lg border border-slate-200"
-                    value={currentScenario.id}
-                    onChange={(event) => {
-                      const nextIndex = noteScenarios.findIndex((scenario) => scenario.id === event.target.value);
-                      setScenarioIndex(nextIndex);
-                    }}
-                  >
-                    {noteScenarios.map((scenario) => (
-                      <option key={scenario.id} value={scenario.id}>
-                        {scenario.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+          <div className="grid lg:grid-cols-12 gap-8 my-8 items-start">
+            {/* Input Note Column */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="flex justify-between items-center">
+                <label className="text-xs uppercase tracking-wider text-slate-400 font-bold">
+                  Raw Frontline Support Worker Note
+                </label>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">
+                  Initial Score: {currentScenario.initialScore} / 100
+                </span>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wide text-slate-500 font-semibold">Original note</label>
-                  <textarea
-                    className="w-full h-40 rounded-2xl border border-slate-200 p-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    value={noteText}
-                    onChange={(event) => setNoteText(event.target.value)}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wide text-slate-500 font-semibold">Compliance suggestions</label>
-                  <div className="h-40 rounded-2xl border border-slate-200 p-4 text-sm bg-slate-50 overflow-y-auto">
-                    {analysis.status === 'complete' ? (
-                      <div>
-                        <p className="mb-2">{analysis.rewritten}</p>
-                        <div className="mt-3 p-2 bg-amber-50 border border-amber-200 rounded-lg">
-                          <p className="text-xs text-amber-800"><strong>Staff action required:</strong> Review this suggestion and click Accept/Reject below. You remain the author.</p>
-                        </div>
-                      </div>
-                    ) : analysis.status === 'analyzing' ? (
-                      <p className="text-slate-400">Reviewing note and preparing compliance suggestions for your approval...</p>
-                    ) : (
-                      <p className="text-slate-400">Run compliance check to see suggested improvements (requires staff approval).</p>
-                    )}
-                  </div>
-                </div>
+              <textarea
+                value={noteText}
+                onChange={(e) => setNoteText(e.target.value)}
+                className="w-full h-36 bg-white/5 border border-white/15 rounded-2xl p-4 text-xs md:text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 leading-relaxed font-sans"
+              />
+
+              <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 space-y-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-rose-300 flex items-center gap-1.5">
+                  <AlertTriangle className="w-3.5 h-3.5" /> Compliance Gaps Detected:
+                </span>
+                <ul className="space-y-1 text-xs text-rose-200">
+                  {currentScenario.flags.map((flag, idx) => (
+                    <li key={idx} className="flex items-start gap-1.5">
+                      <span className="text-rose-400">•</span>
+                      <span>{flag}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mt-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center font-semibold text-lg">
-                    {analysis.score}
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-500 font-semibold">Compliance score</p>
-                    <p className="text-base font-bold text-slate-900">{riskLabel}</p>
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  <button
-                    className="px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-[#0b3b47] disabled:opacity-50"
-                    onClick={runGuardianAI}
-                    disabled={analysis.status === 'analyzing'}
-                  >
-                    {analysis.status === 'analyzing' ? 'Analyzing...' : 'Run Compliance Check'}
-                  </button>
-                  {analysis.status === 'complete' && (
-                    <div className="flex gap-2">
-                      <button className="px-4 py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700">
-                        Accept
-                      </button>
-                      <button className="px-4 py-3 rounded-xl bg-slate-300 text-slate-700 font-semibold hover:bg-slate-400">
-                        Reject
-                      </button>
-                    </div>
-                  )}
-                </div>
+              <button
+                onClick={runGuardianAI}
+                disabled={analysis.status === 'analyzing'}
+                className="w-full py-3.5 px-6 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 transition-all text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
+              >
+                {analysis.status === 'analyzing' ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 animate-spin" /> Guardian AI Evaluating Note...
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-4 h-4" /> Run Guardian AI Rewrite & Upgrade
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* Output Upgraded Note Column */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="flex justify-between items-center">
+                <label className="text-xs uppercase tracking-wider text-emerald-400 font-bold flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5" /> Guardian Upgraded Clinical Record
+                </label>
+                {analysis.status === 'complete' && (
+                  <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold border border-emerald-500/40">
+                    Upgraded Score: {analysis.score} / 100
+                  </span>
+                )}
               </div>
-              <div className="mt-4">
-                <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-accent to-primary transition-all duration-500"
-                    style={{ width: `${analysis.score}%` }}
-                  ></div>
-                </div>
+
+              <div className="w-full min-h-[144px] bg-emerald-950/30 border border-emerald-500/30 rounded-2xl p-4 text-xs md:text-sm text-emerald-100 leading-relaxed font-sans">
+                {analysis.status === 'complete' ? (
+                  <p>{analysis.rewritten}</p>
+                ) : analysis.status === 'analyzing' ? (
+                  <div className="flex items-center justify-center h-28 text-emerald-300 text-xs gap-2">
+                    <RefreshCw className="w-4 h-4 animate-spin" /> Restructuring note against NDIS Practice Standards...
+                  </div>
+                ) : (
+                  <p className="text-slate-400 italic text-xs">
+                    Click "Run Guardian AI Rewrite" to see the upgraded, audit-proof clinical phrasing.
+                  </p>
+                )}
               </div>
-              <div className="grid gap-4 md:grid-cols-2 mt-4">
-                <div className="p-4 rounded-2xl border border-red-100 bg-red-50">
-                  <p className="text-xs uppercase font-semibold text-red-600 tracking-wide mb-2">Flags detected</p>
-                  <ul className="space-y-2 text-sm text-red-700">
-                    {currentScenario.flags.map((flag) => (
-                      <li key={flag} className="flex items-start gap-2">
-                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                        <span>{flag}</span>
+
+              {analysis.status === 'complete' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-2"
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-300 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Clinical Quality Enhancements:
+                  </span>
+                  <ul className="space-y-1 text-xs text-emerald-200">
+                    {currentScenario.improvements.map((imp, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5">
+                        <span className="text-emerald-400">✓</span>
+                        <span>{imp}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-                <div className="p-4 rounded-2xl border border-emerald-100 bg-emerald-50">
-                  <p className="text-xs uppercase font-semibold text-emerald-700 tracking-wide mb-2">Compliance improvements</p>
-                  <ul className="space-y-2 text-sm text-emerald-700">
-                    {currentScenario.improvements.map((improvement) => (
-                      <li key={improvement} className="flex items-start gap-2">
-                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                        <span>{improvement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              )}
 
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide">One-click audit</p>
-                  <p className="text-3xl font-bold text-slate-900">NDIS ready export</p>
-                </div>
-                <div className="px-4 py-2 rounded-full bg-emerald-50 text-emerald-600 text-sm font-semibold">
-                  Audit-ready exports
-                </div>
-              </div>
-              <div className="space-y-4">
-                {auditSteps.map((step, i) => (
-                  <div key={step.step} className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-lg font-semibold">
-                      {i + 1}
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900">{step.step}</p>
-                      <p className="text-sm text-slate-500">{step.detail}</p>
-                    </div>
-                    <span className="text-xs font-semibold text-slate-500">{step.duration}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 p-5 rounded-2xl bg-slate-50 border border-slate-100">
-                <div className="flex items-center gap-3 text-emerald-600 font-semibold">
-                  <CheckCircle2 className="w-5 h-5" />
-                  Guardian AI zipped 47 supporting docs for Participant #1082
-                </div>
-                <p className="mt-3 text-sm text-slate-500">
-                  Includes progress notes, shift logs, roster diffs, incident drafts, and billing evidence packaged for auditors.
-                </p>
+              <div className="p-3 bg-white/5 rounded-xl border border-white/10 flex items-center gap-2.5 text-xs text-slate-300">
+                <UserCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>
+                  <strong>Human-in-Command:</strong> Staff review, edit, or approve all generated suggestions before final save.
+                </span>
               </div>
             </div>
-          </motion.div>
+          </div>
+
+          {/* Workflow Steps */}
+          <div className="pt-8 border-t border-white/10 grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {auditSteps.map((step, i) => (
+              <div key={i} className="p-4 bg-white/5 rounded-2xl border border-white/5">
+                <p className="text-xs font-bold text-emerald-400">{step.step}</p>
+                <p className="text-xs text-slate-300 mt-1 leading-snug">{step.detail}</p>
+                <p className="text-[10px] text-slate-400 mt-2 font-mono">{step.duration}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 4 Feature Highlights Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {aiHighlights.map((feat, idx) => (
+            <div key={idx} className="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+                  {feat.icon}
+                </div>
+                <h4 className="font-bold text-white text-base leading-snug">{feat.title}</h4>
+                <p className="text-xs text-slate-300 mt-2 leading-relaxed">{feat.description}</p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10 text-[11px] font-mono text-emerald-400 font-bold">
+                {feat.metric}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

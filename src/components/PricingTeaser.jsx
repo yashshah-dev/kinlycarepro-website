@@ -3,145 +3,88 @@ import { Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const plans = [
-    {
-        name: 'Solo',
-        price: '$99',
-        cadence: 'per month',
-        description: 'Perfect for independent providers.',
-        features: [
-            'Unlimited staff accounts',
-            'Guardian compliance engine',
-            'Mobile app with GPS',
-            'Basic invoicing'
-        ],
-        highlight: 'New Entry Plan',
-        primary: false
-    },
-    {
-        name: 'Starter',
-        price: '$199',
-        cadence: 'per month',
-        description: 'For growing teams. Full access to the entire platform.',
-        features: [
-            'Everything in Solo, plus:',
-            'Live operations map',
-            'Smart fatigue alerts',
-            'Qualification tracking',
-            'Custom shift rates'
-        ],
-        highlight: 'Best for small teams',
-        primary: true
-    }
-];
-
 const PricingTeaser = () => {
-    return (
-        <section id="pricing" className="py-24 bg-white">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-12"
-                >
-                    <p className="text-accent font-semibold tracking-wide uppercase text-sm">Pricing</p>
-                    <h2 className="text-4xl font-bold text-slate-900 mt-4">Simple, audit-friendly billing.</h2>
-                    <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                        Start with our new <strong>Solo Plan</strong> or scale up with <strong>Starter</strong> and <strong>Growth</strong>. All plans include mobile apps and Guardian compliance.
-                    </p>
-                </motion.div>
+  return (
+    <section id="pricing-teaser" className="py-24 bg-slate-50 border-t border-slate-200">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="text-accent font-semibold tracking-wide uppercase text-xs">Transparent Pricing</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">
+            One simple price. Everything included.
+          </h2>
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-base">
+            $25 per active participant per month. Unlimited staff and admins, no feature paywalls.
+          </p>
+        </motion.div>
 
-                {/* Competitive advantage */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12"
-                >
-                    {[
-                        'Complete platform included',
-                        'Unlimited staff accounts',
-                        'NDIS price updates guaranteed'
-                    ].map((item) => (
-                        <div key={item} className="flex items-center gap-2 text-sm font-medium text-emerald-900 bg-emerald-50 px-4 py-2 rounded-full">
-                            <Check className="w-4 h-4 text-emerald-600" />
-                            <span>{item}</span>
-                        </div>
-                    ))}
-                </motion.div>
-
-                {/* Plan Cards */}
-                <div className="grid md:grid-cols-2 gap-6">
-                    {plans.map((plan, index) => (
-                        <motion.div
-                            key={plan.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 + index * 0.1 }}
-                            className={`relative rounded-3xl border p-8 ${plan.primary
-                                ? 'border-primary/30 bg-primary/5 shadow-xl'
-                                : 'border-slate-200 bg-white shadow-lg'
-                                }`}
-                        >
-                            <span className={`text-xs font-semibold px-3 py-1 rounded-full ${plan.primary ? 'bg-primary text-white' : 'bg-slate-100 text-slate-600'
-                                }`}>
-                                {plan.highlight}
-                            </span>
-
-                            <p className="mt-4 text-sm uppercase tracking-[0.3em] text-slate-500">{plan.name}</p>
-                            <h3 className="mt-2 text-4xl font-bold text-slate-900">
-                                {plan.price}
-                                <span className="block text-sm font-medium text-slate-500 mt-1">{plan.cadence}</span>
-                            </h3>
-
-                            <p className="mt-4 text-sm text-slate-600">{plan.description}</p>
-
-                            <ul className="mt-6 space-y-3">
-                                {plan.features.map((feature) => (
-                                    <li key={feature} className="flex items-start gap-2 text-sm text-slate-700">
-                                        <span className="mt-0.5 w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                                            <Check className="w-2.5 h-2.5" />
-                                        </span>
-                                        <span>{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <Link
-                                to="/contact"
-                                className={`mt-8 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm ${plan.primary
-                                    ? 'bg-primary text-white hover:bg-[#0b3b47]'
-                                    : 'bg-slate-900 text-white hover:bg-slate-800'
-                                    }`}>
-                                {plan.name === 'Enterprise' ? 'Book review' : 'Start pilot'}
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* View all plans link */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="mt-10 text-center"
-                >
-                    <Link
-                        to="/pricing"
-                        className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
-                    >
-                        View all plans and compare features <ArrowRight className="w-4 h-4" />
-                    </Link>
-                </motion.div>
+        {/* Master Plan Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl border-2 border-primary shadow-2xl p-8 md:p-10 relative overflow-hidden"
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-slate-100 pb-8">
+            <div className="text-center md:text-left">
+              <span className="text-xs uppercase tracking-widest font-extrabold text-accent-700">All-Inclusive Plan</span>
+              <h3 className="text-2xl font-extrabold text-slate-900 mt-1">Kinly CarePro Platform</h3>
+              <p className="text-slate-500 text-xs mt-1">Billing, AI note QA, rostering, payroll & reports</p>
             </div>
-        </section>
-    );
+
+            <div className="text-center md:text-right">
+              <div className="flex items-baseline justify-center md:justify-end gap-1">
+                <span className="text-5xl font-black text-primary">$25</span>
+                <span className="text-xs font-bold text-slate-500">AUD</span>
+              </div>
+              <p className="text-xs font-semibold text-slate-600 mt-1">per active participant / month</p>
+              <p className="text-[11px] text-slate-400">Save 2 months with annual billing</p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-3 my-7 text-xs text-slate-700">
+            {[
+              '1 Month Free Support & Staff Training',
+              'Unlimited support workers & carers ($0)',
+              'Unlimited admin & scheduler seats ($0)',
+              'Deterministic NDIS billing & PAPL 2025–26',
+              'Guardian AI note quality scoring',
+              'GPS mobile app with offline sync',
+              'Smart rostering & copy-week wizard',
+              'Payroll, compliance & 17+ reports',
+              '100% Australian data residency (Sydney)',
+              'Free assisted data migration assistance'
+            ].map((f, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-accent-600 flex-shrink-0" />
+                <span>{f}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all font-bold text-xs flex items-center justify-center gap-2 shadow-md"
+            >
+              Book a demo <ArrowRight size={14} />
+            </Link>
+            <Link
+              to="/pricing"
+              className="w-full sm:w-auto px-6 py-3 bg-slate-100 text-slate-700 rounded-xl hover:bg-slate-200 transition-all font-semibold text-xs flex items-center justify-center gap-2 border border-slate-200"
+            >
+              See your price
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default PricingTeaser;

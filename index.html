@@ -5,26 +5,29 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/logo192.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#3B3766" />
+  <meta name="theme-color" content="#0F4C5C" />
   <meta name="description"
-    content="Complete NDIS management platform with mobile apps, smart rostering, one-click PRODA billing, and Guardian safety checks. Built for Australian care providers." />
+    content="The all-in-one NDIS practice management platform. GPS-verified mobile care, deterministic NDIS billing, AI note QA, and payroll — one platform, $25 per participant per month with unlimited staff." />
   <meta name="keywords"
     content="NDIS software, NDIS management, care provider software, NDIS rostering, NDIS billing, PRODA, disability support software, Australia" />
   <meta name="google-site-verification" content="FrdUFyxJOOm0F7pELLx4T83MNlMDzcos8oJ4s4FpEgw" />
-  <title>Kinly CarePro | Complete NDIS Management Platform for Australian Providers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>Kinly CarePro | All-in-One NDIS Practice Management Platform</title>
 </head>
 
 <body>
-  <!-- GitHub Pages SPA redirect handling -->
   <script>
     (function () {
-      // Handle redirect from 404.html
       var redirect = sessionStorage.redirect;
       delete sessionStorage.redirect;
       if (redirect && redirect !== location.href) {
         history.replaceState(null, null, redirect);
       }
-      // Handle path stored in query params (from 404.html redirect)
       var params = new URLSearchParams(location.search);
       var path = params.get('p');
       var hash = params.get('h');

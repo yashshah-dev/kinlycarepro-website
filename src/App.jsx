@@ -13,6 +13,10 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import CompliancePage from './pages/CompliancePage';
 import SecurityPage from './pages/SecurityPage';
+import ShiftCareComparisonPage from './pages/ShiftCareComparisonPage';
+import WhyParticipantPricingPage from './pages/WhyParticipantPricingPage';
+import NdisPriceGuidePage from './pages/NdisPriceGuidePage';
+import GuardianAIPage from './pages/GuardianAIPage';
 
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
@@ -20,16 +24,20 @@ import { Analytics } from '@vercel/analytics/react';
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-accent/30">
+      <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-accent/30 flex flex-col justify-between">
         <SpeedInsights />
         <Analytics />
         <Navbar />
         <ScrollToTop />
-        <main>
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/guardian-ai" element={<GuardianAIPage />} />
             <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/vs/shiftcare" element={<ShiftCareComparisonPage />} />
+            <Route path="/why-participant-pricing" element={<WhyParticipantPricingPage />} />
+            <Route path="/ndis-price-guide" element={<NdisPriceGuidePage />} />
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />

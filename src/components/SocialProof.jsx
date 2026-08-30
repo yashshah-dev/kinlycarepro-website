@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Shield, Zap, Clock } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -96,18 +96,14 @@ const SocialProof = () => {
                     transition={{ delay: 0.3 }}
                     className="mt-14 text-center"
                 >
-                    <div className="inline-block p-6 rounded-2xl bg-[#0b3b47] w-full max-w-3xl mx-auto border border-white/10">
-                        <div className="flex items-center justify-center gap-2 text-accent mb-3">
-                            <Sparkles className="w-5 h-5" />
-                            <span className="text-sm font-semibold uppercase tracking-wide">Limited Spots Available</span>
-                        </div>
+                    <div className="inline-block p-6 rounded-2xl bg-primary-800 w-full max-w-3xl mx-auto border border-white/10">
                         <h3 className="text-xl font-bold mb-2">Join Our Founding Provider Program</h3>
                         <p className="text-blue-100 text-sm mb-4 max-w-xl mx-auto">
                             Be among the first providers to experience Kinly CarePro. Founding providers receive priority onboarding, direct access to our product team, and special pricing.
                         </p>
                         <Link
                             to="/contact"
-                            className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-white rounded-xl hover:bg-[#2ab36d] transition-all shadow-lg font-bold"
+                            className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-slate-950 rounded-xl hover:bg-accent-600 transition-all shadow-lg font-bold"
                         >
                             Apply for Early Access <ArrowRight className="w-4 h-4" />
                         </Link>
