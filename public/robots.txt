@@ -30,6 +30,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# XML Sitemap & LLM Knowledge Base
-Sitemap: https://www.kinlycarepro.com/sitemap.xml
-# LLMs Discoverability: https://www.kinlycarepro.com/llms.txt
+# XML Sitemap & LLM Knowledge Base (.com.au Primary Domain)
+Sitemap: https://www.kinlycarepro.com.au/sitemap.xml
+# LLMs Discoverability: https://www.kinlycarepro.com.au/llms.txt

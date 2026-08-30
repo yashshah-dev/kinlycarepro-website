@@ -78,7 +78,7 @@ const ShiftCareComparisonPage = () => {
         title="Kinly CarePro vs ShiftCare - NDIS Software TCO Comparison | Kinly CarePro"
         description="Compare Kinly CarePro vs ShiftCare. See why NDIS providers are switching from per-user pricing ($10-$15/worker) to Kinly CarePro's $25/participant all-inclusive model with unlimited staff."
         keywords="Kinly CarePro vs ShiftCare, ShiftCare alternative, ShiftCare pricing comparison, NDIS software comparison, participant based NDIS pricing, NDIS PMS comparison Australia"
-        url="https://www.kinlycarepro.com/vs/shiftcare"
+        url="https://www.kinlycarepro.com.au/vs/shiftcare"
         faqs={comparisonFaqs}
         breadcrumbs={[
           { name: "Comparisons", path: "/vs/shiftcare" },

@@ -79,7 +79,7 @@
   console.log(`\n🖼️  Images: ${images.length} total, ${imagesWithoutAlt.length} missing alt text ${imagesWithoutAlt.length === 0 ? '✅' : '⚠️'}`);
 
   // 9. Internal Links
-  const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="http://localhost"], a[href^="https://www.kinlycarepro.com"]');
+  const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="http://localhost"], a[href^="https://www.kinlycarepro.com.au"], a[href^="https://www.kinlycarepro.com"]');
   console.log(`\n🔗 Internal Links: ${internalLinks.length} found ✅`);
 
   // 10. Mobile Viewport & Language

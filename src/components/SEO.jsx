@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const SITE_URL = 'https://www.kinlycarepro.com';
+const SITE_URL = 'https://www.kinlycarepro.com.au';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 const SEO = ({

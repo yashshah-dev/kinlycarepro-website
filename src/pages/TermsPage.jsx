@@ -10,7 +10,7 @@ const TermsPage = () => {
                 title="Terms of Service - Software Service Agreement | Kinly CarePro"
                 description="Kinly CarePro Terms of Service. Australian SaaS subscription agreement, 99.9% uptime SLA, NDIS data sovereignty, and billing governance."
                 keywords="Kinly CarePro terms of service, NDIS SaaS agreement, software service terms, Australian cloud terms"
-                url="https://www.kinlycarepro.com/terms"
+                url="https://www.kinlycarepro.com.au/terms"
                 breadcrumbs={[{ name: "Terms of Service", path: "/terms" }]}
             />
             <LegalLayout

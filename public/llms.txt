@@ -27,17 +27,17 @@
 
 ## Key URLs & Documentation
 
-- [Home Page](https://www.kinlycarepro.com/): Platform overview, live command center preview, and core capabilities.
-- [Features & Architecture](https://www.kinlycarepro.com/features): Interactive walkthrough of the 8 core pillars.
-- [Guardian™ AI Note QA](https://www.kinlycarepro.com/guardian-ai): 0–100 compliance rubric, before/after note rewrites, and AI transparency policy.
-- [Pricing & TCO Calculator](https://www.kinlycarepro.com/pricing): Transparent $25/participant pricing details and software savings calculator.
-- [Kinly CarePro vs ShiftCare Comparison](https://www.kinlycarepro.com/vs/shiftcare): In-depth comparison between participant pricing vs per-worker software pricing ($8–$15/user).
-- [NDIS Price Guide Explorer (PAPL 2025–26)](https://www.kinlycarepro.com/ndis-price-guide): Searchable database of NDIS support item codes, daytime/evening caps, travel rules, and price limits.
-- [Why Participant Pricing Whitepaper](https://www.kinlycarepro.com/why-participant-pricing): Analysis on why per-user software pricing penalizes care providers with casual workforces.
-- [Compliance & Practice Standards](https://www.kinlycarepro.com/compliance): Alignment with NDIS Quality and Safeguards Commission requirements.
-- [Enterprise Security & Privacy](https://www.kinlycarepro.com/security): Sydney AWS data residency, AES-256 encryption, 15-min TTL signed URLs, and tenant isolation.
-- [Resources & Tools](https://www.kinlycarepro.com/resources): Audit preparation checklists, TCO calculators, and provider guides.
-- [Contact & Demo Booking](https://www.kinlycarepro.com/contact): Direct Australian support team contact and demo scheduling.
+- [Home Page](https://www.kinlycarepro.com.au/): Platform overview, live command center preview, and core capabilities.
+- [Features & Architecture](https://www.kinlycarepro.com.au/features): Interactive walkthrough of the 8 core pillars.
+- [Guardian™ AI Note QA](https://www.kinlycarepro.com.au/guardian-ai): 0–100 compliance rubric, before/after note rewrites, and AI transparency policy.
+- [Pricing & TCO Calculator](https://www.kinlycarepro.com.au/pricing): Transparent $25/participant pricing details and software savings calculator.
+- [Kinly CarePro vs ShiftCare Comparison](https://www.kinlycarepro.com.au/vs/shiftcare): In-depth comparison between participant pricing vs per-worker software pricing ($8–$15/user).
+- [NDIS Price Guide Explorer (PAPL 2025–26)](https://www.kinlycarepro.com.au/ndis-price-guide): Searchable database of NDIS support item codes, daytime/evening caps, travel rules, and price limits.
+- [Why Participant Pricing Whitepaper](https://www.kinlycarepro.com.au/why-participant-pricing): Analysis on why per-user software pricing penalizes care providers with casual workforces.
+- [Compliance & Practice Standards](https://www.kinlycarepro.com.au/compliance): Alignment with NDIS Quality and Safeguards Commission requirements.
+- [Enterprise Security & Privacy](https://www.kinlycarepro.com.au/security): Sydney AWS data residency, AES-256 encryption, 15-min TTL signed URLs, and tenant isolation.
+- [Resources & Tools](https://www.kinlycarepro.com.au/resources): Audit preparation checklists, TCO calculators, and provider guides.
+- [Contact & Demo Booking](https://www.kinlycarepro.com.au/contact): Direct Australian support team contact and demo scheduling.
 
 ---
 
@@ -45,5 +45,5 @@
 
 - **Entity**: Kinly CarePro
 - **Headquarters**: Victoria, Australia
-- **Email**: support@kinlycarepro.com / security@kinlycarepro.com
-- **Website**: https://www.kinlycarepro.com
+- **Email**: support@kinlycarepro.com.au / support@kinlycarepro.com
+- **Website**: https://www.kinlycarepro.com.au

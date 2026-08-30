@@ -11,7 +11,7 @@ const SecurityPage = () => {
                 title="Enterprise Security, Privacy & Data Compliance Architecture | Kinly CarePro"
                 description="100% Australian Data Residency in Sydney AWS, AES-256 encryption, 15-min TTL signed URLs, multi-tenant isolation, OWASP Top 10 defense, and 7-year NDIS immutable audit trail."
                 keywords="NDIS software security, Australian data sovereignty, NDIS data compliance, AWS Sydney NDIS hosting, Privacy Act 1988 NDIS, NDIS audit trail retention"
-                url="https://www.kinlycarepro.com/security"
+                url="https://www.kinlycarepro.com.au/security"
                 breadcrumbs={[{ name: "Security Architecture", path: "/security" }]}
             />
 
@@ -20,7 +20,7 @@ const SecurityPage = () => {
                 lastUpdated="August 29, 2026"
                 seoTitle="Security & Data Protection - Kinly CarePro"
                 seoDescription="Bank-grade security protecting your NDIS participant data. 100% Australian hosted in Sydney AWS."
-                seoUrl="https://www.kinlycarepro.com/security"
+                seoUrl="https://www.kinlycarepro.com.au/security"
             >
                 <div className="space-y-12">
                     <section className="bg-slate-900 text-white rounded-3xl p-8 border border-slate-800">

@@ -40,7 +40,7 @@ const Home = () => {
         title="Kinly CarePro | All-in-One NDIS Practice Management Platform"
         description="The all-in-one, audit-proof NDIS practice management platform. GPS-verified mobile care, deterministic NDIS billing, Guardian AI note QA, and payroll. $25/participant/mo with unlimited staff."
         keywords="NDIS software, NDIS practice management platform, NDIS billing software, PAPL 2025-26, NDIS rostering software, ShiftCare alternative, Guardian AI NDIS compliance, NDIS mobile app GPS, NDIS payroll software"
-        url="https://www.kinlycarepro.com"
+        url="https://www.kinlycarepro.com.au"
         faqs={homeFaqs}
       />
 

@@ -170,7 +170,7 @@ const NdisPriceGuidePage = () => {
         title="NDIS Price Guide Explorer 2025–26 (PAPL Search & Rates) | Kinly CarePro"
         description="Search active NDIS Pricing Arrangements and Price Limits (PAPL 2025–26) support item codes, daytime/evening/weekend caps, travel TRAN rules, and Support Coordination rates."
         keywords="NDIS price guide 2025-26, PAPL 2025-26 item codes, NDIS line item search, NDIS price limits directory, NDIS hourly rates Australia, NDIS support item search"
-        url="https://www.kinlycarepro.com/ndis-price-guide"
+        url="https://www.kinlycarepro.com.au/ndis-price-guide"
         breadcrumbs={[{ name: "NDIS Price Guide Explorer", path: "/ndis-price-guide" }]}
         faqs={[
           {

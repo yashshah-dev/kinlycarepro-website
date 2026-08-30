@@ -29,7 +29,7 @@ const PricingPage = () => {
         title="NDIS Software Pricing - $25/Participant/Mo | Unlimited Staff | Kinly CarePro"
         description="Transparent NDIS pricing: $25 AUD / active participant / month (minimum $99/mo). Unlimited support worker and admin accounts at $0, and every feature included with zero paywalls."
         keywords="NDIS software pricing, transparent NDIS pricing, participant based NDIS pricing, NDIS PMS pricing Australia, $25 participant NDIS software, unlimited staff NDIS software"
-        url="https://www.kinlycarepro.com/pricing"
+        url="https://www.kinlycarepro.com.au/pricing"
         faqs={pricingFaqs}
         breadcrumbs={[{ name: "Pricing", path: "/pricing" }]}
       />

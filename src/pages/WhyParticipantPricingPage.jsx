@@ -23,7 +23,7 @@ const WhyParticipantPricingPage = () => {
         title="Why Per-User Pricing is Broken for NDIS Providers | Kinly CarePro"
         description="Learn why per-user software pricing penalizes NDIS care providers and how participant-based pricing ($25/participant/mo with unlimited staff) protects your margins and aligns software costs with revenue."
         keywords="NDIS software pricing, per user pricing vs participant pricing, NDIS PMS pricing model, disability provider margins, NDIS software cost"
-        url="https://www.kinlycarepro.com/why-participant-pricing"
+        url="https://www.kinlycarepro.com.au/why-participant-pricing"
         faqs={pricingAnalysisFaqs}
         breadcrumbs={[{ name: "Why Participant Pricing?", path: "/why-participant-pricing" }]}
       />

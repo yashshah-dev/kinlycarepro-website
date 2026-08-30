@@ -29,7 +29,7 @@ const ResourcesPage = () => {
         title="NDIS Resources, Price Guide Explorer & TCO Calculator | Kinly CarePro"
         description="Free NDIS provider tools: PAPL 2025–26 Price Guide Explorer, Software TCO Savings Calculator, ShiftCare Comparison Guide, and Audit Preparation Checklists."
         keywords="NDIS resources, NDIS price guide 2025-26, NDIS TCO calculator, ShiftCare comparison, NDIS audit checklist, care management resources"
-        url="https://www.kinlycarepro.com/resources"
+        url="https://www.kinlycarepro.com.au/resources"
         faqs={resourcesFaqs}
         breadcrumbs={[{ name: "Resources & Free Tools", path: "/resources" }]}
       />

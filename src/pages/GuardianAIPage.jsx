@@ -177,7 +177,7 @@ const GuardianAIPage = () => {
         title="Guardian™ AI Note QA & NDIS Compliance Checker | Kinly CarePro"
         description="Transform frontline shift notes into audit-proof, goal-aligned NDIS records with Guardian™ AI. Real-time 0–100 compliance scoring, incident detection, and human-in-command governance."
         keywords="Guardian AI, NDIS progress notes AI, NDIS AI note assistant, NDIS note quality score, NDIS practice standards AI, audit proof NDIS notes, NDIS clinical documentation, human in command AI disability care"
-        url="https://www.kinlycarepro.com/guardian-ai"
+        url="https://www.kinlycarepro.com.au/guardian-ai"
         faqs={faqItems}
         breadcrumbs={[{ name: "Guardian™ AI", path: "/guardian-ai" }]}
       />

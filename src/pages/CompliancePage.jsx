@@ -10,7 +10,7 @@ const CompliancePage = () => {
                 title="NDIS Compliance & Practice Standards Governance | Kinly CarePro"
                 description="Built for the NDIS Quality and Safeguards Commission. 7-year immutable audit retention, 3-tier worker screening, incident reporting, restrictive practices, and deterministic PAPL billing."
                 keywords="NDIS compliance, NDIS practice standards, NDIS worker screening check, NDIS incident management, restrictive practices logging, 7 year NDIS audit log"
-                url="https://www.kinlycarepro.com/compliance"
+                url="https://www.kinlycarepro.com.au/compliance"
                 breadcrumbs={[{ name: "NDIS Compliance & Governance", path: "/compliance" }]}
             />
 
@@ -19,7 +19,7 @@ const CompliancePage = () => {
                 lastUpdated="August 29, 2026"
                 seoTitle="NDIS Compliance Standards - Kinly CarePro"
                 seoDescription="Kinly CarePro is purpose-built to meet NDIS Practice Standards. Learn how our software simplifies compliance for Australian providers."
-                seoUrl="https://www.kinlycarepro.com/compliance"
+                seoUrl="https://www.kinlycarepro.com.au/compliance"
             >
                 <div className="space-y-12">
                     <section className="bg-emerald-50 border border-emerald-200 rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-center">

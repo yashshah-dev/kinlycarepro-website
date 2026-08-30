@@ -10,7 +10,7 @@ const PrivacyPolicyPage = () => {
                 title="Privacy Policy - Australian NDIS Data Protection | Kinly CarePro"
                 description="Kinly CarePro Privacy Policy. Our commitment to the Privacy Act 1988 (Cth), NDIS Quality and Safeguards Commission data governance, and Sydney AWS health data isolation."
                 keywords="Kinly CarePro privacy policy, NDIS data privacy, Australian privacy principles, NDIS health data security"
-                url="https://www.kinlycarepro.com/privacy"
+                url="https://www.kinlycarepro.com.au/privacy"
                 breadcrumbs={[{ name: "Privacy Policy", path: "/privacy" }]}
             />
             <LegalLayout
