@@ -42,17 +42,29 @@ const ContactPage = () => {
       const response = await fetch('https://formspree.io/f/xlgwlzra', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData)
       });
 
       if (response.ok) {
         setStatus({ submitting: false, submitted: true, error: null });
+        
+        // Push conversion event to Google Tag Manager / GA4
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({
+            event: 'generate_lead',
+            form_type: 'demo_inquiry',
+            inquiry_type: formData.inquiryType,
+            provider_type: formData.providerType
+          });
+        }
+
         setFormData({ name: '', email: '', phone: '', organization: '', currentSoftware: '', providerType: '', participantCount: '', inquiryType: 'Demo', message: '' });
       } else {
         const data = await response.json();
-        throw new Error(data.error || 'Form submission failed');
+        throw new Error(data.error || data.errors?.[0]?.message || 'Form submission failed');
       }
     } catch (err) {
       console.error('Submission error:', err);
