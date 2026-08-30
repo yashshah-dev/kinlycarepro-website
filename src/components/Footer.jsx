@@ -16,8 +16,8 @@ const Footer = () => {
                 <div className="grid md:grid-cols-5 gap-10 mb-12">
                     {/* Logo & Overview */}
                     <div className="col-span-1 md:col-span-2">
-                        <button onClick={scrollToTop} className="inline-block bg-white p-2 rounded-xl mb-6 hover:shadow-lg transition-shadow cursor-pointer">
-                            <img src={logo} alt="Kinly CarePro" className="h-32 w-auto object-contain" />
+                        <button onClick={scrollToTop} className="inline-block bg-white p-2.5 rounded-xl mb-6 hover:shadow-lg transition-shadow cursor-pointer">
+                            <img src={logo} alt="Kinly CarePro" className="h-10 w-auto object-contain" />
                         </button>
                         <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-4 max-w-sm">
                             The all-inclusive, audit-proof NDIS practice management platform. $25 AUD / active participant / month with unlimited staff accounts and zero paywalls.

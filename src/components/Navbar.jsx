@@ -41,7 +41,7 @@ const Navbar = () => {
                 <div className="flex justify-between h-20 items-center">
                     <div className="flex-shrink-0 flex items-center">
                         <Link to="/" aria-label="Kinly CarePro home" className="flex items-center">
-                            <img src={logo} alt="Kinly CarePro" className="h-16 sm:h-20 w-auto object-contain py-1" />
+                            <img src={logo} alt="Kinly CarePro" className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                         </Link>
                     </div>
 
