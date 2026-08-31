@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Users, DollarSign, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import dashboardImage from '../assets/home_page_dashboard.png';
+import dashboardImage from '../assets/home_page_dashboard.webp';
 
 const Hero = () => {
     return (
@@ -10,12 +10,7 @@ const Hero = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center max-w-4xl mx-auto mb-14">
                     {/* Trust Badges Row */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="flex flex-wrap justify-center gap-2.5 mb-6"
-                    >
+                    <div className="flex flex-wrap justify-center gap-2.5 mb-6">
                         <span className="inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full bg-accent-50 text-accent-700 font-bold text-xs border border-accent-100">
                             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                             $25 AUD / Participant / Mo
@@ -32,33 +27,18 @@ const Hero = () => {
                         <span className="inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-xs border border-slate-200">
                             🇦🇺 Sydney AWS Hosted
                         </span>
-                    </motion.div>
+                    </div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight"
-                    >
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
                         Run your NDIS practice on <br />
                         one <span className="text-primary">audit-proof platform.</span>
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed"
-                    >
+                    <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
                         GPS-verified mobile care, deterministic NDIS billing, AI note quality assurance, and payroll — united in one platform, from $25 per participant per month.
-                    </motion.p>
+                    </p>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="flex flex-col sm:flex-row gap-4 justify-center"
-                    >
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             to="/contact"
                             className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 font-bold text-base flex items-center justify-center gap-2 group"
@@ -71,7 +51,7 @@ const Hero = () => {
                         >
                             Explore the platform
                         </Link>
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Dashboard Mockup Display */}
@@ -101,8 +81,11 @@ const Hero = () => {
                     <img
                         src={dashboardImage}
                         alt="Kinly CarePro Command Center Interface"
+                        width="1400"
+                        height="800"
                         className="w-full h-auto img-crisp block"
                         loading="eager"
+                        fetchPriority="high"
                         decoding="async"
                     />
                 </motion.div>

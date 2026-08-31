@@ -75,8 +75,19 @@ const SEO = ({
     "@id": `${SITE_URL}/#software`,
     "name": "Kinly CarePro",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web Browser, iOS, Android",
+    "applicationSubCategory": "NDIS Practice Management Platform",
+    "operatingSystem": "Web Browser (Chrome, Safari, Edge), iOS, Android",
     "description": description,
+    "featureList": [
+      "Deterministic NDIS Billing Engine (PAPL 2025–26)",
+      "Guardian AI Clinical Note Quality Assurance",
+      "GPS-Verified Mobile Caregiver App with Offline Sync",
+      "Smart Rostering & Copy-Week Wizard",
+      "Time & Attendance to Payroll Engine (SCHADS compliant)",
+      "3-Tier Staff Screening & Compliance Governance",
+      "17+ Operational & Financial Reports Hub",
+      "Enterprise Multi-Tenant Data Isolation (Sydney AWS)"
+    ],
     "offers": {
       "@type": "Offer",
       "price": "25.00",
@@ -87,13 +98,6 @@ const SEO = ({
         "priceCurrency": "AUD",
         "unitText": "active participant / month"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "142",
-      "bestRating": "5",
-      "worstRating": "1"
     },
     "provider": {
       "@id": `${SITE_URL}/#organization`

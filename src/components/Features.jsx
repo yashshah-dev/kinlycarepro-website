@@ -18,13 +18,13 @@ import {
   Lock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import mobileAppMockup from '../assets/mobile_app_kinly.png';
-import reportsMockup from '../assets/reports_kinlycare.png';
-import rosterView from '../assets/roster_kinlycare.png';
-import billingSuccess from '../assets/billing_kinly.png';
-import guardianAiMockup from '../assets/Guardian_ai..png';
-import payrollMockup from '../assets/payroll_kinly.png';
-import complianceMockup from '../assets/compliance_kinly.png';
+import mobileAppMockup from '../assets/mobile_app_kinly.webp';
+import reportsMockup from '../assets/reports_kinlycare.webp';
+import rosterView from '../assets/roster_kinlycare.webp';
+import billingSuccess from '../assets/billing_kinly.webp';
+import guardianAiMockup from '../assets/Guardian_ai..webp';
+import payrollMockup from '../assets/payroll_kinly.webp';
+import complianceMockup from '../assets/compliance_kinly.webp';
 
 const pillars = [
   {
@@ -635,6 +635,25 @@ const Features = () => {
                       {/* Interactive Pulsing Hotspots on Screenshot */}
                       {showHotspots && pillar.hotspots?.map((spot) => {
                         const isSelected = activeHotspot?.id === spot.id;
+                        const xNum = parseFloat(spot.x);
+                        const yNum = parseFloat(spot.y);
+                        const isTop = yNum < 38;
+                        const popoverVClass = isTop ? 'top-full mt-3' : 'bottom-full mb-3';
+                        const arrowVClass = isTop
+                          ? 'bottom-full border-b-slate-900 border-b-[6px] border-x-[6px] border-x-transparent border-t-0'
+                          : 'top-full border-t-slate-900 border-t-[6px] border-x-[6px] border-x-transparent border-b-0';
+
+                        let popoverHClass = 'left-1/2 -translate-x-1/2';
+                        let arrowHClass = 'left-1/2 -translate-x-1/2';
+
+                        if (xNum < 32) {
+                          popoverHClass = 'left-[-12px] sm:left-[-16px]';
+                          arrowHClass = 'left-4';
+                        } else if (xNum > 68) {
+                          popoverHClass = 'right-[-12px] sm:right-[-16px]';
+                          arrowHClass = 'right-4';
+                        }
+
                         return (
                           <div
                             key={spot.id}
@@ -645,23 +664,23 @@ const Features = () => {
                               setActiveHotspot(isSelected ? null : spot);
                             }}
                           >
-                            {/* Outer Radar Pulse Ring */}
+                            {/* Outer Radar Pulse Ring & Pin */}
                             <div className="relative flex items-center justify-center group/pin cursor-pointer">
-                              <span className={`absolute w-7 h-7 sm:w-9 sm:h-9 rounded-full ${pillar.theme.pinBg} opacity-40 animate-ping`}></span>
-                              <span className={`relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full ${pillar.theme.pinBg} text-white shadow-lg shadow-black/60 border-2 border-white ring-2 ring-black/20 text-[10px] font-bold transition-transform duration-200 group-hover/pin:scale-125`}>
+                              <span className={`absolute w-7 h-7 sm:w-9 sm:h-9 rounded-full ${pillar.theme.pinBg} ${isSelected ? 'opacity-70 scale-125' : 'opacity-40'} animate-ping`}></span>
+                              <span className={`relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full ${pillar.theme.pinBg} text-white shadow-lg shadow-black/60 border-2 border-white ring-2 ${isSelected ? 'ring-white scale-125 shadow-white/20' : 'ring-black/20'} text-[10px] font-bold transition-all duration-200 group-hover/pin:scale-125`}>
                                 <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                               </span>
 
-                              {/* Rich Popover Tooltip */}
+                              {/* Desktop Smart Clamped Popover Tooltip (md and above) */}
                               <AnimatePresence>
                                 {isSelected && (
                                   <motion.div
-                                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                    initial={{ opacity: 0, y: isTop ? -8 : 8, scale: 0.95 }}
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                    exit={{ opacity: 0, y: isTop ? -8 : 8, scale: 0.95 }}
                                     transition={{ duration: 0.15 }}
                                     onClick={(e) => e.stopPropagation()}
-                                    className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 sm:w-72 bg-slate-900/95 backdrop-blur-md text-white p-3.5 sm:p-4 rounded-2xl border border-slate-700 shadow-2xl shadow-black/80 z-30 pointer-events-auto"
+                                    className={`hidden md:block absolute ${popoverVClass} ${popoverHClass} w-72 lg:w-80 bg-slate-900/95 backdrop-blur-md text-white p-3.5 sm:p-4 rounded-2xl border border-slate-700 shadow-2xl shadow-black/80 z-30 pointer-events-auto`}
                                   >
                                     <div className="flex items-center justify-between gap-2 mb-1.5">
                                       <span className="text-[10px] font-extrabold uppercase tracking-wider bg-white/10 text-emerald-400 px-2 py-0.5 rounded">
@@ -672,7 +691,8 @@ const Features = () => {
                                           e.stopPropagation();
                                           setActiveHotspot(null);
                                         }}
-                                        className="text-slate-400 hover:text-white p-0.5"
+                                        className="text-slate-400 hover:text-white p-0.5 transition-colors"
+                                        aria-label="Close tooltip"
                                       >
                                         <X className="w-3.5 h-3.5" />
                                       </button>
@@ -683,7 +703,7 @@ const Features = () => {
                                     <p className="text-xs text-slate-300 mt-1.5 leading-relaxed font-normal">
                                       {spot.description}
                                     </p>
-                                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900"></div>
+                                    <div className={`absolute ${arrowVClass} ${arrowHClass} w-0 h-0`}></div>
                                   </motion.div>
                                 )}
                               </AnimatePresence>
@@ -691,6 +711,76 @@ const Features = () => {
                           </div>
                         );
                       })}
+
+                      {/* Mobile Dedicated Hotspot Drawer Card Overlay (sm and below) */}
+                      <AnimatePresence>
+                        {showHotspots && activeHotspot && pillar.hotspots?.some(h => h.id === activeHotspot.id) && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 20, scale: 0.96 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 20, scale: 0.96 }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="md:hidden absolute inset-x-2.5 sm:inset-x-4 bottom-2.5 sm:bottom-3 z-40 bg-slate-900/98 backdrop-blur-xl text-white p-3.5 sm:p-4 rounded-2xl border border-slate-700/90 shadow-2xl shadow-black/90 pointer-events-auto ring-1 ring-white/10"
+                          >
+                            <div className="flex items-center justify-between gap-2 mb-1.5">
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                                  {activeHotspot.badge}
+                                </span>
+                                <span className="text-[10px] font-mono text-slate-400">
+                                  Interactive Hotspot
+                                </span>
+                              </div>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setActiveHotspot(null);
+                                }}
+                                className="p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+                                aria-label="Close feature details"
+                              >
+                                <X className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+
+                            <h5 className="text-xs sm:text-sm font-bold text-white leading-snug">
+                              {activeHotspot.title}
+                            </h5>
+                            <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                              {activeHotspot.description}
+                            </p>
+
+                            {/* Mobile Hotspot Quick-Switch Pills */}
+                            {pillar.hotspots && pillar.hotspots.length > 1 && (
+                              <div className="mt-2.5 pt-2 border-t border-slate-800 flex items-center justify-between">
+                                <span className="text-[10px] text-slate-400 font-medium">Switch feature:</span>
+                                <div className="flex items-center gap-1.5">
+                                  {pillar.hotspots.map((hs, idx) => {
+                                    const isHsActive = activeHotspot.id === hs.id;
+                                    return (
+                                      <button
+                                        key={hs.id}
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setActiveHotspot(hs);
+                                        }}
+                                        className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all ${
+                                          isHsActive 
+                                            ? `${pillar.theme.pinBg} text-white shadow-sm ring-1 ring-white/30` 
+                                            : 'bg-slate-800 text-slate-400 hover:text-white'
+                                        }`}
+                                      >
+                                        {idx + 1}
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            )}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ) : (
                     <div className="w-full max-w-4xl p-6 sm:p-8 text-white space-y-6">

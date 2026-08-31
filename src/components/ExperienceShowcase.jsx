@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Bell, MapPin, MonitorPlay, Activity, ShieldCheck } from 'lucide-react';
-import mobileApp from '../assets/mobile_app.png';
-import dashboard from '../assets/hero_dashboard.png';
+import mobileApp from '../assets/mobile_app.webp';
+import dashboard from '../assets/hero_dashboard.webp';
 
 const tabs = {
   staff: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import { motion } from 'framer-motion';
-import dashboardImage from '../assets/hero_dashboard.png';
+import dashboardImage from '../assets/hero_dashboard.webp';
 
 const VideoSection = () => {
     return (
