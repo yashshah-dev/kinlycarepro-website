@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Users, DollarSign, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import dashboardImage from '../assets/home_page_dashboard.webp';
+const dashboardImage = '/home_page_dashboard.webp';
 
 const Hero = () => {
     return (

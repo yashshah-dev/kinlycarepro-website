@@ -15,10 +15,16 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: Google-Extended
@@ -28,6 +34,9 @@ User-agent: Amazonbot
 Allow: /
 
 User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 # XML Sitemap & LLM Knowledge Base (.com.au Primary Domain)

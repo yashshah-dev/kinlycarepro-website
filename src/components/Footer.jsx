@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, ArrowUp, ShieldCheck, Scale } from 'lucide-react';
+import { Mail, ArrowUp, ShieldCheck, Scale, Phone } from 'lucide-react';
 import logo from '../assets/KinlyCarePro_logo.png';
 
 const Footer = () => {
@@ -23,12 +23,17 @@ const Footer = () => {
                             The all-inclusive, audit-proof NDIS practice management platform. $25 AUD / active participant / month with unlimited staff accounts and zero paywalls.
                         </p>
 
-                        <div className="space-y-1 text-xs text-slate-400">
+                        <div className="space-y-1.5 text-xs text-slate-400">
                             <p className="flex items-center gap-2">
-                                <Mail className="w-3.5 h-3.5 text-primary" /> support@kinlycarepro.com
+                                <Mail className="w-3.5 h-3.5 text-primary" />
+                                <a href="mailto:support@kinlycarepro.com" className="hover:text-white transition-colors">support@kinlycarepro.com</a>
+                            </p>
+                            <p className="flex items-center gap-2">
+                                <Phone className="w-3.5 h-3.5 text-primary" />
+                                <a href="tel:+61427884336" className="hover:text-white transition-colors">+61 427 884 336 (Direct Support)</a>
                             </p>
                             <p className="text-slate-500 pt-1">
-                                🇦🇺 100% Australian Hosted in Sydney AWS (ap-southeast-2)
+                                🇦🇺 100% Australian Owned & Hosted in Sydney AWS (ap-southeast-2)
                             </p>
                         </div>
                     </div>
@@ -72,10 +77,15 @@ const Footer = () => {
                 {/* Bottom Section with Disclaimer */}
                 <div className="border-t border-slate-800 pt-8 space-y-4">
                     <div className="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-                        <p>© {currentYear} Kinly CarePro. All rights reserved. Built for Australian NDIS care providers.</p>
-                        <div className="flex items-center space-x-6">
-                            <Link to="/vs/shiftcare" className="hover:text-slate-400 transition-colors">Competitor Benchmark</Link>
-                            <Link to="/ndis-price-guide" className="hover:text-slate-400 transition-colors">PAPL 2025–26 Directory</Link>
+                        <div>
+                            <p>© {currentYear} Kinly CarePro. All rights reserved. ABN: 84 652 193 841.</p>
+                            <p className="text-[11px] text-slate-600 mt-0.5">Melbourne, VIC, Australia · Built for Australian NDIS Care Providers</p>
+                        </div>
+                        <div className="flex items-center space-x-5">
+                            <a href="https://www.linkedin.com/company/kinlycarepro" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">LinkedIn</a>
+                            <a href="https://x.com/KinlyCarePro" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">X (Twitter)</a>
+                            <Link to="/vs/shiftcare" className="hover:text-slate-400 transition-colors">vs ShiftCare</Link>
+                            <Link to="/ndis-price-guide" className="hover:text-slate-400 transition-colors">PAPL Directory</Link>
                             <button
                                 onClick={scrollToTop}
                                 className="flex items-center gap-1 text-slate-400 hover:text-white transition-colors cursor-pointer"

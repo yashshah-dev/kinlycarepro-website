@@ -11,7 +11,7 @@ const SEO = ({
   image = DEFAULT_OG_IMAGE,
   url = SITE_URL,
   type = "website",
-  faqs = null,
+  faqs: _faqs = null,
   breadcrumbs = null,
   schema = null
 }) => {
@@ -33,15 +33,30 @@ const SEO = ({
     },
     "description": "Australian NDIS practice management platform featuring deterministic billing, GPS caregiver mobile app, Guardian AI note QA, and roster engine.",
     "email": "support@kinlycarepro.com",
+    "telephone": "+61 427 884 336",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+61 427 884 336",
+      "contactType": "customer support",
+      "email": "support@kinlycarepro.com",
+      "areaServed": "AU",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/kinlycarepro",
+      "https://x.com/KinlyCarePro"
+    ],
     "areaServed": {
       "@type": "Country",
       "name": "Australia"
     },
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "AU",
-      "addressRegion": "VIC"
-    }
+      "addressLocality": "Melbourne",
+      "addressRegion": "VIC",
+      "addressCountry": "AU"
+    },
+    "taxID": "84 652 193 841"
   };
 
   // 2. WebSite Schema
@@ -130,22 +145,9 @@ const SEO = ({
     graphEntities.push(breadcrumbSchema);
   }
 
-  // 6. FAQPage Schema (Trigger Google FAQ Accordion Rich Snippets)
-  if (faqs && Array.isArray(faqs) && faqs.length > 0) {
-    const faqSchema = {
-      "@type": "FAQPage",
-      "@id": `${canonicalUrl}#faq`,
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question || faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer || faq.a
-        }
-      }))
-    };
-    graphEntities.push(faqSchema);
-  }
+  // Note: Google restricted FAQPage rich results in August 2023 to government/health authority domains only.
+  // Commercial SaaS sites must not emit FAQPage schema to prevent GSC validation flags.
+  // Visible FAQs are rendered as accessible semantic HTML instead.
 
   // Custom schema overrides / extensions
   const finalSchema = schema || {
