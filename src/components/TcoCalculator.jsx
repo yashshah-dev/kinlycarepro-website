@@ -297,7 +297,7 @@ const TcoCalculator = ({ showTitle = true, billingCycle: controlledCycle, onBill
             )}
 
             <Link
-              to="/contact"
+              to="/contact#book-demo"
               className="w-full py-3.5 px-6 bg-accent text-slate-950 rounded-xl hover:bg-accent-600 transition-all font-bold text-sm flex items-center justify-center gap-2 shadow-lg group"
             >
               Book a demo <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

@@ -16,10 +16,8 @@ const Navbar = () => {
         { label: 'Solutions', to: '/solutions' },
         { label: 'Features', to: '/features' },
         { label: 'Guardian™ AI', to: '/guardian-ai' },
-        { label: 'Pricing ($25/mo)', to: '/pricing' },
+        { label: 'Pricing', to: '/pricing' },
         { label: 'Compare software', to: '/compare' },
-        { label: 'vs ShiftCare', to: '/vs/shiftcare' },
-        { label: 'Price Guide', to: '/ndis-price-guide' },
         { label: 'Resources', to: '/resources' },
     ];
 
@@ -38,9 +36,9 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <nav className="fixed inset-x-0 top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-20 items-center">
+                <div className="flex justify-between h-[4.75rem] sm:h-20 items-center gap-4">
                     <div className="flex-shrink-0 flex items-center">
                         <Link to="/" aria-label="Kinly CarePro home" className="flex items-center">
                             <img src={logo} alt="Kinly CarePro" className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
@@ -48,13 +46,13 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden xl:flex xl:items-center xl:space-x-5">
+                    <div className="hidden xl:flex xl:items-center xl:gap-4 2xl:gap-5">
                         {mainLinks.map((item) => (
                             <Link
                                 key={item.label}
                                 to={item.to}
                                 className={clsx(
-                                    'text-slate-600 hover:text-primary font-semibold transition-colors text-xs xl:text-sm tracking-tight',
+                                    'whitespace-nowrap text-slate-600 hover:text-primary font-semibold transition-colors text-xs xl:text-[13px] 2xl:text-sm tracking-tight',
                                     location.pathname === item.to && 'text-primary font-extrabold'
                                 )}
                             >
@@ -135,8 +133,9 @@ const Navbar = () => {
                         </div>
 
                         <Link
-                            to="/contact"
-                            className="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-md hover:shadow-lg font-bold text-xs"
+                            to="/contact#book-demo"
+                            aria-label="Book a Kinly CarePro demo"
+                            className="whitespace-nowrap px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-md hover:shadow-lg font-bold text-xs"
                         >
                             Book a demo
                         </Link>
@@ -217,7 +216,8 @@ const Navbar = () => {
 
                             <div className="pt-4">
                                 <Link
-                                    to="/contact"
+                                    to="/contact#book-demo"
+                                    aria-label="Book a Kinly CarePro demo"
                                     className="w-full inline-flex justify-center px-6 py-3.5 bg-primary text-white rounded-xl hover:bg-primary-700 font-bold text-center shadow-md text-sm"
                                     onClick={() => setIsOpen(false)}
                                 >

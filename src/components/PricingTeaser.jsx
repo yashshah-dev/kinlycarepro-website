@@ -69,7 +69,7 @@ const PricingTeaser = () => {
 
           <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/contact"
+              to="/contact#book-demo"
               className="w-full sm:w-auto px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all font-bold text-xs flex items-center justify-center gap-2 shadow-md"
             >
               Book a demo <ArrowRight size={14} />

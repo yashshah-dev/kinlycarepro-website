@@ -97,7 +97,7 @@ const Pricing = () => {
 
             <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                to="/contact"
+                to="/contact#book-demo"
                 className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-lg font-bold text-sm flex items-center justify-center gap-2 group"
               >
                 Book a demo <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

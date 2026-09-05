@@ -40,7 +40,7 @@ const Hero = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
-                            to="/contact"
+                            to="/contact#book-demo"
                             className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 font-bold text-base flex items-center justify-center gap-2 group"
                         >
                             Book a demo <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

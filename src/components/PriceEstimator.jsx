@@ -59,7 +59,7 @@ const PriceEstimator = () => {
 
       <div className="mt-8">
         <Link
-          to="/contact"
+          to="/contact#book-demo"
           className="w-full py-4 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-lg font-bold text-sm flex items-center justify-center gap-2 group"
         >
           Book a demo <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

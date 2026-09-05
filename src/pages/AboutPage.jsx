@@ -190,7 +190,7 @@ const AboutPage = () => (
 
         <div className="text-center mt-12">
           <Link
-            to="/contact"
+            to="/contact#book-demo"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-xl hover:bg-[#0b3b47] transition-all font-bold text-sm shadow-md"
           >
             Book a demo
