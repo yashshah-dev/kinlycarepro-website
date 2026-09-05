@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ResourcesSection from '../components/ResourcesSection';
 import FAQSection from '../components/FAQSection';
@@ -44,6 +45,13 @@ const ResourcesPage = () => {
           </p>
         </div>
       </section>
+      <section className="py-14 bg-white"><div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="text-3xl font-bold text-slate-900">Provider operations guides</h2><p className="mt-3 max-w-3xl text-slate-600">Practical starting points for teams evaluating their documentation, billing, rostering and software workflows. Check current official requirements before acting on regulatory matters.</p><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">{[
+        ['NDIS Progress Notes: A Practical Guide','/resources/ndis-progress-notes-guide'],
+        ['NDIS Billing: Reduce Claim Errors and Rework','/resources/ndis-billing-guide'],
+        ['What to Look For in NDIS Rostering Software','/resources/ndis-rostering-software-guide'],
+        ['NDIS Provider Audit Preparation Checklist','/resources/ndis-audit-preparation-guide'],
+        ['NDIS Software Buyer’s Checklist','/resources/ndis-software-buyers-checklist']
+      ].map(([title,to]) => <Link key={to} to={to} className="rounded-2xl border border-slate-200 p-6 hover:border-primary hover:shadow-md transition"><h3 className="font-bold text-lg text-slate-900">{title}</h3><span className="inline-block mt-4 font-bold text-primary">Read guide →</span></Link>)}</div></div></section>
       <ResourcesSection />
       <FAQSection />
     </>
