@@ -19,6 +19,7 @@ const ShiftCareComparisonPage = lazy(() => import('./pages/ShiftCareComparisonPa
 const WhyParticipantPricingPage = lazy(() => import('./pages/WhyParticipantPricingPage'));
 const NdisPriceGuidePage = lazy(() => import('./pages/NdisPriceGuidePage'));
 const GuardianAIPage = lazy(() => import('./pages/GuardianAIPage'));
+const NdisProgressNotesGuidePage = lazy(() => import('./pages/NdisProgressNotesGuidePage'));
 const SolutionsHubPage = lazy(() => import('./pages/SolutionsHubPage'));
 const SolutionPage = lazy(() => import('./pages/SolutionPage'));
 const CompareHubPage = lazy(() => import('./pages/CompareHubPage'));
@@ -64,7 +65,7 @@ function App() {
               <Route path="/why-participant-pricing" element={<WhyParticipantPricingPage />} />
               <Route path="/ndis-price-guide" element={<NdisPriceGuidePage />} />
               <Route path="/resources" element={<ResourcesPage />} />
-              <Route path="/resources/ndis-progress-notes-guide" element={<BlogArticlePage slug="ndis-progress-notes-guide" />} />
+              <Route path="/resources/ndis-progress-notes-guide" element={<NdisProgressNotesGuidePage />} />
               <Route path="/resources/ndis-billing-guide" element={<BlogArticlePage slug="ndis-billing-guide" />} />
               <Route path="/resources/ndis-rostering-software-guide" element={<BlogArticlePage slug="ndis-rostering-software-guide" />} />
               <Route path="/resources/ndis-audit-preparation-guide" element={<BlogArticlePage slug="ndis-audit-preparation-guide" />} />

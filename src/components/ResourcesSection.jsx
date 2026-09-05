@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 
 const activeResources = [
   {
+    title: 'NDIS Progress Notes: A Practical Guide',
+    description: 'A people-first guide to clear, respectful disability-support progress notes, with examples and a manager checklist.',
+    link: '/resources/ndis-progress-notes-guide',
+    cta: 'Read the guide',
+    type: 'Provider Guide',
+    icon: <FileText className="w-6 h-6 text-primary" />
+  },
+  {
     title: 'NDIS Price Guide Explorer (PAPL 2025–26)',
     description: 'Searchable directory of active NDIS support item codes, hourly price caps, time bands, and travel claim rules.',
     link: '/ndis-price-guide',
