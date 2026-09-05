@@ -30,8 +30,8 @@ const Hero = () => {
                     </div>
 
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
-                        Run your NDIS practice on <br />
-                        one <span className="text-primary">audit-proof platform.</span>
+                        NDIS and Disability Care Management Software <br />
+                        for <span className="text-primary">Australian Providers</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">

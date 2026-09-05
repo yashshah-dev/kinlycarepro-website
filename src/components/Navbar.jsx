@@ -13,9 +13,11 @@ const Navbar = () => {
     const location = useLocation();
 
     const mainLinks = [
+        { label: 'Solutions', to: '/solutions' },
         { label: 'Features', to: '/features' },
         { label: 'Guardian™ AI', to: '/guardian-ai' },
         { label: 'Pricing ($25/mo)', to: '/pricing' },
+        { label: 'Compare software', to: '/compare' },
         { label: 'vs ShiftCare', to: '/vs/shiftcare' },
         { label: 'Price Guide', to: '/ndis-price-guide' },
         { label: 'Resources', to: '/resources' },

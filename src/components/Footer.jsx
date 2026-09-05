@@ -42,9 +42,13 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-4">Platform</h4>
                         <ul className="space-y-2.5 text-xs text-slate-400">
-                            <li><Link to="/features" className="hover:text-white transition-colors">8 Core Pillars</Link></li>
+                            <li><Link to="/solutions" className="hover:text-white transition-colors">NDIS provider software</Link></li>
+                            <li><Link to="/solutions/ndis-rostering-software" className="hover:text-white transition-colors">NDIS rostering software</Link></li>
+                            <li><Link to="/solutions/participant-management-software" className="hover:text-white transition-colors">Participant management</Link></li>
+                            <li><Link to="/features" className="hover:text-white transition-colors">Platform features</Link></li>
                             <li><Link to="/guardian-ai" className="hover:text-white transition-colors font-semibold text-emerald-400">Guardian™ AI Note QA</Link></li>
                             <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing ($25/mo)</Link></li>
+                            <li><Link to="/compare" className="hover:text-white transition-colors">Compare software</Link></li>
                             <li><Link to="/vs/shiftcare" className="hover:text-white transition-colors flex items-center gap-1"><Scale className="w-3 h-3 text-primary" /> vs ShiftCare</Link></li>
                             <li><Link to="/why-participant-pricing" className="hover:text-white transition-colors">Why Participant Pricing?</Link></li>
                         </ul>
