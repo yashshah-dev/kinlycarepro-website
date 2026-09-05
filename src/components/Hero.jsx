@@ -30,8 +30,8 @@ const Hero = () => {
                     </div>
 
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
-                        Run your NDIS practice on <br />
-                        one <span className="text-primary">audit-proof platform.</span>
+                        NDIS and Disability Care Management Software <br />
+                        for <span className="text-primary">Australian Providers</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -40,7 +40,7 @@ const Hero = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
-                            to="/contact"
+                            to="/contact#book-demo"
                             className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 font-bold text-base flex items-center justify-center gap-2 group"
                         >
                             Book a demo <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

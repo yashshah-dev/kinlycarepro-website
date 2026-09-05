@@ -19,6 +19,10 @@ const ShiftCareComparisonPage = lazy(() => import('./pages/ShiftCareComparisonPa
 const WhyParticipantPricingPage = lazy(() => import('./pages/WhyParticipantPricingPage'));
 const NdisPriceGuidePage = lazy(() => import('./pages/NdisPriceGuidePage'));
 const GuardianAIPage = lazy(() => import('./pages/GuardianAIPage'));
+const SolutionsHubPage = lazy(() => import('./pages/SolutionsHubPage'));
+const SolutionPage = lazy(() => import('./pages/SolutionPage'));
+const CompareHubPage = lazy(() => import('./pages/CompareHubPage'));
+const CompetitorComparisonPage = lazy(() => import('./pages/CompetitorComparisonPage'));
 
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
@@ -40,6 +44,19 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/solutions" element={<SolutionsHubPage />} />
+              <Route path="/solutions/ndis-provider-software" element={<SolutionPage slug="ndis-provider-software" />} />
+              <Route path="/solutions/disability-service-provider-software" element={<SolutionPage slug="disability-service-provider-software" />} />
+              <Route path="/solutions/care-management-software" element={<SolutionPage slug="care-management-software" />} />
+              <Route path="/solutions/ndis-rostering-software" element={<SolutionPage slug="ndis-rostering-software" />} />
+              <Route path="/solutions/participant-management-software" element={<SolutionPage slug="participant-management-software" />} />
+              <Route path="/solutions/ndis-invoicing-claiming-software" element={<SolutionPage slug="ndis-invoicing-claiming-software" />} />
+              <Route path="/solutions/disability-support-worker-scheduling-software" element={<SolutionPage slug="disability-support-worker-scheduling-software" />} />
+              <Route path="/compare" element={<CompareHubPage />} />
+              <Route path="/vs/deputy" element={<CompetitorComparisonPage slug="deputy" />} />
+              <Route path="/vs/care-master" element={<CompetitorComparisonPage slug="care-master" />} />
+              <Route path="/vs/myp" element={<CompetitorComparisonPage slug="myp" />} />
+              <Route path="/vs/nightingale" element={<CompetitorComparisonPage slug="nightingale" />} />
               <Route path="/guardian-ai" element={<GuardianAIPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/vs/shiftcare" element={<ShiftCareComparisonPage />} />

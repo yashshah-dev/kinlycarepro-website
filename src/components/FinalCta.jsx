@@ -17,7 +17,7 @@ const FinalCta = () => {
                         </p>
                         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
-                                to="/contact"
+                                to="/contact#book-demo"
                                 className="px-8 py-4 bg-accent text-slate-950 rounded-xl hover:bg-accent-600 transition-all shadow-lg font-bold text-base flex items-center justify-center gap-2 group"
                             >
                                 Book a demo <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
