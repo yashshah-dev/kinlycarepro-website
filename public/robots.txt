@@ -30,6 +30,12 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Bytespider
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
 User-agent: Amazonbot
 Allow: /
 

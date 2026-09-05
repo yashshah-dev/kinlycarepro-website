@@ -23,6 +23,7 @@ const SolutionsHubPage = lazy(() => import('./pages/SolutionsHubPage'));
 const SolutionPage = lazy(() => import('./pages/SolutionPage'));
 const CompareHubPage = lazy(() => import('./pages/CompareHubPage'));
 const CompetitorComparisonPage = lazy(() => import('./pages/CompetitorComparisonPage'));
+const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
 
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
@@ -63,6 +64,11 @@ function App() {
               <Route path="/why-participant-pricing" element={<WhyParticipantPricingPage />} />
               <Route path="/ndis-price-guide" element={<NdisPriceGuidePage />} />
               <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/resources/ndis-progress-notes-guide" element={<BlogArticlePage slug="ndis-progress-notes-guide" />} />
+              <Route path="/resources/ndis-billing-guide" element={<BlogArticlePage slug="ndis-billing-guide" />} />
+              <Route path="/resources/ndis-rostering-software-guide" element={<BlogArticlePage slug="ndis-rostering-software-guide" />} />
+              <Route path="/resources/ndis-audit-preparation-guide" element={<BlogArticlePage slug="ndis-audit-preparation-guide" />} />
+              <Route path="/resources/ndis-software-buyers-checklist" element={<BlogArticlePage slug="ndis-software-buyers-checklist" />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
