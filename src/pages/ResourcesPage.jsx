@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ResourcesSection from '../components/ResourcesSection';
 import FAQSection from '../components/FAQSection';
-import guardianImage from '../assets/Guardian_ai..webp';
-import billingImage from '../assets/billing_kinly.webp';
 
 const resourcesFaqs = [
   {
@@ -47,13 +45,21 @@ const ResourcesPage = () => {
           </p>
         </div>
       </section>
-      <section className="py-14 bg-white"><div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 className="text-3xl font-bold text-slate-900">Provider operations guides</h2><p className="mt-3 max-w-3xl text-slate-600">Practical starting points for teams evaluating their documentation, billing, rostering and software workflows. Check current official requirements before acting on regulatory matters.</p><div className="grid md:grid-cols-2 gap-6 mt-8"><Link to="/resources/ndis-progress-notes-guide" className="overflow-hidden rounded-2xl border border-slate-200 hover:border-primary hover:shadow-md transition"><img src={guardianImage} alt="Guardian AI progress note quality assurance interface" className="w-full aspect-[16/8] object-cover" loading="lazy"/><div className="p-6"><p className="text-xs font-bold uppercase tracking-widest text-primary">Featured guide</p><h3 className="mt-2 font-bold text-xl text-slate-900">NDIS Progress Notes: A Practical Guide</h3><p className="mt-2 text-slate-600">Help teams write clearer records, make handovers useful and maintain a consistent review workflow.</p><span className="inline-block mt-4 font-bold text-primary">Read guide →</span></div></Link><Link to="/resources/ndis-billing-guide" className="overflow-hidden rounded-2xl border border-slate-200 hover:border-primary hover:shadow-md transition"><img src={billingImage} alt="Kinly CarePro billing and invoicing dashboard" className="w-full aspect-[16/8] object-cover" loading="lazy"/><div className="p-6"><p className="text-xs font-bold uppercase tracking-widest text-primary">Featured guide</p><h3 className="mt-2 font-bold text-xl text-slate-900">NDIS Billing: Reduce Claim Errors and Rework</h3><p className="mt-2 text-slate-600">Build a service-to-invoice review routine that makes billing exceptions visible earlier.</p><span className="inline-block mt-4 font-bold text-primary">Read guide →</span></div></Link></div><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">{[
-        ['NDIS Progress Notes: A Practical Guide','/resources/ndis-progress-notes-guide'],
-        ['NDIS Billing: Reduce Claim Errors and Rework','/resources/ndis-billing-guide'],
-        ['What to Look For in NDIS Rostering Software','/resources/ndis-rostering-software-guide'],
-        ['NDIS Provider Audit Preparation Checklist','/resources/ndis-audit-preparation-guide'],
-        ['NDIS Software Buyer’s Checklist','/resources/ndis-software-buyers-checklist']
-      ].map(([title,to]) => <Link key={to} to={to} className="rounded-2xl border border-slate-200 p-6 hover:border-primary hover:shadow-md transition"><h3 className="font-bold text-lg text-slate-900">{title}</h3><span className="inline-block mt-4 font-bold text-primary">Read guide →</span></Link>)}</div></div></section>
+      <section className="py-14 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-900">Provider operations guides</h2>
+          <p className="mt-3 max-w-3xl text-slate-600">Practical starting points for teams evaluating documentation, billing, rostering and software workflows. Check current official requirements before acting on regulatory matters.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {[
+              ['NDIS Progress Notes: A Practical Guide','Help teams write clearer records, make handovers useful and maintain a consistent review workflow.','/resources/ndis-progress-notes-guide','/blog-assets/ndis-progress-notes-guide/hero.png','Disability support worker and participant reviewing a support plan at a kitchen table'],
+              ['NDIS Billing: Reduce Claim Errors and Rework','Build a service-to-invoice review routine that makes billing exceptions visible earlier.','/resources/ndis-billing-guide','/blog-assets/ndis-billing-guide/hero.png','NDIS provider finance professional reviewing billing workflow on a laptop'],
+              ['What to Look For in NDIS Rostering Software','Test rostering software against the real changes, handovers and workforce needs your team manages.','/resources/ndis-rostering-software-guide','/blog-assets/ndis-rostering-software-guide/hero.png','Disability support coordinator and worker reviewing a roster on a tablet'],
+              ['NDIS Provider Audit Preparation Checklist','Organise evidence, record ownership and test retrieval before an audit request arrives.','/resources/ndis-audit-preparation-guide','/blog-assets/ndis-audit-preparation-guide/hero.png','Disability service provider manager preparing documentation for an audit'],
+              ['NDIS Software Buyer’s Checklist','Compare platforms using real provider workflows, commercial terms and implementation questions.','/resources/ndis-software-buyers-checklist','/blog-assets/ndis-software-buyers-checklist/hero.png','Disability service provider team reviewing software options in a meeting']
+            ].map(([title,description,to,image,alt]) => <Link key={to} to={to} className="overflow-hidden rounded-2xl border border-slate-200 bg-white hover:border-primary hover:shadow-md transition"><img src={image} alt={alt} className="w-full aspect-[16/9] object-cover" loading="lazy" width="1536" height="1024"/><div className="p-6"><p className="text-xs font-bold uppercase tracking-widest text-primary">Provider guide</p><h3 className="mt-2 font-bold text-xl text-slate-900">{title}</h3><p className="mt-2 text-slate-600">{description}</p><span className="inline-block mt-4 font-bold text-primary">Read guide →</span></div></Link>)}
+          </div>
+        </div>
+      </section>
       <ResourcesSection />
       <FAQSection />
     </>

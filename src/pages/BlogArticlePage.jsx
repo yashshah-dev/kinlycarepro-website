@@ -4,6 +4,13 @@ import SEO from '../components/SEO';
 import guardianImage from '../assets/Guardian_ai..webp';
 import billingImage from '../assets/billing_kinly.webp';
 
+const generatedImages = {
+  'ndis-billing-guide': { src: '/blog-assets/ndis-billing-guide/hero.png', alt: 'NDIS provider finance professional reviewing billing workflow on a laptop' },
+  'ndis-rostering-software-guide': { src: '/blog-assets/ndis-rostering-software-guide/hero.png', alt: 'Disability support coordinator and worker reviewing a roster on a tablet' },
+  'ndis-audit-preparation-guide': { src: '/blog-assets/ndis-audit-preparation-guide/hero.png', alt: 'Disability service provider manager preparing documentation for an audit' },
+  'ndis-software-buyers-checklist': { src: '/blog-assets/ndis-software-buyers-checklist/hero.png', alt: 'Disability service provider team reviewing software options in a meeting' }
+};
+
 const commonChecklist = [
   'Nominate an accountable owner and a backup for the workflow.',
   'Document the current process before changing tools or procedures.',
@@ -98,9 +105,10 @@ const articles = {
 
 export default function BlogArticlePage({ slug }) {
   const article = articles[slug];
+  const generatedImage = generatedImages[slug];
   const path = `/resources/${slug}`;
   return <><SEO title={article.title} description={article.description} url={path} type="article" breadcrumbs={[{name:'Resources', path:'/resources'}, {name:article.title, path}]} />
-    <article className="pt-32 pb-20"><div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"><p className="text-primary font-bold uppercase tracking-widest text-xs">Provider operations guide</p><h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">{article.title}</h1><p className="mt-5 text-sm text-slate-500">By Kinly CarePro · Reviewed 5 September 2026</p><p className="mt-8 text-xl text-slate-600 leading-relaxed">{article.intro}</p>{article.image && <figure className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50"><img src={article.image} alt={article.imageAlt} className="w-full h-auto" loading="eager" /><figcaption className="px-4 py-3 text-sm text-slate-500">Illustration of the Kinly CarePro workflow discussed in this guide.</figcaption></figure>}{article.sections.map(([heading, paragraphs]) => <section key={heading} className="mt-12"><h2 className="text-2xl md:text-3xl font-bold text-slate-900">{heading}</h2>{paragraphs.map(paragraph=><p key={paragraph} className="mt-4 text-slate-600 leading-relaxed text-lg">{paragraph}</p>)}</section>)}
+    <article className="pt-32 pb-20"><div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"><p className="text-primary font-bold uppercase tracking-widest text-xs">Provider operations guide</p><h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">{article.title}</h1><p className="mt-5 text-sm text-slate-500">By Kinly CarePro · Reviewed 5 September 2026</p><p className="mt-8 text-xl text-slate-600 leading-relaxed">{article.intro}</p>{(generatedImage || article.image) && <figure className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50"><img src={generatedImage?.src || article.image} alt={generatedImage?.alt || article.imageAlt} className="w-full h-auto" loading="eager" width={generatedImage ? '1536' : undefined} height={generatedImage ? '1024' : undefined} /><figcaption className="px-4 py-3 text-sm text-slate-500">Illustrative image for this provider operations guide.</figcaption></figure>}{article.sections.map(([heading, paragraphs]) => <section key={heading} className="mt-12"><h2 className="text-2xl md:text-3xl font-bold text-slate-900">{heading}</h2>{paragraphs.map(paragraph=><p key={paragraph} className="mt-4 text-slate-600 leading-relaxed text-lg">{paragraph}</p>)}</section>)}
       <section className="mt-14 rounded-2xl bg-primary/5 border border-primary/15 p-7"><h2 className="text-2xl font-bold">Operational checklist</h2><ul className="mt-5 space-y-3 text-slate-700">{article.checklist.concat(commonChecklist.slice(0, 2)).map(item=><li key={item} className="flex gap-3"><span aria-hidden="true" className="text-primary font-bold">✓</span><span>{item}</span></li>)}</ul></section>
       <section className="mt-14"><h2 className="text-2xl font-bold">Frequently asked questions</h2>{article.faqs.map(([question,answer])=><div key={question} className="mt-6"><h3 className="font-bold text-lg">{question}</h3><p className="mt-2 text-slate-600 leading-relaxed">{answer}</p></div>)}</section>
       <aside className="mt-14 rounded-2xl bg-slate-50 border border-slate-200 p-7"><h2 className="text-xl font-bold">Continue your evaluation</h2><ul className="mt-4 space-y-3">{article.related.map(([label,to])=><li key={to}><Link className="font-bold text-primary hover:underline" to={to}>{label} →</Link></li>)}</ul></aside>
