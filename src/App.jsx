@@ -25,6 +25,7 @@ const SolutionPage = lazy(() => import('./pages/SolutionPage'));
 const CompareHubPage = lazy(() => import('./pages/CompareHubPage'));
 const CompetitorComparisonPage = lazy(() => import('./pages/CompetitorComparisonPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
@@ -76,7 +77,7 @@ function App() {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/compliance" element={<CompliancePage />} />
               <Route path="/security" element={<SecurityPage />} />
-              <Route path="*" element={<Home />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </main>
